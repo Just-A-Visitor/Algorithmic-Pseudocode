@@ -12,12 +12,14 @@ Case 2 k is less than countZeros
  windowSize We define the window size as the number of zeroes contained in that window
 
 * Clearly we need to find the window which contains the maximum number of ones and has size atmost k. We can then convert all the zeroes     in the window to get an amount equal to windowSize+ amountOfPreviousOnes.
+
  Algorithm
 
 * Create a deque to hold the array elements (values). Create variables to store the count of zeroes, count of ones, and the best answer so far.
 * Iterate over each element of the array. If the element is one, just push it in the back(as it cannot contribute to window size) and update the count. If the element is zero, update the window size and then push it to the back.
 * If the length of the window exceeds k, start contracting the window from the front. Since 1's did not contribute to the size, keep popping them till you see a zero. As soon as you see a zero, pop it and the window size decreases by 1.
 * Update the maxPossibleResult so far in each iteration. All elements in the current window can be converted to 1.
+
 Miscellaneous
 
 * Updation of the result should be dones after confirming that the window size does not exceed k.
