@@ -8,3 +8,7 @@ Approach
 Miscellaneous
 
 * The minMatching vector has been initialised with INT_MAX instead of 0 to handle the updation of first string. After that, all the non-appearing charcters would be set to zero.
+
+Link
+
+https://leetcode.com/problems/find-common-characters/discuss/247798/detailed-explanation-c-on
