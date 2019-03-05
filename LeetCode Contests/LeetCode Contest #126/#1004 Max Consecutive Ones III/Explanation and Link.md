@@ -27,3 +27,7 @@ Miscellaneous
 Time Complexity
 
 * O(n)
+
+Link
+
+https://leetcode.com/problems/max-consecutive-ones-iii/discuss/249472/detailed-explanation-without-any-messy-indices-on
