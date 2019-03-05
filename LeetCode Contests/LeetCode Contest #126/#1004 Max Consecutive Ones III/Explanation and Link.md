@@ -1,5 +1,5 @@
 Intuition
-Let the total number of zeroes be countZeroes.
+* Let the total number of zeroes be countZeroes.
 
 Case 1 k is greater than or equal to countZeroes
 
