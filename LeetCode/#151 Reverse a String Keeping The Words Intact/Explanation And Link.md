@@ -10,6 +10,9 @@ Approach
 *    Extract words from the stack and append it to answer
 *    Remember to append space if it is not the last word.
 
+Problem
+
+https://leetcode.com/problems/reverse-words-in-a-string/
 
 Blog
 
