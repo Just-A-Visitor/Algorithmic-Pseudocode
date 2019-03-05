@@ -4,6 +4,7 @@ Intuition
 Case 1 k is greater than or equal to countZeroes
 
 * In this case, we apply the greedy approach, and convert all the zeroes to ones, eventually converting the entire array to 1s, (Why is this the best choice?), Because if we indeed left out any zero, we can still improve upon the count of ones by converting it to 1, becuase it is permissible.
+
 Case 2 k is less than countZeros
 
 * Claim We should convert k consecutive zeroes to ones.
