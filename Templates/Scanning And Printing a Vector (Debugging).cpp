@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* To use the template just copy the 2 functions and use it */
 /* The cerr stream won't affect the judgement of a program. */
 /* You can even submit the same file on online judge without removing debug */
 
