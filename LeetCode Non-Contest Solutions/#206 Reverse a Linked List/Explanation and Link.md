@@ -20,3 +20,6 @@
 **Time Complexity** of both solutions is `O(n)`. The space complexity is `O(1)` and `O(n)`.
 
 **Credits** ----- Inspired by a couple of `Discuss` posts for this question.
+
+
+**Blog** https://leetcode.com/problems/reverse-linked-list/discuss/254618/C%2B%2B-Detailed-Explanation-Recursive-and-Iterative
