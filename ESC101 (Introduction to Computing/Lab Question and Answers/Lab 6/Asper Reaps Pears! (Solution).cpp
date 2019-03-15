@@ -1,4 +1,3 @@
-ZPRAC-16-17-Lab6
 #include <stdio.h>
 #include<string.h>
 int main(){
