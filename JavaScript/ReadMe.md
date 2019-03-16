@@ -1,1 +1,1 @@
-This repository contains the JavaScript files.
+This folder contains the JavaScript files.
