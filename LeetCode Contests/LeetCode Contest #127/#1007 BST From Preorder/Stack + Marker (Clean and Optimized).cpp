@@ -48,5 +48,8 @@ TreeNode* Solution :: bstFromPreorder(vector<int>& preorder)
     return root;
 }
 
-/* An important point to note that we are modifying the value without popping. How? */
+/* An important point to note is that we are modifying the value without popping. How? */
 /* This is possible because of pointers. Making a copy can still modify elements. */
+/* The technique is called monotonic stack */
+
+
