@@ -9,3 +9,6 @@ https://leetcode.com/problems/construct-binary-search-tree-from-preorder-travers
 
 
 https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversa/
+
+
+[GeekForGeeks Stack Explanation](https://www.geeksforgeeks.org/construct-bst-from-given-preorder-traversal-set-2/)
