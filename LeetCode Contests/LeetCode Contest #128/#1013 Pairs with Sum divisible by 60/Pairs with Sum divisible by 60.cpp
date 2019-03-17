@@ -7,10 +7,10 @@ public:
 /* Returns the number of pairs whose sum is divisible by 60 */
 int Solution :: numPairsDivisibleBy60(vector<int>& a)
 {
-	// The reference for modular arithmetic
+    // The reference for modular arithmetic
     int ref=60;
 	
-	// Populate the map in modular arithemtic
+    // Populate the map in modular arithemtic
     unordered_map<int,int> count;
     for(auto ele : a)
         count[ele%ref]++;
