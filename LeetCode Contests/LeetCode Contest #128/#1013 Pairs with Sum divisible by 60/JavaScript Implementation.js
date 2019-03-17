@@ -1,7 +1,7 @@
 /* Returns the number of pairs whose sum is divisible by 60 */
 var numPairsDivisibleBy60 = function(time)
 {
-	// The reference for modular arithmetic
+    // The reference for modular arithmetic
     const ref=60;
 	
     // Initilize the map
@@ -9,7 +9,7 @@ var numPairsDivisibleBy60 = function(time)
     for(let i=0; i<ref; i++)
         count.push(0);
     
-	// Populate the map in modular arithemtic
+    // Populate the map in modular arithemtic
     for(let i=0; i<time.length; i++)
         count[time[i]%ref]++;
 		
