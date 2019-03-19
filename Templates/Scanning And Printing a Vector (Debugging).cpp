@@ -3,20 +3,17 @@
 using namespace std;
 
 /* To use the template just copy the 2 functions and use it */
-/* The cerr stream won't affect the judgement of a program. */
-/* You can even submit the same file on online judge without removing debug */
-
 
 /* Prints the contents of a vector containing any data type in the cerr stream*/
 template <typename universal_type>
 void printVector(vector<universal_type> &myVector)
 {
-    cerr << endl << "Printing the contents of the vector" << endl;
+    cout << endl << "Printing the contents of the vector" << endl;
     
     for(auto ele : myVector)
-        cerr << ele << " ";
+        cout << ele << " ";
     
-    cerr << endl << "The vector has been printed" << endl;
+    cout << endl << "The vector has been printed" << endl;
 }
 
 /* Scans the contents of a vector of any data type*/
