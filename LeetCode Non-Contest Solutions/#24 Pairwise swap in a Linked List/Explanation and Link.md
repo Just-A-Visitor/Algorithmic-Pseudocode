@@ -1,6 +1,8 @@
 **Link**
 [Recursion](https://leetcode.com/problems/swap-nodes-in-pairs/discuss/259625/Detailed-Explanation-with-Pictures-C%2B%2BJavaScript)
 
+[An iterative solution using sentinels](https://leetcode.com/problems/swap-nodes-in-pairs/discuss/11046/My-simple-JAVA-solution-for-share)
+
 **Intuition**
 * The idea is simple. Just swap 2 nodes manually and let recursion do the rest.
 
