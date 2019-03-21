@@ -4,6 +4,9 @@ public:
     ListNode* swapPairs(ListNode* head);
 };
 
+/* Converting it into an iterative version is easy.*/
+/* Enclose the swapping procedure in a while loop */
+
 /* Swaps the nodes pairwise */
 ListNode* Solution :: swapPairs(ListNode* head)
 {
