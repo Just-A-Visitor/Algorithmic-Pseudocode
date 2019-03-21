@@ -1,3 +1,9 @@
+**Links**
+
+* [HashMap](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/258935/Detailed-Explanation-with-Pictures-C%2B%2BJavaScript)
+* [Constant Space](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/259563/Detailed-Explanation-Constant-Space-C%2B%2BJavaScript)
+
+
 **Intuition**
 * First, how do we clone a **Normal** linked list? (i.e, a linked list with no **Random** field). One easy way is to iterate the list and create the nodes on the fly. 
 * This is exactly **Step 1** of the algorithm. We clone the linked list while not caring about the random pointers (setting it to **Null**).
@@ -19,3 +25,18 @@ The above method handles duplicates but does not handle *Loops* in the linked li
 
 
 Sorry, I didn't mean to extend it so long, but I hope you understand the concept and its working.
+
+
+
+
+The HashMap based solution can be found [here](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/258935/Detailed-Explanation-with-Pictures-C%2B%2BJavaScript)
+
+**Intuition**
+* As discussed in the above link, the only thing forcing us to use extra space is the fact that we need a mapping from the old node to the new node counterpart (The vertical threading). Now, can we overcome this? (Of course, we would still need a mapping).
+* The idea is to clone the nodes such the cloned node is just to the right of the old node. This way, we can have a mapping in O(1).
+* We traverse the original list and for each node we create a copy and insert it to the right. So, *1 2 3 4 2 5* would become *1 1 2 2 3 3 4 4 2 2 5 5*. 
+* Now, we traverse the list again and correct the random field of the cloned nodes. (How?). We stand at the original node, go to its **random** field, and then move right (the mapping) and set the newly found node as the random field of the cloned node (the node to the current right). We continue this process, while ensuring that we only stand at the original nodes.
+* Now, we need to free the lists. This is easy, for each node, we set it's next field to the **node.next.next**. (This has to be done to each node since we need to free both the lists).
+
+**Credits** ----- Inspired by a couple of **Discuss** posts and a question on **StackOverFlow**.
+
