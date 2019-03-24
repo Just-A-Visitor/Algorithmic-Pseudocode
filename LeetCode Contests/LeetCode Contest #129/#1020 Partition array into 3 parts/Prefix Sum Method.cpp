@@ -18,8 +18,8 @@ bool Solution :: canThreePartsEqualSum(vector<int>& a)
     for(auto ele : a)
     {
         prefixSum += ele;
-        if(prefixSum==subSum) firstFound = true;
-        else if(firstFound && prefixSum==subSum*2) secondFound = true;
+        if(!firstFound && prefixSum==subSum) firstFound = true;
+        else if(firstFound && !secondFound && prefixSum==subSum*2) secondFound = true;
         else if(firstFound && secondFound && prefixSum==subSum*3) thirdFound = true;
     }
     
