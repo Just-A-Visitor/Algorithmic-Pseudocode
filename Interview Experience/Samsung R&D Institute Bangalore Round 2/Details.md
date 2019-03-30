@@ -2,7 +2,7 @@
 
 **Details**
 * This was the second round of **Parichay**. It was an online coding round, with 3 questions.
-* The difficulty was moderate. The time alloted was 1 hour 30 minutes.
+* The difficulty was moderate. The time allotted was 1 hour 30 minutes.
 * I didn't perform well in this contest as I hadn't practiced **Graph** questions for a long time.
 * I made a lot of incorrect submissions.
 * Coded the **Binary string** question during the last 5 minutes and **Boom**. 125/200. 
