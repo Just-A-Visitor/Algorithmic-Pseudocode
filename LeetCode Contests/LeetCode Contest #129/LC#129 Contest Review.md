@@ -14,3 +14,7 @@
 * I've decided to experiment a bit with my strategy during tomorrow's contest. In the first 5 minutes, I won't implement anything. Instead I'll devote the time to read each of the 4 questions.
 
 ---
+
+
+The contest was pre-poned by 1 hour and I was not aware of that. Eventually I didn't solve any of the question during contest duration. 
+I upsolved all the questions afterwards.
