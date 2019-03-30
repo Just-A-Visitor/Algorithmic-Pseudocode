@@ -10,4 +10,4 @@
 
 **Scores**
 * Solved the question **Particle Collision** after a huge number of incorrect submissions. (**Handle corner cases well**).
-* **Partial Score on the question **Binary Strings** . 125/200. Time Limit Exceeded on the remaining test cases.
+* **Partial Score** on the question **Binary Strings** . 125/200. Time Limit Exceeded on the remaining test cases.
