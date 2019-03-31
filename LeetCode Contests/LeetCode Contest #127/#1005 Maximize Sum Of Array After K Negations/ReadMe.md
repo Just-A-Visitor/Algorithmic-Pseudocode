@@ -8,6 +8,6 @@ Also, observe that negating a negative element results in twice the contribution
 So the larger the magnitude of the negative element, the larger the gain.
 
 
-**Blog**  https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/discuss/252317/detailed-explanation-using-min-heap-without-any-messy-indices
+[Blog](https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/discuss/252317/detailed-explanation-using-min-heap-without-any-messy-indices)
 
-**Alternate Solution**   https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/discuss/252254/C%2B%2BPython-Sort
+[Alternate Solution](https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/discuss/252254/C%2B%2BPython-Sort_
