@@ -1,3 +1,6 @@
+[Blog](https://leetcode.com/problems/binary-prefix-divisible-by-5/discuss/265601/Detailed-Explanation-using-Modular-Arithmetic-O(n))
+[Alternate Solution](https://leetcode.com/problems/binary-prefix-divisible-by-5/discuss/265636/C-divisible-by-5-is-determined-by-right-most-digit-only)
+
 **Intuition**
 * First, let us see how to append an extra bit at the end of a binary number
 * Any binary number **a<sub>k</sub>a<sub>k-1</sub>...a<sub>0</sub>**  has the form a<sub>0</sub>*2<sup>0</sup> + a<sub>1</sub>*2<sup>1</sup> + ........ a<sub>0</sub>*2<sup>k</sup>
