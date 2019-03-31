@@ -1,3 +1,5 @@
+[Blog](https://leetcode.com/problems/number-of-enclaves/discuss/265699/Detailed-Explanation-using-Connected-Components-O(n))
+
 **Abstraction**
 * We can consider the input as a graph. Every cell in the matrix with the value 1 is a node in the graph.
   There is an edge from one node to another if both the nodes are cardinal neighbours (with value 1). Clearly, the graph is undirected.
