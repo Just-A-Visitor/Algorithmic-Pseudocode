@@ -1,3 +1,5 @@
+**LC#129 Contest Review**
+
 **Thoughts**
 
 * I've been under-performing for the past few contests. I need to be more focused during the contests (Last contest, I lost motivation just after half an hour).
