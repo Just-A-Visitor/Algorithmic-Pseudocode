@@ -6,7 +6,7 @@ public:
     int longestValidParentheses(string str);
 };
 
-/* Returns the length of teh longest valid parenthesis */
+/* Returns the length of the longest valid parenthesis */
 int Solution :: longestValidParentheses(string str)
 {
     // Store the length of the string
