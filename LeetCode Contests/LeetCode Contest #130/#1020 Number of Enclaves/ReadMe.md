@@ -41,6 +41,6 @@
 **Time Complexity**
 * Notice that we can encounter each cell atmost 4 times (by the 4 neighbours). Once the cell is visited, it won't be considered again. Hence, the net effect is 3-4 traversals of the matrix.
 * At the end, we traverse the matrix once.
-* Hence, the time complexity is **O(n)**.
+* Hence, the time complexity is **O(m*n)**.
   
 ---
