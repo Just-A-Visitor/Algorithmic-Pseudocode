@@ -1,1 +1,1 @@
-EXplain the algorithm and link 2 unique solutions.
+Explain the algorithm and link 2 unique solutions.
