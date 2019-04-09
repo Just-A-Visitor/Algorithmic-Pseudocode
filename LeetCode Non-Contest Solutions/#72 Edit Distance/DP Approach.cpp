@@ -25,7 +25,7 @@ int Solution :: minDistance(string str_1, string str_2)
     
     /* dp[0][0] = 0
      * dp[0][j] = j First string is empty,  only insertions can happen
-     * dp[i][0] = i Second string is empty, only deletions can happend
+     * dp[i][0] = i Second string is empty, only deletions can happen
      * Compactly, dp[i][j] = max(i,j) if one of them is zero
      */
     
