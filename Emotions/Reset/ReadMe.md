@@ -12,13 +12,13 @@ I didn't see that level of sad coming. **I think when sad comes, you don't know 
 
 **It was my job to fall madly in love with me first.** That no one was going to show me how to love me, that I have to show not only me how to love me, but I had to show other people how to love me. 
 
-**That you are the first example of what loving you looks like and the way you love you, the way the world's gonna love you**. So when you say I don't need rest, we beieve you. When you say, no don't worry about me I'm fine, we believe you.When you say, no I don't need help, we believe you. When you say, I'm fine by myself, we believe you. So, here's what I realized, **Words, words are power, words speak life, words, your life is a physical manifestation of the conversation going on in your head, and it's a physical manifestation of the words that are falling across your lips and if you want to create a better life, design a better converstaion. If you want to design a better conversation, think a better thought, not about them but first about you.**
+**That you are the first example of what loving you looks like and the way you love you, the way the world's gonna love you**. So when you say I don't need rest, we beieve you. When you say, no don't worry about me I'm fine, we believe you.When you say, no I don't need help, we believe you. When you say, I'm fine by myself, we believe you. So, here's what I realized, **Words, words are power, words speak life, words, your life is a physical manifestation of the conversation going on in your head, and it's a physical manifestation of the words that are falling across your lips and if you want to create a better life, design a better converstaion. If you want to design a better conversation, think of a better thought, not about them but first about you.**
 
 **And If you can feel it right now, something stirring in your soul, just that little something, you can't even describe it, then you're still in the game. It ain't over yet**
 
 > It's never too late, at 20 at 40, at 55, at 75, at 88. It ain't ever too late to press reset and fall madly in love with the life that you've been given. And then you'll look up and your life is barely recognizable.
 
-I wear everything as a badge. I'm fine with it. It's not, I'm not successfull inspite of it, my success is beautiful because of it.
+I wear everything as a badge. I'm fine with it. It's not, I'm not successful inspite of it, my success is beautiful because of it.
 **Don't wear the labels and don't let the labels wear you. You're bigger than a label.**
 
 > You don't think you get to press reset, you better think again. It is not over yet. Matter of fact, it just begun!
