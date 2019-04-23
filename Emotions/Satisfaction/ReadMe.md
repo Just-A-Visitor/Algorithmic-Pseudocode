@@ -9,7 +9,7 @@ I cracked **JEE** and I'm studying in an IIT. So, am I satisfied? Absolutely not
         JEE! Surely the destination has changed but the journey remains the same.
    
    
-Maybe I'm still stuck in the past and need to move on. But my heart says that if I give up on this dream, I won't be able to sleep in peace for the rest of my life. Let's give it a shot!
+Maybe I'm still stuck in the past and need to move on. But my heart says that if I gave up on this dream, I won't be able to sleep in peace for the rest of my life. Let's give it a shot!
 
 
  
