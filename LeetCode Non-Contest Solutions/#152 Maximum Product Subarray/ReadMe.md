@@ -16,6 +16,7 @@
     * Update `max_ending_here` to `min_ending_here*a[i]`. However, the result can be negative as well (if `min_ending_here` is 1). Remember to take the maximum with 1.
     * Update `min_ending_here` to `max_ending_here*a[i]`. Even if `max_ending_here` is 1, the answer is valid. Use the `temp` variable for the old value of `max_ending_here`.
 
+* Remember to update the `max_so_far` in each iteration.
 
 # Count of Negatives (Incomplete)
 
