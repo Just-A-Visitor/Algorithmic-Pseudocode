@@ -18,6 +18,8 @@
 
 * Remember to update the `max_so_far` in each iteration.
 
+[Credits](https://www.geeksforgeeks.org/maximum-product-subarray/)
+
 # Count of Negatives (Incomplete)
 
 * This was the initial thought that crossed my mind. If the count of negative elements is even, it's clear that the entire array would be the answer. 
