@@ -1,9 +1,10 @@
 Here is the list of questions that I've solved/intend to solve.   
 
-* - [ ] **Diameter of a Binary Tree**
+* - [x] **Diameter of a Binary Tree**
 * - [ ] **Intersection point of 2 Linked Lists**
-* - [ ] **Maximum Product Subarray** [O(n) Time, O(1) Space]
-* - [ ] **Remove Duplicates from Sorted Linked List**
+* - [x] **Maximum Product Subarray** [O(n) Time, O(1) Space]
+* - [x] **Remove Duplicates from Sorted Linked List** [_Retain a copy_]
+* - [ ] **Remove Duplicates from Sorted Linked List** [_Retain only distinct_]
 * - [ ] **Serialize and Deserialize a Binary Tree**
 * - [ ] **Cyclic Right Shift for Linked List**
 * - [ ] **Loop Detection and Removal in Linked List**
