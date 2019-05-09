@@ -4,6 +4,7 @@ public:
     bool hasCycle(ListNode *head);
 };
 
+/* Detects cycle in a linked list */
 bool Solution :: hasCycle(ListNode *head)
 {
     // Start both the pointers at the head
