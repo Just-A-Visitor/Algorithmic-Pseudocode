@@ -4,6 +4,7 @@ class Solution
     ListNode* rotateRight(ListNode* head, int k);
 };
 
+/* Rotates a linked list to the right by k places */
 ListNode* Solution :: rotateRight(ListNode* head, int k)
 {
     // Handle the base case
