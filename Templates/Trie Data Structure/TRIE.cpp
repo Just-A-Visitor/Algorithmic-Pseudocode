@@ -3,12 +3,14 @@ using namespace std;
 
 const int ALPHABET_SIZE = 26;
 
+/* The structure of a trie node */
 struct TrieNode
 {
     struct TrieNode* children[ALPHABET_SIZE];
     bool isEndOfWord;
 };
 
+/* Creates a new trie node and returns the pointer */
 struct TrieNode* getNode()
 {
     struct TrieNode* newNode = new TrieNode;
@@ -21,6 +23,7 @@ struct TrieNode* getNode()
     return newNode;
 }
 
+/* Inserts the given string to the collection */
 void insert(struct TrieNode* root, string str)
 {
     struct TrieNode* pCrawl = root;
@@ -38,6 +41,7 @@ void insert(struct TrieNode* root, string str)
     pCrawl->isEndOfWord = true;
 }
 
+/* Returns true if the string is present in the collection */
 bool search(struct TrieNode* root, string str)
 {
     struct TrieNode* pCrawl = root;
@@ -55,6 +59,7 @@ bool search(struct TrieNode* root, string str)
     return (pCrawl and pCrawl->isEndOfWord);
 }
 
+/* A Driver function to test the Trie Data Structure */
 void TestDrive()
 {
     struct TrieNode* root = getNode();
