@@ -1,9 +1,12 @@
-# Thoughts
+# Thoughts    
 It's been a long time since I've learned something new related to coding. This was a great learning experience. So simple, yet so powerful!
+
 ---
 
-# Important Links / Credits
+# Important Links / Credits   
+
 All credits goes to the evergreen [GeeksForGeeks](https://www.geeksforgeeks.org/trie-insert-and-search/). I've lost count of how many times **GFG** has helped me in the past. I am still amazed at the fact that this resource is completely free.
+
 ---
 
 # Walkthrough
