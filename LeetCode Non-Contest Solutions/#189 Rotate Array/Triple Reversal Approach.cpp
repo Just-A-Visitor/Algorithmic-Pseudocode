@@ -4,6 +4,7 @@ public:
     void rotate(vector<int>& v, int k);
 };
 
+/* Rotates the array to the right by K */
 void Solution :: rotate(vector<int>& v, int k)
 {
     // Extract size and normalize the shift
