@@ -133,7 +133,7 @@ I've written the template for cardinal direction in a different post.
 The main roadblock for me while dealing with **Dijkstra** was the fact
 that during **Edge-Relaxation**, we compare the `deltas` to `other_delta +
 weight`. Moreover, we also initialize all `deltas` as **infinity**  or
-**Int_Max**. The issue with that is fact that when we add something to
+**Int_Max**. The issue with that is the fact that when we add something to
 **Int_Max**, it actually becomes negative and the comparison would give
 wrong results. One solution is to use infinity as **1e7** or a slightly
 smaller number. This ensures that it doesn't become negative while
