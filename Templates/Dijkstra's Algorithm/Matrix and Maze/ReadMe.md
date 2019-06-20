@@ -159,13 +159,13 @@ constant time access).
 * Intialize this matrix with **infinity** (Standard CLRS stuff).
 * Update the `delta` value of cell (0,0) in the **delta** matrix. Push it
 in the set too.
-* **A very important invariant**    Maintain an invariant that no element
+* **A very important invariant**  ===> Maintain an invariant that no element
 whose `delta` value is infinity goes inside the set, This ensures that
 during relaxation, the `delta` in which the weight is added has come from
 the set itself, so of course, no overflow can happen. Even if the
 comparison is with **infinity**, it would be on the left side.
 * While the set does not become empty, do
-    * Remover and store the minimum element by `delta` value. (The
+    * Remove and store the minimum element by `delta` value. (The
 beginning iterator of set).
     * Explore all its neighbours and perform edge relaxation on all of
 them. If edge relaxation succeeds, it means it's time to update the
