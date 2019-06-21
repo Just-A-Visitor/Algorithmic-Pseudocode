@@ -94,11 +94,8 @@ vector<int> Dijkstra(vector<vector<Node>> &adj, int source)
 
 int main() 
 {
-    int vertices, edges;
-    cin >> vertices >> edges;
-    
-    int source;
-    cin >> source;
+    int vertices, edges, source;
+    cin >> vertices >> edges >> source;
     
     vector<vector<Node>> adj(vertices);
     
