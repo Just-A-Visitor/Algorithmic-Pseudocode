@@ -13,18 +13,18 @@ class Node
     
     /* Comparator for the class */
     bool operator <(const Node &biggerNode) const 
-	{
+    {
         if(weight==biggerNode.weight)
             return (vertex < biggerNode.vertex);
         else
             return (weight < biggerNode.weight);
-	}
+    }
 	
 	// Constructor
 	Node(int weight, int vertex)
 	{
 	    this->weight = weight;
-        this->vertex = vertex;
+            this->vertex = vertex;
 	}
 	
 };
