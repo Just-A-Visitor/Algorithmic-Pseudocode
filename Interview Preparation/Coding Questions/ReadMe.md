@@ -20,4 +20,4 @@ Here is the list of questions that I've solved/intend to solve.
 
         Competitive Coding
     
-* - [ ] **BiColored RBS**
+* - [ ] **[BiColored RBS](https://codeforces.com/contest/1167/problem/D)**
