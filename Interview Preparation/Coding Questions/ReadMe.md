@@ -18,6 +18,6 @@ Here is the list of questions that I've solved/intend to solve.
 * - [ ] **Cloning a Graph**   
 
 
-      Competitive Coding
+        Competitive Coding
     
 * - [ ] **BiColored RBS**
