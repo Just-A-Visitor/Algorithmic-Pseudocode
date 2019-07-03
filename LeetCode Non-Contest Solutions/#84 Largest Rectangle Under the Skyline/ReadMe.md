@@ -79,7 +79,7 @@ I know that this was an overkill, but that was the idea that first striked my mi
 * We know that `i-th` element is popping it from the stack. Hence right boundary ends at `i` (excluding it).
 * We pop the stack.
     * If the stack becomes empty
-        * it means everything to the left was part of left span. Therefore, we need the number of elements between `[0,i]`.
+        * it means everything to the left was part of left span. Therefore, we need the number of elements between `[0,i)`.
         * Clearly, it is `(i-0+1) - 1`
         * Therefore, `width = i`
     * Else
