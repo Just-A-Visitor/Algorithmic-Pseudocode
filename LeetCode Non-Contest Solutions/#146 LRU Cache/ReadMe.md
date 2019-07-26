@@ -37,5 +37,8 @@ The algorithm is straightforward. The first intuition, as the name **Least Recen
         * To refresh the element, evict it and use the **put** function to re-insert the value.
         * Return the saved value
 
+# Working
+See this [link](https://www.geeksforgeeks.org/lru-cache-implementation/) to visualize how the algorithm works.
+
 # Credits 
 [GeeksForGeeks](https://www.geeksforgeeks.org/lru-cache-implementation/)
