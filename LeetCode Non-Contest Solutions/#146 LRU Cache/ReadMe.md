@@ -16,7 +16,7 @@ The algorithm is straightforward. The first intuition, as the name **Least Recen
 # Algorithm
 * Create a `Node` class to store the (key,value) pairs. Make sure to create the constructor. You can also use `pair<int,int>` if you wish, but remember to do `typedef` or else your code will look messy.
 
-* For the instance variables, create the `capacity` variable, an unordered map which maps keys to `list<Node> :: iterator` and an STL list which stores the nodes. Create the constructor initializing the size.
+* For the instance variables, create the `capacity` variable, an unordered map which maps keys to `list<Node> :: iterator` and an STL list which stores the nodes. Create the constructor initializing the capacity.
 
 * We'll create 3 functions to facilitate our task
     * **Evict**
