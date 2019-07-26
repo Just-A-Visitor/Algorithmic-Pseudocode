@@ -21,7 +21,7 @@ The algorithm is straightforward. The first intuition, as the name **Least Recen
 * We'll create 3 functions to facilitate our task
     * **Evict**
         * This function takes a key and deletes it if it is present in the cache.
-        * To delete the key, search it's iterator in the map, and delete it from the cache. After that, erase the key from the map. 
+        * To delete the key, search its iterator in the map, and delete it from the cache. After that, erase the key from the map. 
         * Do not mess the order or you'll lose the location of the iterator.
 
     * **Put**
