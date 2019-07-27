@@ -14,7 +14,7 @@ Here is the list of questions that I've solved/intend to solve.
 * - [ ] **Linear Time Pattern Matching**
 * - [ ] **Dutch National Flag**
 * - [ ] **Median of online data** [Already done, just a revision]
-* - [ ] **Largest Rectangle under the skyline**
+* - [x] **Largest Rectangle under the skyline**
 * - [ ] **Cloning a Graph** 
 * - [ ] **Josephus Problem**
 * - [ ] **Snake and Ladder**    
