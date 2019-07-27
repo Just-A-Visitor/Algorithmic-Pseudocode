@@ -8,7 +8,7 @@ Here is the list of questions that I've solved/intend to solve.
 * - [x] **Remove Duplicates from Sorted Linked List** [_Retain a copy_]
 * - [ ] **Remove Duplicates from Sorted Linked List** [_Retain only distinct_]
 * - [ ] **Serialize and Deserialize a Binary Tree**
-* - [ ] **Cyclic Right Shift for Linked List**
+* - [x] **Cyclic Right Shift for Linked List**
 * - [ ] **Loop Detection and Removal in Linked List**
 * - [x] **LRU Cache**
 * - [ ] **Linear Time Pattern Matching**
