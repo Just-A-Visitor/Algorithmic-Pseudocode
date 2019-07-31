@@ -73,7 +73,7 @@ void solve(string &text, string &pattern)
 
 int main()
 {
-    int test;
+    int test; 
     cin >> test;
     
     for(int i=0; i<test; i++)
