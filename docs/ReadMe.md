@@ -40,5 +40,5 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 # Dijsktra's Algorithm
-[Let's Try it](../a%20bc/Dijkstra.md)
+[Let's Try it](a%20bc/Dijkstra.md)
 
