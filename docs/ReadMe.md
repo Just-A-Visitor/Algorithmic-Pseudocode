@@ -40,5 +40,5 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 # Dijsktra's Algorithm
-[Let's Try it](a%20bc/Dijkstra.html)
+[Let's Try it one last time](/Templates/Dijkstra's%20Algorithm/Matrix%20and%20Maze/ReadMe.html)
 
