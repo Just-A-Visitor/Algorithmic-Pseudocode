@@ -40,5 +40,5 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 # Dijsktra's Algorithm
-[It works](../ReadMe.md)
+[It works](../README.md)
 
