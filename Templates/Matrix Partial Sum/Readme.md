@@ -5,6 +5,7 @@
 
 * Partial sum at a particular cell includes that cell.
 
+* `partial_sum[row][col] = sum(mat[row][0,...col]) + partial_sum[row-1][col]`
 
 # Example
 The partial sum of
