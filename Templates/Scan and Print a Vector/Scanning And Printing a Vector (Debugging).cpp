@@ -26,7 +26,8 @@ void scanVector(vector<universal_type> &myVector)
 }
 
 
-int main() {
+int main()
+{
 	vector<long long int> myVec;
 	
 	int size;
