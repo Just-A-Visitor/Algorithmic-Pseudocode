@@ -1,7 +1,7 @@
 # Definition
 * **Partial sum** at a particular cell is defined to be the sum of all the elements inside the boundary created by the left and above.   
 
-* **Partial sum** at a particular sum is defined to be the sum of all elements which can be reached by taking a step to the left or top (or any combination of left and top). 
+* **Partial sum** at a particular cell is defined to be the sum of all elements which can be reached by taking a step to the left or top (or any combination of left and top). 
 
 * Partial sum at a particular cell includes that cell.
 
