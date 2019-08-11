@@ -4,7 +4,7 @@ using namespace std;
 
 /* To use the template just copy the 2 functions and use it */
 
-/* Prints the contents of a vector containing any data type in the cerr stream*/
+/* Prints the contents of a vector containing any data type in the cout stream*/
 template <typename universal_type>
 void printVector(vector<universal_type> &myVector)
 {
