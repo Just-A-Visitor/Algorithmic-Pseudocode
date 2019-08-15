@@ -19,8 +19,3 @@ Here is the list of questions that I've solved/intend to solve.
 * - [ ] **Josephus Problem**
 * - [ ] **Snake and Ladder**    
 
-
-
-        Competitive Coding
-    
-* - [ ] **[BiColored RBS](https://codeforces.com/contest/1167/problem/D)**
