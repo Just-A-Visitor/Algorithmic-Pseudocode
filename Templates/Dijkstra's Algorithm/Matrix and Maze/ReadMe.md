@@ -19,7 +19,7 @@ Now I've realized that all the above benefits can be taken by creating a
 **class** or **structure**.
 
 For a triplet, now I'd just do
-```
+```cpp
 class Triplet
 {
     int dist;
@@ -29,7 +29,7 @@ class Triplet
 ```
 
 How to replace the **make_pair** function ? Simply create a constructor
-```
+```cpp
 void Triplet :: Triplet(int dist, int x_cord, int y_cord)
 {
     this->dist = dist;
@@ -41,7 +41,7 @@ As simple as that!
 To instantiate an object, just call `Triplet(dist,x_cord,y_cord)`
 
 How to replace the inbuilt comparators? Just include this in the class itself
-```
+```cpp
 {
     bool operator <(const int &biggerNode) const
     {
@@ -70,7 +70,7 @@ argument to **biggerNode**).
 
 **Tip** ---- Don't forget the `const` at the end!
 Intially, my comparator looked like this
-```
+```cpp
 {
     bool operator <(const int &biggerNode) const
     {
@@ -86,7 +86,7 @@ This clearly doesn't specify which element is smaller if the condition
 fails? This was casuing unexpected error.
 
 **The Real Code**
-```
+```cpp
 {
     bool operator <(const int &biggerNode) const
     {
