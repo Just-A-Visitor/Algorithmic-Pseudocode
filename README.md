@@ -3,4 +3,4 @@ This repository contains the codes of all the questions that I have solved so fa
 
 
 # Online Presence
-![Image](Image/Leetcode%20Logo.png)
+![Images](Images/Leetcode%20Logo.png)
