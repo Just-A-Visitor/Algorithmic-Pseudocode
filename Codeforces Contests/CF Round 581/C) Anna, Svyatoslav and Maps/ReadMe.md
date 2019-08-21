@@ -65,7 +65,7 @@ I was trying to sleep. It's 2 AM and I'm not even thinking about the question. A
 
 
 # Level Zero
-Everything went in vain. I submitted both the question to the testers. Now I am at level zero. I need to learn **Floyd Warshall** and revisit this question.
+Everything went in vain. I submitted both the test cases to the testers (ultimately being hacked, of course). Now I am at level zero. I need to learn **Floyd Warshall** and revisit this question.
 
 **Don't trust Greedy**.
 
