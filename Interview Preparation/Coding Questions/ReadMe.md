@@ -17,20 +17,21 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Dutch National Flag**
 * - [ ] **Median of online data** [Already done, just a revision]
 * - [x] **Largest Rectangle under the skyline**
-* - [ ] **Cloning a Graph**
+* - [ ] **Cloning a Graph**   
 
-
-
-
-
-                Phase 2
-# Tips   
+# Phase 2 Tips   
 * Practice writing code on paper.
 * Your first submission should be your last submission. 
 * Your first implementation on IDE should avoid compilation errors.
 * Devote minimum 1 hour to each question.
 * Start coding on IDE only after you have a batch of 10 pseudocodes.
 * Don't think while coding on IDE. Just copy everything written on your paper.
+
+
+
+                Phase 2
+
+
 
 # Phase 2 List
 * - [ ] **Print Nodes at distance k from a target node** [Link](https://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/)
