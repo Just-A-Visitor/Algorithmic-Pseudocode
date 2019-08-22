@@ -19,3 +19,7 @@ Here is the list of questions that I've solved/intend to solve.
 * - [ ] **Josephus Problem**
 * - [ ] **Snake and Ladder**    
 
+
+
+                Phase 2
+* - [ ] **Print Nodes at distance k from a target node** [Link](https://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/)
