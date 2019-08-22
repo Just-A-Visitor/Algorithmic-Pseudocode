@@ -1,4 +1,4 @@
-Here is the list of questions that I've solved/intend to solve.   
+Here is the list of questions that I've solved/intend to solve
 
                 Interview Questions
 
@@ -17,7 +17,7 @@ Here is the list of questions that I've solved/intend to solve.
 * - [x] **Largest Rectangle under the skyline**
 * - [ ] **Cloning a Graph** 
 * - [ ] **Josephus Problem**
-* - [ ] **Snake and Ladder**    
+* - [ ] **Snake and Ladder**
 
 
 
