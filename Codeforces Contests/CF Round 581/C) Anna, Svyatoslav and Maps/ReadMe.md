@@ -1,3 +1,7 @@
+[Problem](https://codeforces.com/contest/1204/problem/C)     
+[Submission](https://codeforces.com/contest/1204/submission/59329198)     
+[Editorial](https://codeforces.com/blog/entry/69244)    
+
 # Strategy
 There were a total of 5 questions. This time I decided to start the contest with the third problem. 
 
