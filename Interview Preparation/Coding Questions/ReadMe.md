@@ -18,7 +18,6 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Median of online data** [Already done, just a revision]
 * - [x] **Largest Rectangle under the skyline**
 * - [ ] **Cloning a Graph**
-* - [ ] **Josephus Problem**
 
 
 
