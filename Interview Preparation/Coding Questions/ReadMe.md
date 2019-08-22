@@ -1,6 +1,6 @@
 Here is the list of questions that I've solved/intend to solve
 
-                Interview Questions
+ # Phase 1 List
 
 * - [x] **Diameter of a Binary Tree**
 * - [ ] **Intersection point of 2 Linked Lists**
@@ -32,5 +32,5 @@ Here is the list of questions that I've solved/intend to solve
 * Start coding on IDE only after you have a batch of 10 pseudocodes.
 * Don't think while coding on IDE. Just copy everything written on your paper.
 
-# List
+# Phase 2 List
 * - [ ] **Print Nodes at distance k from a target node** [Link](https://www.geeksforgeeks.org/print-nodes-distance-k-given-node-binary-tree/)
