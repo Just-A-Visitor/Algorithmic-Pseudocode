@@ -1,5 +1,6 @@
-Here is the list of questions that I've solved/intend to solve
+Here is the list of questions that I've solved/intend to solve   
 
+      Phase 1
  # Phase 1 List
 
 * - [x] **Diameter of a Binary Tree**
@@ -11,13 +12,13 @@ Here is the list of questions that I've solved/intend to solve
 * - [x] **Cyclic Right Shift for Linked List**
 * - [ ] **Loop Detection and Removal in Linked List**
 * - [x] **LRU Cache**
+* - [ ] **Snake and Ladder**
 * - [ ] **Linear Time Pattern Matching**
 * - [ ] **Dutch National Flag**
 * - [ ] **Median of online data** [Already done, just a revision]
 * - [x] **Largest Rectangle under the skyline**
-* - [ ] **Cloning a Graph** 
+* - [ ] **Cloning a Graph**
 * - [ ] **Josephus Problem**
-* - [ ] **Snake and Ladder**
 
 
 
