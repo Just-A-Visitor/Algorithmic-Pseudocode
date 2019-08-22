@@ -19,6 +19,8 @@ Here is the list of questions that I've solved/intend to solve
 * - [x] **Largest Rectangle under the skyline**
 * - [ ] **Cloning a Graph**   
 
+
+                Phase 2
 # Phase 2 Tips   
 * Practice writing code on paper.
 * Your first submission should be your last submission. 
@@ -29,7 +31,7 @@ Here is the list of questions that I've solved/intend to solve
 
 
 
-                Phase 2
+
 
 
 
