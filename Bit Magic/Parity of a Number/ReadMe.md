@@ -46,3 +46,8 @@ The complextiy is O(number_of_bits).
 
 ## Time Complexity
 * O(number_of_set_bits)
+
+
+# Take Aways
+* `x ^= 1` increments `x` in modular arithmetic of 2.
+* `x & (x-1)` unsets the lowest set bits of `x`.
