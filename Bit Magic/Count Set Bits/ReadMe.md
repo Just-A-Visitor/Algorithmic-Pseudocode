@@ -13,3 +13,6 @@ The traditional approach is to get the bit representation and count the number o
  # Take Aways
  1) `n % 2` = `n & 1`
  2) `n / 2` = `n >> 1`
+
+
+There's an even faster way to compute set bits. See **Parity of a number** for more discussions.
