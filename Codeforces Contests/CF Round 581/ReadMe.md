@@ -1,7 +1,7 @@
 # To Do
 * - [ ] Proof of Correctness and Implementation of **Floyd Warshall**    
 * - [ ] Editorial of Problem **C**(Based on Floyd Warshall)    
-* - [ ] Proof of Correctness of **C** (Based on Valid Parentheses)   
+* - [ ] Proof of Correctness of **D** (Based on Valid Parentheses)   
 * - [ ] DP approach for **D**   
 * - [ ] Implementation / Understanding of **E**     
 
