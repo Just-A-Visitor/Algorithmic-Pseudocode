@@ -1,4 +1,6 @@
 # To Do
+* - [ ] Implementation / Understanding of **A**     
+* - [ ] Implementation / Understanding of **B**     
 * - [ ] Proof of Correctness and Implementation of **Floyd Warshall**    
 * - [ ] Editorial of Problem **C**(Based on Floyd Warshall)    
 * - [ ] Proof of Correctness of **D** (Based on Valid Parentheses)   
