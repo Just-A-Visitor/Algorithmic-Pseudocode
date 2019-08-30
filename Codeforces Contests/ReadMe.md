@@ -7,7 +7,7 @@
   * - [ ] **Upsolving**
 
 
-* - [x] **CF Round 582** [_Div3_] (30th August) 
+* - [ ] **CF Round 582** [_Div3_] (30th August) 
   * - [ ] **Participation**
   * - [ ] **Upsolving**
 
