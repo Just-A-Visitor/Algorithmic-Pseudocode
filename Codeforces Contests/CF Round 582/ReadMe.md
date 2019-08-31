@@ -7,6 +7,14 @@ I have decided to experiment a little. I would start the contest from the 4th qu
 
 This is a divison 3 round. The last 3 questons would be easily solvable. I have to struggle till the last minute.
 
+## Aftermath
+This contest was a disaster. The questions were mostlly observation based and implementation heavy (unless you know the correct shorter way). I solved the first question in the last 10 minutes (which was perfectly valid) and later submitted another solution handling the case when `n == 1`. Sadlly the first solution was correct, the second was not. Silly me!
+
+The only question worth upsolving is the last question (which uses **DSU**).
+
+
+**I am not giving Divison 3 Contests again**.
+
 
 # To Do
 * - [ ] Learn **Union Find** and imlement the last question.    
