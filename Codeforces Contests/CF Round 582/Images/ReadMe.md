@@ -21,6 +21,6 @@ WLOG, Suppose, only the vertex `a` is marked, this means that both outgoing edge
 
 **Sub Case 2** ⇒     
 ![Graph of sub case 2](https://github.com/Just-A-Visitor/Coding/blob/master/Codeforces%20Contests/CF%20Round%20582/Images/5.png)      
-2 Vertices are marked. Suppose they are `a` and `b`.  If we cutoff both the link of `a` and `b`, we can traverse the graph in the manner `acb cba acb ....`.  So now, the only case remaining is the one where the edge `a ---> b` is cutoff, and the edge `b --> c` is cutoff. Notice that we can still traverse the graph in the manner `acb acb ...`
+2 Vertices are marked. Suppose they are `a` and `b`.  If we cutoff both the link of `a` and `b`, we can traverse the graph in the manner `acb bca acb ....`.  So now, the only case remaining is the one where the edge `a ---> b` is cutoff, and the edge `b --> c` is cutoff. Notice that we can still traverse the graph in the manner `acb acb ...`
 
 
