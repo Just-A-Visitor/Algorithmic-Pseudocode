@@ -45,5 +45,8 @@ So, the worst case traversal would be of the order of `10 ^ 2`. So, the overall 
 [Even if you include the hidden constant factors, it won't go beyond `100 * queries_length`
 
 
+# To Do
+Implement the bitwise solution.   
+
 
 [Blog Link](https://leetcode.com/problems/number-of-valid-words-for-each-puzzle/discuss/371876/Detailed-Explanation-using-Trie-O(word_length-%2B-100*puzzle_length))
