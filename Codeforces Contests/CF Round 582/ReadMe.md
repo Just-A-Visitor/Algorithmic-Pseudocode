@@ -18,3 +18,7 @@ The only question worth upsolving is the last question (which uses **DSU**).
 
 # To Do
 * - [ ] Learn **Union Find** and imlement the last question.    
+
+
+# Rating
+![Rating](https://github.com/Just-A-Visitor/Coding/blob/master/Codeforces%20Contests/CF%20Round%20582/Rating.PNG)
