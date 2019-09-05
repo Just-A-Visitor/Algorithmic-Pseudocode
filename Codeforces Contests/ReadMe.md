@@ -11,6 +11,6 @@
   * - [x] **Participation**
   * - **Skipped Upsolving**
 
-* - [ ] **CF Educational Round 72** [_Div2_] (5th September) 
-  * - [ ] **Participation**
+* - [x] **CF Educational Round 72** [_Div2_] (5th September) 
+  * - [x] **Participation**
   * - [ ] **Upsolving**
