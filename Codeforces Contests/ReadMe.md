@@ -11,8 +11,6 @@
   * - [x] **Participation**
   * - **Skipped Upsolving**
 
-
-# Contest Calendar
 * - [ ] **CF Educational Round 72** [_Div2_] (5th September) 
   * - [ ] **Participation**
   * - [ ] **Upsolving**
