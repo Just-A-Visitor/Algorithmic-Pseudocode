@@ -13,3 +13,7 @@ This was not a bad contest overall. Yes, I did a lot of silly mistakes, messed u
 
 
 So, to conclude, I didn't look at the 5th and 6th question, solved the 4th question correctly, and have absolutely no idea how to solve the first 3! The 5th one is on segment trees, so I'd have to learn it first to upsolve it. However, I would give a virtual contest covering the first 3 questions.
+
+
+## Rating
+![Rating](https://github.com/Just-A-Visitor/Coding/edit/master/Codeforces%20Contests/CF%20Edu%20Round%2072/Images/Rating.png)
