@@ -16,4 +16,4 @@ So, to conclude, I didn't look at the 5th and 6th question, solved the 4th quest
 
 
 ## Rating
-![Rating](https://github.com/Just-A-Visitor/Coding/edit/master/Codeforces%20Contests/CF%20Edu%20Round%2072/Images/Rating.png)
+![Rating](https://github.com/Just-A-Visitor/Coding/blob/master/Codeforces%20Contests/CF%20Edu%20Round%2072/Images/Rating.PNG)
