@@ -39,4 +39,5 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Print Nodes at distance k from a target node**   
 * - [ ] **Search in a 2D Sorted Array**    
 * - [ ] **WildCard Pattern Matching**  
-* - [ ] **Word Ladder**
+* - [ ] **Word Ladder**    
+* - [ ] **Asteroid Collison**    
