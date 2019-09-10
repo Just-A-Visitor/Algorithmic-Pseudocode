@@ -10,6 +10,6 @@ I have several of my friends to thank for this achievement. On the surface, it m
 
 I certainly didn't have Amazon in mind when I left **Samsung**. **Microsoft** and **Flipkart** were my only target. I was so close to getting into Microsoft. But close is not enough. A year back, I couldn't even dream of taking such a big risk for Microsoft. But things change, you need to keep moving forward. People recognize you only after your success. Had I been selected for Microsoft that day, what would've changed? Nothing. Had I not been selected for Amazon, what would've changed? Absolutely nothing. I would have still been the same person. It's just that people's perception about you change by seeing your achievements. And Flipkart, how did I miss Flipkart? I'm still in denial. Well, sometimes, we have to acknowledge that we are not the best and can be easily replaced. Maybe my preparation level wasn't up to the mark. Maybe I should focus more on writing code on paper rather than cursing my fate.
 
-Let's hope that the internship is as exciting as it seems to be!
+Let's hope that the internship is as exciting as I expect it to be!
 
 Remember the date, **24th August 2019**!
