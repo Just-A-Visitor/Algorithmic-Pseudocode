@@ -6,7 +6,7 @@ class Solution
     public:
     int moveCount = 0;
     int desiredCount = 0;
-    void tower_of_hanoi(int n, int source, int target, int aux);
+    void tower_of_hanoi(int n, int source, int aux, int target);
 };
 
 void Solution :: tower_of_hanoi(int n, int source, int aux, int target)
