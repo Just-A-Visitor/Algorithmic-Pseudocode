@@ -1,7 +1,7 @@
 **Don't comment out bad code. Rewrite it.**    
 
 # Contest Calendar
-* - [x] **LC Round 153** (18th August) 
+* - [x] **LC Round 153** (8th September, 2019) 
   * - [x] **Participation**
   * - [ ] **Upsolving**
 
