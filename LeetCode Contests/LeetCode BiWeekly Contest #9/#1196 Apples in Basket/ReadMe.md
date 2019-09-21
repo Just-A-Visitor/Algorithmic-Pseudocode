@@ -3,3 +3,7 @@ The idea is very simple. Keep taking the elements in a greedily manner, that is,
 
 # Complexity
 **O(n log (n) )**
+
+
+
+[Blog](https://leetcode.com/problems/how-many-apples-can-you-put-into-the-basket/discuss/386991/Same-Idea-Different-Implementation-C%2B%2B)
