@@ -41,3 +41,5 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **WildCard Pattern Matching**  
 * - [ ] **Word Ladder**    
 * - [ ] **Asteroid Collison**    
+* - [ ] **Maximum Points using Two Traversals**    
+* - [ ] **Activity Selection Problem**    
