@@ -389,22 +389,22 @@ int main()
 # Making our lives simpler
 To create custom containers, there is a lot of work involved. You need to create a new class, put a new function, remember the difference in the syntax between `priority_queue` and `set`, etc. Plus, we still don't know how to implement custom maps. 
 
-Let's think about this a bit. When you create a container of integers, do you do all this? No, right! This is beacause all the comparators are already hidden inside the integers. Hence, we don't have to worry about them. Can we do the same for objects? Can we inject something in the blueprint of the object so that compiler would treat it as it treats integers. If so, than our lives would become much simpler. Turns out, there is such a way and I'll let you in on this secret in a few moments.
+Let's think about this a bit. When you create a container of integers, do you do all this? No, right! This is beacause all the comparators are already hidden inside the integers. Hence, we don't have to worry about them. Can we do the same for objects? Can we inject something in the blueprint of the object so that compiler would treat it as integers. If so, than our lives would become much simpler. Turns out, there is such a way and I'll let you in on this secret in a few moments.
 
-In Java, there is one superclass, and every class is inherited from it. What's more, you can also over ride the inherited functions. In C++, when defining any function, there is a boolean function called `operator<` which takes two different a single parameter and determines whether the current object of the clasas is smaller than the incoming object. This is the default comparator. If you write this function precisely, then you won't have to use comparators with this class, not even in sorting. To sort, you can just do `sort(customVec.begin(), customVec.end())`. To create a set, jsut do, `set<customClass>`. To create heaps, just do `priority_queue<cusomClasss>`. To create maps, just do `map<customClass, ValueDataType>>`. As you can see, we can now use it like any data type because we have embedded the comparator in the blue print. So, all that remains is to modify the blue print.
+In Java, there is one superclass, and every class inherits from it. What's more, you can also over ride the inherited functions. In C++, when defining any class, there is a hidden boolean function called `operator<` which takes a single parameter and determines whether the current object of the class is smaller than the incoming object. This is the default comparator. If you write this function precisely, then you won't have to use comparators with this class, not even in sorting. To sort, you can just do `sort(customVec.begin(), customVec.end())`. To create a set, jsut do, `set<customClass>`. To create heaps, just do `priority_queue<cusomClasss>`. To create maps, just do `map<customClass, ValueDataType>>`. As you can see, we can now use it like any other data type because we have embedded the comparator in the blue print. So, all that remains is to modify the blue print.
 
 To do so, just create a public function with this template
 ```
 boool operator < (const &IncomingObject) const
 {
-	// Return true if you see current object as smaller than incoming one
+	// Return true if you see current object is smaller than incoming one
 	// Don't forget to return false explicitly if it is bigger or equal
 }
 ```
 
 **Notice the extra const at the end. Weird syntax, but it is what it is**
 
-Although it looks like it takes 1 argument, it actually takes 2 under the hood. It's just like `lesser<int>`. So now, we want to know what is the first argument and what is the second argument. (Remember, the ordering matters a lot). Well, it turns out, that **The first argument is the object of the class that you are currently standing at and the second is the incoming object**. Hence, the comparator expects that if the object that you are standing at is smaller than the incoming object, then it is your duty to return true. Now, how do access the instance variables of the object that you are standing at? It's simple. Either use `this->VariableName` or just use `instanceVariableName` . This is because there is no name collisons and we don't really require `this`. How to access the variables of incoming object? Use the dot notation. 
+Although it looks like it takes 1 argument, it actually takes 2 under the hood. It's just like `lesser<int>`. So now, we want to know what is the first argument and what is the second argument. (Remember, the ordering matters a lot). Well, it turns out, that **The first argument is the object of the class that you are currently standing at and the second is the incoming object**. Hence, the comparator expects that if the object that you are standing at is smaller than the incoming object, then it is your duty to return true. Now, how to access the instance variables of the object that you are standing at? It's simple. Either use `this->VariableName` or just use `instanceVariableName` . This is because there is no name collisons and we don't really require `this`. How to access the variables of incoming object? Use the dot notation. 
 
 After we are done, we don't have to worry about using any function / container which uses ordering. This is the template that I use (and prefer). It's not as difficult as it seems
 
