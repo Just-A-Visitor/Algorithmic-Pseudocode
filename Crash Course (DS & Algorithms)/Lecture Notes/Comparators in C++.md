@@ -29,9 +29,9 @@ So now, we need to tell the computer that `2 < 3`. How do we do this? Lucky for 
 
 **Caution** : Comparators are not exactly functions, as it is wrapped over a class. But, to keep the discussion less technical, we'll just assume that they are normal functions.
 
-Coming back to `lesser<int>`. As you might have guessed by now, this is function which takes as an input 2 arguments `(first, second)` and returns true if the first argument is lesser than the second. Else, it returns false. The most important thing is the ordering of the arguments. If you called the function for the arguments `(second, first)`, naturally you would want to get the reverse results.
+Coming back to `lesser<int>`. As you might have guessed by now, this is a function which takes as an input 2 arguments `(first, second)` and returns true if the first argument is lesser than the second. Else, it returns false. The most important thing is the ordering of the arguments. If you called the function for the arguments `(second, first)`, naturally you would want to get the reverse results.
 
-Similarly, there is a function called `greater<int>`. As yo might have guessed by now, this functin would return true if the first argument is greater than the second. 
+Similarly, there is a function called `greater<int>`. As you might have guessed by now, this functin would return true if the first argument is greater than the second. 
 
 **Default Comparators**    
 By default, C++ uses `lesser<int>` to compare 2 numbers. Hence, to know which of the numbers `7,5` is smaller, it would call `lesser(7,5)` and get the answer `false` which means `5` is smaller. Similarly, if it had accidentally called `lesser(5,7)`, it would get the answer `true` and it would still conclude that `5` is smaller. 
