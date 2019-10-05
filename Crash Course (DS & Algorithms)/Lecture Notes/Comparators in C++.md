@@ -356,7 +356,7 @@ int main()
     // Let us print the class and see the contents
     printClass(classVec);
     
-    // Let's create a set that can store the objects in descending order of data
+    // Let's create a min Heap
     
     /* Syntax --- priority_queue<custom_class, container, class_comparator> */
     // Note that internally, heaps need some container to work on 
