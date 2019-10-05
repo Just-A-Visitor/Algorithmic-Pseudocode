@@ -540,5 +540,6 @@ Here's some of the problems that made me learn the power of comparators.
 Don't worry so much about the comments in the code. I was actually experimenting with the techniques at that time. Feel free to use any method that you feel comfortable with.
 
 
-Lastly, one problem to help you practice     
+Lastly, Two problems to help you practice     
+[Activity Selection](https://practice.geeksforgeeks.org/problems/n-meetings-in-one-room/0)    
 [Shrinking Space](https://www.codechef.com/problems/SPACE)
