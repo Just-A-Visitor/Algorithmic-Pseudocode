@@ -7,3 +7,6 @@ Suppose, at any stage we are at the `i-th` element. By definition, this is the f
 
 So, after checking the maximum dp value from hashmap, we can update the maximum dp value in the hashmap. Hence, `dp[i] = 1 + max_dp_value[next_term]` , where `next_term = a[i] + diff`. 
 
+
+# Blog
+[Link](https://leetcode.com/problems/longest-arithmetic-subsequence-of-given-difference/discuss/398201/Detailed-Explanation-using-DP-O(n))
