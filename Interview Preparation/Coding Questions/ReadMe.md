@@ -44,3 +44,4 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Maximum Points using Two Traversals**    
 * - [ ] **Activity Selection Problem**    
 * - [ ] **Largest Square/Rectangle of Ones in a Matrix**   
+* - [ ] **Merge Overlapping Intervals**
