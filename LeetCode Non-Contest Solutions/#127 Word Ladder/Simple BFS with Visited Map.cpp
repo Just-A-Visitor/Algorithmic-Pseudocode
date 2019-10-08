@@ -7,10 +7,10 @@ public:
 /* Returns the the number of nodes in the shortest path to the target word */
 int Solution :: ladderLength(string beginWord, string endWord, vector<string>& wordList)
 {
-    unordered_set<string> hashMap, visited;
+    unordered_set<string> dictionary, visited;
     
     // A fancy way to populate a container
-    hashMap.insert(wordList.begin(), wordList.end());
+    dictionary.insert(wordList.begin(), wordList.end());
     
     queue<pair<string, int>> bfs;
     
@@ -38,7 +38,7 @@ int Solution :: ladderLength(string beginWord, string endWord, vector<string>& w
                 ele = i;
                 
                 // A fancy way to check existence
-                if(hashMap.count(currentString) and !visited.count(currentString))
+                if(dictionary.count(currentString) and !visited.count(currentString))
                 {
                     bfs.push(make_pair(currentString, currentLevel + 1));
                     visited.insert(currentString);
