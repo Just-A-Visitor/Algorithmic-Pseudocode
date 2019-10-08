@@ -1,0 +1,61 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+\input{macros.tex}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Clone a linked list with $next$ and $random$ pointers}
+  \begin{algorithmic}[1]
+    
+    \Procedure{Deep\_Copy}{$head$}
+        \State $new\_head \gets clone(head)$
+        \State $backup \gets new\_head$
+        \While{$head.next$ \textbf{exist},}
+            \State $new\_head.next \gets Clone(head.next)$
+            \State $head \gets head.next$
+            \State $new\_head \gets new\_head.next$
+        \EndWhile
+        
+        \State \Return $backup$
+    \EndProcedure
+    
+    \Statex
+    \Function{Clone\_Linked\_List}{$old\_head$}
+        \LeftComment $node\_just\_below$ is a hash map where the keys are the address of the original list 
+        \LeftComment{The values is the address of the corresponding node in the new list}
+        
+        \Statex
+        \If{List is empty}
+            \State \Return{}
+        \EndIf
+        
+        \Statex
+        \State $new\_head \gets Deep\_Copy(old\_head)$ 
+        
+        \State $current\_node \gets old\_head$
+        \While{$current\_node$ \textbf{exist},} 
+            \State $node\_just\_below[current\_node] = new\_head$ \Comment{Vertically link the nodes}
+            \State $current\_node \gets current\_node.next$
+            \State $new\_head \gets new\_head.next$
+        \EndWhile
+        
+        \Statex
+       
+        \State $node\_just\_below[null] \gets null$
+        \For{all $key$ in HashMap}  \Comment{Correct all the random pointers}
+            \If{$key$ is not $null$}
+                \State $node\_just\_below[key].random = node\_just\_below[key.random]$ 
+            \EndIf
+        \EndFor
+        
+        \State \Return{$node\_just\_below[old\_head]$}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
