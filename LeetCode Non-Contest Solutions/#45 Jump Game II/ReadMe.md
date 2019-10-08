@@ -9,7 +9,7 @@
 * Notice that once an element is in the queue, all the elements to the left would also be in the queue.
 * Let us maintain a variable called `maxReach` which indicates **the largest index which was pushed into the queue**. 
 * Whenever we pop an element from the queue, we just need to check whether we can insert `maxReach + 1` into the queue or not. This is because by definition, everything to the left of `maxReach` (including it) is already in the queue. 
-* To do this, we first check whether `maxReach + 1` goes out of bound or not. If not, we then check if we can reach it. How? We know that the largest index that can be reached from current index is `curr_index + a[curr_index]`. So, if `maxReach + 1` is less than or equal to this index, we increment `maxReach` and push it into the queueu. We keep doing this for the current element untill we cannot go any further.
+* To do this, we first check whether `maxReach + 1` goes out of bound or not. If not, we then check if we can reach it. How? We know that the largest index that can be reached from current index is `curr_index + a[curr_index]`. So, if `maxReach + 1` is less than or equal to this index, we increment `maxReach` and push it into the queue. We keep doing this for the current element untill we cannot go any further.
 * Lastly, notice that the complextiy would be **O(n)** because we are only pushing `maxReach` into the queue (which can only grow to the right and terminates at the end. Hence, we would cross every element at most twice).
 
 
