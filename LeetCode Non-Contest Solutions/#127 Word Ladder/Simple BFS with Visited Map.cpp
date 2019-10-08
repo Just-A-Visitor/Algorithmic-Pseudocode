@@ -30,6 +30,7 @@ int Solution :: ladderLength(string beginWord, string endWord, vector<string>& w
         
         for(auto &ele : currentString)
         {
+            // Try replacing each character with all letters in alphabet
             for(int i = 'a'; i <= 'z'; i++)
             {
                 // Record the previous character to change it back
