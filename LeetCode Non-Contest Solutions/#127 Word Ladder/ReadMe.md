@@ -7,6 +7,11 @@
   * Adopted a new way to populate STL Containers with the help of existing containers.
   * A Novel approach to change a single charcter of a string using range based for loops.
   
+# Approach
+* Store all the dictionary words in a hashmap called `dictionary` to facilitate quick searching.
+* Make another hashmap `visited` which contains all the string which are visited.
+* The queue would store the string and its level. (i,e a pair).
+* Whenever you pop a string during bfs, iterate over each of the characters and try to replace them with all the alphabets (while keeping the remaining letters same. If the new string is present in the dictionary and is not visited, visit it.
   
   # To Do
   * Perform BFS with marker to avoid pushing a pair into the queue.
