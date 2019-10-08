@@ -37,6 +37,7 @@ int Solution :: ladderLength(string beginWord, string endWord, vector<string>& w
                 char old = ele;
                 ele = i;
                 
+                // A fancy way to check existence
                 if(hashMap.count(currentString) and !visited.count(currentString))
                 {
                     bfs.push(make_pair(currentString, currentLevel + 1));
