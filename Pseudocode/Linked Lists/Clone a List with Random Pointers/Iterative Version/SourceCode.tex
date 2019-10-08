@@ -10,19 +10,6 @@
 
   \caption{Clone a linked list with $next$ and $random$ pointers}
   \begin{algorithmic}[1]
-    
-    \Procedure{Deep\_Copy}{$head$}
-        \State $new\_head \gets clone(head)$
-        \State $backup \gets new\_head$
-        \While{$head.next$ \textbf{exist},}
-            \State $new\_head.next \gets Clone(head.next)$
-            \State $head \gets head.next$
-            \State $new\_head \gets new\_head.next$
-        \EndWhile
-        
-        \State \Return $backup$
-    \EndProcedure
-    
     \Statex
     \Function{Clone\_Linked\_List}{$old\_head$}
         \LeftComment $node\_just\_below$ is a hash map where the keys are the address of the original list 
@@ -34,13 +21,16 @@
         \EndIf
         
         \Statex
-        \State $new\_head \gets Deep\_Copy(old\_head)$ 
+        \State $backup \gets old\_head$ 
         
-        \State $current\_node \gets old\_head$
-        \While{$current\_node$ \textbf{exist},} 
-            \State $node\_just\_below[current\_node] = new\_head$ \Comment{Vertically link the nodes}
-            \State $current\_node \gets current\_node.next$
+        \Statex
+        \State $new\_head \gets Deep\_Copy(old\_head)$ 
+        \State $node\_just\_below[old\_head] \gets new\_head$
+        \While{$old\_head.next$ \textbf{exist},} \Comment{Make a normal copy}
+            \State $new\_head.next \gets Deep\_Copy(old\_head.next)$
+            \State $old\_head \gets old\_head.next$
             \State $new\_head \gets new\_head.next$
+            \State $node\_just\_below[old\_head] = new\_head$ \Comment{Vertically link the nodes}
         \EndWhile
         
         \Statex
@@ -52,7 +42,7 @@
             \EndIf
         \EndFor
         
-        \State \Return{$node\_just\_below[old\_head]$}
+        \State \Return{$node\_just\_below[backup]$}
     \EndFunction
   \end{algorithmic}
   
