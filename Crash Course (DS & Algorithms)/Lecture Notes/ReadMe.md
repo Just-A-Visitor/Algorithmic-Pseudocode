@@ -6,3 +6,5 @@
 **5th October, 2019** : Notes on **Custom Comparators** has been uploaded. (Along with 2 Practice Problems)
 
 **7th October, 2019** : Short Notes on **Dynamic Programming** has been uploaded.
+
+**8th October, 2019** : Short Notes on **Heaps** has been uploaded.
