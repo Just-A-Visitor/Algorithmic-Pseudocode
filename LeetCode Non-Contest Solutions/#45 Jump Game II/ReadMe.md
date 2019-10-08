@@ -15,3 +15,4 @@
 
 # To Do
 * Optimize the bruteforce BFS (Done!) 
+* Try to do it in O(1) space.
