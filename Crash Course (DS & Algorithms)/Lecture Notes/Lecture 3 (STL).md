@@ -1069,7 +1069,7 @@ The syntax is `bool newVar = true` and `bool newVar = false`.
   <summary>The Clutter of and / or</summary>  
 	
 # The Clutter of `and` `or`
-C++ also has 2 reserved keywords, namely `and` , `or`. Try to use them in place of `&&` and `||`. Note that it makes a difference, it just makes the code look more clean.
+C++ also has 2 reserved keywords, namely `and` , `or`. Try to use them in place of `&&` and `||`. Not that it makes a difference, it just makes the code look more clean.
 
 
 ---
