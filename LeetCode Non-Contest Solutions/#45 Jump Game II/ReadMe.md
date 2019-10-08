@@ -6,6 +6,8 @@
 
 * Finally, optimized the BFS solution in 10 minutes.
 
+* The solution on GFG makes the problem look more complicated than it already is.
+
 # Optimizing BruteForce BFS
 * Notice that once an element is in the queue, all the elements to the left would also be in the queue.
 * Let us maintain a variable called `maxReach` which indicates **the largest index which was pushed into the queue**. 
