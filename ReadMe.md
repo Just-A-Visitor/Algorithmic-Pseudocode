@@ -1,3 +1,5 @@
+[![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 # Introduction
 This repository contains the pseudo-code of various algorithms and data structures necessary for **Interview Preparation** and **Competitive Coding**
 
@@ -43,6 +45,9 @@ Read this section carefully if you are planning on contributing to this reposito
 * Finally, please include a `pdf` file of the final source code in the correspoding folder.
 
 * Make a pull request. Sit back and relax while your pull request gets merged.
+
+**Stuck?**
+  * If you need any clarifications or are stuck at something for a long time, feel free to ping us. [![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # Online Presence
 [![Images](Images/Leetcode%20Logo.png)](https://leetcode.com/just__a__visitor/ "just__a__visitor")
