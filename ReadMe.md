@@ -26,7 +26,7 @@ Read this section carefully if you are planning on contributing to this reposito
 
 * If this is your first time contributing to a public repository, please refer this [link](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/)
 
-* If you are not familiar with **TEX** or TypeSetting in general, please refer this [link]([https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes)). You don't need to install anything to contribute to this repository. Just make sure that you have an **Overleaf** account and you are good to go.
+* If you are not familiar with **TEX** or TypeSetting in general, please refer this [link](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes). You don't need to install anything to contribute to this repository. Just make sure that you have an **Overleaf** account and you are good to go.
 
 * Create an _issue_ if you've decided to work on an algorithm and get it approved before the coding phase.
 
