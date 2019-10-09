@@ -8,7 +8,7 @@ Read this section carefully if you are planning on contributing to this reposito
 
 * In the `Pseudocode` folder, you can find a lot of algorithms. If you've come across any interesting algorithm that changed the way you think about any topic, please consider contributing it to this repo.
 
-* There are a lot of pseudocodes with no explanation. If you want to write the a detailed explanation on the working and intuition of these algorithms, please raise an issue and start working on it after it is approved). I would prefere if the explanation in `pdf` format. However, markdown format is equally acceptable.
+* There are a lot of pseudocodes with no explanation. If you want to write the a detailed explanation on the working and intuition of these algorithms, please raise an issue and start working on it after it is approved). I would prefere if the explanation is in `pdf` format. However, markdown format is equally acceptable.
 
 
 * If you want to contribute anything other pseudocodes, feel free to explore the repository and pick up a code and explain its logic and working (either in `pdf` or `Markdown` format).  If you don't see your desired code, feel free to add it. However, remember that this repository is not a code dump and you should only add new codes if you have written a good post explaining the intricacies of the algorithm.
