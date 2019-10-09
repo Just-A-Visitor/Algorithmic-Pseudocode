@@ -33,7 +33,7 @@ Read this section carefully if you are planning on contributing to this reposito
 
 * If you want to code a different implementation than what is already present (for example, _iterative_ instead of _recursive_, constant space instead of linear space, etc), please create a new sub-folder inside the root directory.
 
-* Don't include a lot of comments in the pseudocode (it just means that the code is not self-expressive). However, if the algorithm is highly non-trivial and you would like to include some explanation, please do so before or after the pseudocode. Refer this [link]() for example. 
+* Don't include a lot of comments in the pseudocode (it just means that the code is not self-expressive). However, if the algorithm is highly non-trivial and you would like to include some explanation, please do so before or after the pseudocode. Refer this [link](Pseudocode/Heaps/Median%20in%20a%20Stream%20of%20Integers/Min_Max%20Heaps.pdf) for example. 
 
 * Please include a `ReadMe.md` file in each of the folder that you create. It can either contain the details about your algorithm or you can leave it empty (so that others can edit it eventually).
 
