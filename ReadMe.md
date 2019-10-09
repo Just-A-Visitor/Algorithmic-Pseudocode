@@ -49,6 +49,9 @@ Read this section carefully if you are planning on contributing to this reposito
 **Stuck?**
   * If you need any clarifications or are stuck at something for a long time, feel free to ping us. [![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+# Sample 
+![Images](Images/median.png)
+
 # Online Presence
 [![Images](Images/Leetcode%20Logo.png)](https://leetcode.com/just__a__visitor/ "just__a__visitor")
 [![Images](Images/Codeforces%20Logo.png)](https://codeforces.com/profile/Just_a_visitor "Just_a_visitor")
