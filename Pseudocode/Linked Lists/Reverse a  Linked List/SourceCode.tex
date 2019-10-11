@@ -1,0 +1,83 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\section*{Recursive Version}
+
+Thinking naively, we can reverse all elements except the head recursively and then put head in its correct place (i.e at the end of the reversed sub list). However this approach has very bad time complexity (Why?). Because in each recursive call, after the sub-list has been reversed, you'll end up travelling the entire list to get to the last element (in order to put $head$ in its correct position). Upon further analysis, we find that it takes up $1+2+3+...n = n(n+1)/2$ time which is $O(n^2)$.\\
+
+\noindent
+How do we improve? Clearly the only thing which leads to this huge time complexity is the fact that we do not have access to the last element of the reversed list. But, think carefully, what would the last element of the reversed sub-list be? It would actually be the second element of the original list. Do we have access to it in constant time? Yes, we can easily access it via $head.next$ as we haven't altered $head$ yet. So now, we access the last element of the reversed sub-list in $O(1)$ and connect it to the first element of the original list,(its correct place in the new list). \\
+
+\noindent
+We have to make sure that we block the access of the $head$ (which was referencing to the last element of the reversed sub-list). Since $head$ is now the last element, $head.next$ would be $null$. Remember to return the new reversed head obtained from the recursive call.
+
+\begin{algorithm}
+
+  \caption{Reverse a Linked List recursively}
+  
+  \begin{algorithmic}[1]
+    \Statex
+    
+    \Function{$Reverse\_List$}{$head$}
+        
+        \If{$List$ is of length $0$ or $1$}
+            \State \Return \textbf{head}
+        \EndIf
+        
+        \State $reversed\_sub\_list\_head \gets Reverse\_List(head.next)$
+        \State $sub\_list\_tail \gets head.next$
+        
+        \State $sub\_list\_tail.next \gets head$
+        \State $head.next \gets null$
+        
+        \State \Return {$reversed\_sub\_list\_head$}
+        
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\section*{Iterative Version}
+\begin{algorithm}
+
+  \caption{Reverse a Linked List iteratively}
+  
+  \begin{algorithmic}[1]
+    \Statex
+    
+    \Function{$Reverse\_List$}{$head$}
+        
+        \State $previous \gets null$
+        \State $current \gets head$
+        
+        \While{$current$ \textbf{exists, }}
+            \State $backup \gets current.next$
+            \State $current.next \gets previous$
+            \State $previous \gets current$
+            \State $current \gets backup$
+        \EndWhile
+        
+        \State \Return {$previous$} \Comment{$current$ is $null$}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
