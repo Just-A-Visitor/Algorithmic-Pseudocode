@@ -1,0 +1,56 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the minimum edit distance to convert $str_1$ to $str_2$}
+  
+  \begin{algorithmic}[1]
+    \Ensure Zero Based Indexing for the Matrix, One Based Index for the Strings
+    \Statex
+    \Function{Edit\_Distance}{$str_1, str_2$}
+        \LeftComment{$edit[i][j]$ denotes the edit distance of the first $i$ characters of $str_1$ and the first $j$ characters of $str_2$}
+        
+        \State $edit[i][0] \gets i \hfill \forall i$ \Comment{Delete $i$ characters}
+        \State $edit[0][j] \gets j \hfill \forall j$ \Comment{Insert $j$ characters}
+
+        \For{$ i = 1 : str_1.len$}
+            \For{$j = 1 : str_2.len$}
+                \State $insert \gets 1 + edit[i][j-1]$
+                \State $delete \gets 1+ edit[i-1][j]$
+                \State $replace \gets 1 + edit[i-1][j-1]$
+                \State $match \gets edit[i-1][j-1] $
+                \If{$str_1[i] == str_2[j]$}
+                    \State $edit[i][j] \gets match$
+                \Else 
+                    \State $edit[i][j] \gets min(insert, delete, replace) $
+                \EndIf
+            \EndFor
+        \EndFor
+        
+        \State \Return{$edit[str_1.len][str_2.len]$}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+
+\end{document}

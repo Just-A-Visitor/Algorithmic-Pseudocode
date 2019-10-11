@@ -1,0 +1,47 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the minimum cost to connect $n$ ropes}
+  
+  \begin{algorithmic}[1]
+    \Statex
+    
+    \Function{Connect\_Ropes}{$Arr$}
+        \For{$i = 1 : N$}
+            \State $min\_heap.push(a[i])$
+        \EndFor
+        
+        \State $cost \gets 0$
+        \While{$min\_heap.size > 1$}
+            \State $min\_element \gets min\_heap.top$, $min\_heap.pop$
+            \State $second\_min\_element \gets min\_heap.top$, $min\_heap.pop$
+            
+            \State $cost += min\_element + second\_element$
+            \State $min\_heap.push(min\_element + max\_element)$
+        \EndWhile
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

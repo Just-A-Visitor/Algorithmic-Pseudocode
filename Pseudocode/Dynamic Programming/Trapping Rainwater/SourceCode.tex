@@ -1,0 +1,77 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the maximum amount of water that can be trapped between the given bars}
+  
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
+    \Statex
+    
+    \Function{$Trapping\_Rain\_Water$}{$arr$}
+    
+        \LeftComment{$left\_max[i]$ represents the largest bar to the left of $i$ (including it)}
+        \LeftComment{$right\_max[i]$ represents the largest bar to the right of $i$ (including it)}
+        \LeftComment{$contribution[i]$ denotes the maximum amount of water on top of the $i-th$ bar}
+        
+        \Statex
+        \State $n \gets arr.length$
+        
+        \Statex
+        
+        \State $left\_max[1] \gets a[1]$
+        \For {$i = 2 : n$}
+            \State $left\_max[i] = max(left\_max[i-1], a[i])$
+        \EndFor
+        
+        \Statex
+        
+        \State $right\_max[n] \gets a[n]$
+        \For {$i = len - 1$ \textbf{downto} $1$}
+            \State $right\_max[i] = max(right\_max[i+1], a[i])$
+        \EndFor
+        
+        \Statex
+        
+        \For{$i = 1 : n$}
+            \State $max\_height \gets min(left\_max[i], right\_max[i])$
+            \State $contribution[i] \gets (max\_height - a[i])$
+        \EndFor
+        
+        \Statex
+        
+        \State $total\_water \gets 0$
+        \For{$i = 1 : n$}
+            \State $total\_water \gets total\_water + contribution[i]$
+        \EndFor
+        
+        \Statex
+        
+        \State \Return $total\_water$
+        
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+
+\end{document}

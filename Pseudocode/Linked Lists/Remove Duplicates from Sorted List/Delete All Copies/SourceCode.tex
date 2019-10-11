@@ -1,0 +1,58 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Remove all duplicates from a sorted list}
+  
+  \begin{algorithmic}[1]
+    \Ensure You should delete \textbf{All} copies of the duplicate elements
+    \Statex
+    
+    \Function{Remove\_Duplicates}{$head$}
+    
+        \If{List is of length $0$ \textit{or} $1$}
+            \State \Return{$head$}
+        \EndIf
+        
+        \Statex
+        \LeftComment{If the first element is repeated, go to its last copy}
+        
+        \If{$head.data == head.next.data$}
+            \While{$head.next$ \textbf{exists} $and$ $head.data == head.next.data$}
+                \State $head \gets head.next$
+            \EndWhile
+            
+            \State \Return{$Remove\_Duplicates(head.next)$} 
+            \Comment{Head points to the last copy}
+        \Else
+            \State $clean\_sub\_list \gets Remove\_Duplicates(head.next)$
+            \State $head.next \gets clean\_sub\_list$
+            \Comment{First element is not repeated, hence no effect}
+            \State \Return{$head$}
+        \EndIf
+        
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

@@ -1,0 +1,55 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the maximum profit that you can earn by doing at most one transaction}
+  
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing
+    \Statex
+    \Function{Buy\_Sell}{$Arr, len$}
+    
+        % Comment
+        \LeftComment{$maxRight[i]$ denotes the max element to the right of the $i-th$ element, including it}
+        \Statex
+        
+        \State $maxRight[len] \gets a[len]$
+        \For{$ i = len-1 : 1$}
+            \State $maxRight[i] \gets max(maxRight[i+1], a[i])$
+        \EndFor
+        
+        % Comment
+        \Statex
+        \LeftComment{$profit[i]$ denotes the max profit that you can earn if you can only buy at the $i-th$ day}
+        \Statex
+        
+        \For{$ i = len : 1$}
+            \State $profit[i] \gets (maxRight[i] - a[i])$
+        \EndFor
+        
+        \State \Return{Maximum element of $Profit$ array}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

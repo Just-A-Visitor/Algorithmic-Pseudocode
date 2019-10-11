@@ -1,0 +1,75 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+    
+  \caption{Find the number of nodes in the shortest path to convert $begin\_word$ to $end\_word$ using only valid conversions}
+  
+  
+  \begin{algorithmic}[1]
+    \Statex
+    \Require The length of both the words should be same
+    \Ensure You can only change one character at a time
+    
+    \Statex
+    \Function{Word\_Ladder}{$begin\_word, end\_word, word\_list$}
+        \LeftComment $dictionary$ is a hashmap containing all the valid words in the dictionary 
+        \LeftComment $visited$ is a hashmap containing all the strings which are already processed in the queue
+        
+        \Statex
+        \For{each $word$ in $word\_list$}
+            \State $dictionary.insert(word)$
+        \EndFor
+        
+        \State $queue.push(begin\_word, 1)$
+        \State $visited.insert(begin\_word)$
+        
+        \While{$queue$ is \textbf{not empty}} \Comment{Perform BFS}
+            \State $(current\_string, level) \gets queue.front$
+            \State $queue.pop$
+            
+            \If{$current\_string$ == $end\_word$}
+                \State \Return{$level$}
+            \EndIf
+            
+            \For {Each $element$ in $current\_string$}
+                \For {Each $char$ in the $alphabet$}
+                    \State $backup \gets element$
+                    \State Replace $element$ by $char$ \Comment{Create the new string}
+                    \If{$current\_string$ is in $dictionary$}
+                        \If{$current\_string$ is \textbf{not} in $visited$}
+                            \State $queue.push(current\_string, level + 1)$
+                            \State $visited.push(current\_string)$
+                        \EndIf
+                    \EndIf
+                    
+                    \State Replace $char$ by $backup$ \Comment{Get the original string back}
+                \EndFor
+            \EndFor
+        \EndWhile
+        
+        \State \Return {\textbf{Not Possible}}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

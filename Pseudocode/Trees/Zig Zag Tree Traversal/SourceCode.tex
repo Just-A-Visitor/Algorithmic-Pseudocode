@@ -1,0 +1,73 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+    
+  \caption{Print the \textbf{Zig Zag} Traversal of a Binary Tree}
+  
+  
+  \begin{algorithmic}[1]
+    \Statex
+    \Ensure The tree is \textbf{not} empty 
+    
+    \Statex
+    \Function{Zig\_Zag\_Traversal}{$root$}
+        \LeftComment $current\_stack$ contains all the elements of the current level. 
+        \LeftComment $next\_stack$ contains all the elements of the next level.
+        \LeftComment $left\_to\_right$ is true if the current level associates from left to right
+        
+        \Statex
+        \State $current\_stack.push(root)$
+        \State $left\_to\_right \gets True$
+       
+        \While{$current\_stack$ is \textbf{not empty, }}
+            \While{$current\_stack$ is \textbf{not empty, }}
+            
+                \State $node \gets current\_stack.top$
+                \State $current\_stack.pop$
+                \State \textbf{Print}($node.data$)
+                
+                \If{$left\_to\_right$}
+                    \If{Left Child Exists}
+                        \State $next\_stack.push(node.left)$
+                    \EndIf
+                    \If{Right Child Exists}
+                        \State $next\_stack.push(node.right)$
+                    \EndIf
+                \Else
+                    \If{Right Child Exists}
+                        \State $next\_stack.push(node.right)$
+                    \EndIf
+                    \If{Left Child Exists}
+                        \State $next\_stack.push(node.left)$
+                    \EndIf
+                \EndIf
+                
+            \EndWhile
+            \State \textbf{Print}(One level has been printed)
+            \State $swap(current\_stack, next\_stack)$ \Comment{Go to the next level}
+            \State $left\_to\_right \gets ! left\_to\_right$ \Comment{Change the associativity of the level}
+        \EndWhile
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

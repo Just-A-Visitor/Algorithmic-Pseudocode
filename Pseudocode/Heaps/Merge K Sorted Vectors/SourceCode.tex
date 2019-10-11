@@ -1,0 +1,59 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Merge $k$ Sorted Vectors}
+  
+  \begin{algorithmic}[1]
+    \Require This pseudocode is specific to $vector$ container in C++
+    \Statex
+
+    \Function{Merge\_Sorted\_Vectors}{$mat$}
+    \LeftComment{This solution destroys the original vectors}
+    \LeftComment{$min\_heap$ contains the element, and the index of the vector it came from}
+    
+    \Statex
+    
+        \For {each $vector$ in $mat$}
+            \State $reverse(vector)$
+        \EndFor
+        
+        \For{$index = 1 : mat.size$} \Comment{Push the minimum element into $min\_heap$}
+            \State $min\_heap.push(mat[index].back, index)$
+        \EndFor
+        
+        \While{$min\_heap$ is not \textbf{empty}}
+            \State $(current\_element, index) \gets min\_heap.top$
+            \State $min\_heap.pop$
+            \State $mat[index].pop\_back$
+            \State \textbf{Print} $current\_element$
+            
+            \If{$mat[index]$ is not \textbf{empty}} 
+                \State $min\_heap.push(mat[index].back, index)$
+            \EndIf
+        \EndWhile
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
