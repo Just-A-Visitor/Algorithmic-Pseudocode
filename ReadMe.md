@@ -1,7 +1,10 @@
 [![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # Introduction
-This repository contains the pseudo-code of various algorithms and data structures necessary for **Interview Preparation** and **Competitive Coding**
+This repository contains the pseudo-code of various algorithms and data structures necessary for **Interview Preparation** and **Competitive Coding**. The pseudocodes are written such that they can be easily adapted to any language. Let us remove the clutter of language and focus on the core concepts of the question!
+
+# Sample 
+![Images](Images/median.png)
 
 # Contribution
 Read this section carefully if you are planning on contributing to this repository. 
@@ -49,5 +52,3 @@ Read this section carefully if you are planning on contributing to this reposito
 **Stuck?**
   * If you need any clarifications or are stuck on something for a long time, feel free to ping us. [![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-# Sample 
-![Images](Images/median.png)
