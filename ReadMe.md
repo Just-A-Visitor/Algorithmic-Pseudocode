@@ -1,7 +1,10 @@
 [![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # Introduction
-This repository contains the pseudo-code of various algorithms and data structures necessary for **Interview Preparation** and **Competitive Coding**
+This repository contains the pseudo-code of various algorithms and data structures necessary for **Interview Preparation** and **Competitive Coding**. The pseudocodes are written such that they can be easily adapted to any language. Let us remove the clutter of language and focus on the core concepts of the question!
+
+# Sample GIF
+![Images](Images/Sample.gif)
 
 # Contribution
 Read this section carefully if you are planning on contributing to this repository. 
@@ -49,10 +52,3 @@ Read this section carefully if you are planning on contributing to this reposito
 **Stuck?**
   * If you need any clarifications or are stuck on something for a long time, feel free to ping us. [![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
-# Sample 
-![Images](Images/median.png)
-
-# Online Presence
-[![Images](Images/Leetcode%20Logo.png)](https://leetcode.com/just__a__visitor/ "just__a__visitor")
-[![Images](Images/Codeforces%20Logo.png)](https://codeforces.com/profile/Just_a_visitor "Just_a_visitor")
-[![Images](Images/GeeksforGeeks%20Logo.png)](https://auth.geeksforgeeks.org/user/Just--a--Visitor "Just--a--Visitor")
