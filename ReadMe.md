@@ -3,7 +3,7 @@
 # Introduction
 This repository contains the pseudo-code of various algorithms and data structures necessary for **Interview Preparation** and **Competitive Coding**. The pseudocodes are written such that they can be easily adapted to any language. Let us remove the clutter of language and focus on the core concepts of the question!
 
-# Sample 
+# Sample GIF
 ![Images](Images/Sample.gif)
 
 # Contribution
