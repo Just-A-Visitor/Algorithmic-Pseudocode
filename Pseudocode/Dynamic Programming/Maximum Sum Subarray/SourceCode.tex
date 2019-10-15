@@ -1,0 +1,46 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the length of the subarray with the maximum sum}
+  
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing
+    \Statex
+    
+    \Function{Kadane}{$Arr, len$}
+    
+        \LeftComment{$start[i]$ denotes the length of the maximum sum subarray which starts at the $i-th$ index}
+        \Statex
+        
+        \State $start[len] \gets a[len]$
+        \For{$ i = len-1 : 1$}
+            \State $start[i] \gets max(a[i] + start[i+1], a[i])$
+        \EndFor
+        
+        \State \Return{Maximum element of $Start$ array}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

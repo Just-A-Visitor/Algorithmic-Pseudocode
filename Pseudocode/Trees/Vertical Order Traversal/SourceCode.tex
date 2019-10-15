@@ -1,0 +1,63 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Print the Vertical Order Traversal of a Tree}
+  \begin{algorithmic}[1]
+    \Require A non empty tree
+    \Ensure In case of equal $x$ and $y$, the node which comes first
+    in the level order traversal would be printed first
+    \Statex
+    \Function{Vertical\_Order\_Traversal}{$root$}
+        \LeftComment \textit{Horiz\_Map} is a map with \textit{key} as the horizontal distance.  (can be negative)
+        \LeftComment The \textit{value} is the vector of elements which are at the same horizontal level. 
+        \LeftComment The elements in the vector are ordered according to their appearance in Level Order Traversal
+        
+        \Statex
+        \State $horiz\_dist \gets 0$
+        \State $queue.push(root,horiz\_dist)$
+        
+        \While{Queue is \textbf{not empty, }}
+            \State $(current\_node, horiz\_dist) \gets queue.front $
+            \State $queue.pop$
+            \State $horiz\_map[horiz\_dist].push\_back(current\_node.data)$
+            
+            \If{Left Child Exists}
+                \State $queue.push( current\_node.left, horiz\_dist-1 )$
+            \EndIf
+            
+            \If{Right Child Exists}
+                \State $queue.push(current\_node.right, horiz\_dist+1)$
+            \EndIf
+            
+        \EndWhile
+        \Statex
+        \For{Sorted $Keys$ in $horiz\_map$}
+            \For{all ordered elements in $horiz\_map[key]$ }
+                \State \textbf{Print}($element)$ 
+            \EndFor
+        \EndFor
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

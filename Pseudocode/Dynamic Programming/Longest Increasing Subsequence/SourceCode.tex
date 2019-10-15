@@ -1,0 +1,52 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the length of the longest increasing subsequence}
+  
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing
+    \Statex
+    \Function{LIS}{$Arr, len$}
+    
+        \LeftComment{$lis[i]$ denotes the length of the LIS which starts at the $i-th$ index}
+        \Statex
+        
+        \For{$ i = len : 1$}
+            \State $lis[i] \gets 1$
+        \EndFor
+        
+        \For{$ i = len : 1$}
+            \For{$ j = i + 1 : len$}
+                \If{$a[j] > a[i]$}
+                    \State $lis[i] \gets max(lis[i], 1 + lis[j])$
+                \EndIf
+            \EndFor
+        \EndFor
+        
+        \State \Return{Maximum element of $LIS$ array}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

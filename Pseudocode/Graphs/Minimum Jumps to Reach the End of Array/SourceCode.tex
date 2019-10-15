@@ -1,0 +1,69 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+
+\begin{document}
+
+
+\section*{\centering{An Approach using BFS}}
+
+\begin{algorithm}
+
+  \caption{Find the Minimum Number of Jumps to Reach the end of Array}
+  
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
+    \Statex
+    
+    \Function{$Min\_Jumps\_To\_Reach\_End$}{$arr$}
+    
+        \For {$i = 1 : arr.len$}
+            \State $level[i] \gets \infty$
+        \EndFor
+        
+        \State $queue.push(1)$
+        \State $level[1] \gets 0$
+        \State $max\_reached \gets 1$ \Comment{$max\_reached$ is the largest vertex in the queue}
+        \While{$queue$ is \textbf{not empty, }}
+            \State $current \gets queue.front$
+            \State $queue.pop$
+            
+            \State $next \gets max\_reached + 1$
+            
+            \While{$next <= arr.len$ \textbf{and} $next \leq current + a[current]$}
+                \State $queue.push(next)$
+                \State $level[next] \gets level[current] + 1$
+                \State $max\_reached \gets next$
+                \State $next \gets next + 1$
+            \EndWhile
+        \EndWhile
+        
+        \Statex
+        \If{$level[arr.len]$ is $\infty$}
+            \State \textbf{Not Possible}
+        \Else
+            \State \Return $level[arr.len]$
+        \EndIf
+        
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+
+\end{document}

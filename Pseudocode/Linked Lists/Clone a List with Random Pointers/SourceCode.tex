@@ -1,0 +1,64 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Clone a linked list with $next$ and $random$ pointers}
+  \begin{algorithmic}[1]
+    \Statex
+    \Function{Clone\_Linked\_List}{$old\_head$}
+        \LeftComment $node\_just\_below$ is a hash map where the keys are the address of the original list 
+        \LeftComment{The values is the address of the corresponding node in the new list}
+        
+        \Statex
+        \If{List is empty}
+            \State \Return{}
+        \EndIf
+        
+        \Statex
+        \State $backup \gets old\_head$ 
+        
+        \Statex
+        \State $new\_head \gets Deep\_Copy(old\_head)$ 
+        \State $node\_just\_below[old\_head] \gets new\_head$
+        \While{$old\_head.next$ \textbf{exist},} \Comment{Make a normal copy}
+            \State $new\_head.next \gets Deep\_Copy(old\_head.next)$
+            \State $old\_head \gets old\_head.next$
+            \State $new\_head \gets new\_head.next$
+            \State $node\_just\_below[old\_head] = new\_head$ \Comment{Vertically link the nodes}
+        \EndWhile
+        
+        \Statex
+       
+        \State $node\_just\_below[null] \gets null$
+        \For{all $key$ in HashMap}  \Comment{Correct all the random pointers}
+            \If{$key$ is not $null$}
+                \State $node\_just\_below[key].random = node\_just\_below[key.random]$ 
+            \EndIf
+        \EndFor
+        
+        \State \Return{$node\_just\_below[backup]$}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

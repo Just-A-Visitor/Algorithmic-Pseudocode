@@ -1,0 +1,68 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Populate the $next\_right$ pointers by connecting all the nodes at the same level}
+  \begin{algorithmic}[1]
+    \Statex
+    \Function{Connect\_Nodes\_At\_Same\_Level}{$root$}
+        \LeftComment Queue stores the pointers of the nodes.
+        
+        \Statex
+        \If{Tree is empty}
+            \State \Return{}
+        \EndIf
+        
+        \Statex
+        \State $marker \gets nullptr$
+        \State $queue.push(root)$
+        \State $queue.push(marker)$
+        \While{Queue is not empty}
+            \If{$queue.front == marker$}
+                \State $queue.pop$
+                \If{$queue$ is \textbf{not empty}}
+                    \State $queue.push(marker)$
+                \EndIf
+            \EndIf
+            
+            %\Statex
+            \State $current\_node\gets queue.front $
+            \State $queue.pop$
+            \State $current\_node.next\_right \gets queue.front$ \Comment{The queue can also contain the marker}
+            
+            %\Statex
+            \If{Left Child Exists}
+                \State $queue.push(current\_node.left)$
+            \EndIf
+            
+            \If{Right Child Exists}
+                \State $queue.push(current\_node.right)$
+            \EndIf
+            
+        \EndWhile
+
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}

@@ -1,0 +1,122 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+\usepackage[colorlinks = true, urlcolor = blue,  linkcolor = blue]{hyperref}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\section*{Intuition}
+Suppose we have an array of $n$ numbers. We want to divide it into 2 segments. The first segment should contain all the elements that are smaller than or equal to the median and the second segment should contain elements bigger than or equal to the median.  
+
+\begin{enumerate}
+    \item If $n$ is even, we can first sort the elements and then put the first $n/2$ elements in the first segment and the remaining elements in the other segment. The median in this case is the average of the maximum element of the first segment and the minimum element of the second segment.  
+    
+    \item If $n$ is odd, we can sort the elements. Now, we can place the first $(n-1)/2$ elements in the first segment and the last $(n-1)/2$ elements in the second segment. For the middle element, we have a choice. Let's say that we would always prefer insertion in the first segment whenever there's a choice. Hence, we would insert the middle element in the first segment and the median would be the maximum element in the first segment.
+\end{enumerate}
+
+\noindent
+Naturally, this gives us a hint to use $heaps$. We will store the first segment in a $max\_heap$ and the second segment in a $min\_heap$.
+
+\subsection*{Invariant 1}
+We'll maintain an invariant that the size of the $max\_heap$ cannot be strictly smaller than the size of $min\_heap$ (because of the second point above) . Of course, any element of $max\_heap$ should be less than or equal to any element of $min\_heap$ (and vice versa).
+
+\section*{Handling Insertions}
+It's clear that if we maintain the above rules and invariant while inserting a new element, we can quickly find the new median. 
+
+
+\subsection*{Invariant 2}
+Let us say that we would always insert a new element into the $max\_heap$ and immediately transfer the maximum element of the $max\_heap$ to the $min\_heap$.
+
+\section*{Balancing}
+Now, we need to balance these 2 heaps. 
+
+\begin{enumerate}
+    \item If the size of the $max\_heap$ is greater than the size of $min\_heap$, we don't do anything.
+    \item If the size of the $max\_heap$ is equal to the size of the $min\_heap$, we don't do anything.
+    \item If the size of the $max\_heap$ is less than the size of the min heap, we transfer the minimum element of the $min\_heap$ to the $max\_heap$
+\end{enumerate}
+
+Can you now see why the size difference of these 2 heaps would never be more than 1?
+
+\pagebreak
+
+\begin{algorithm}
+
+  \caption{Find the \textbf{Median} in a stream of integers}
+  
+  \begin{algorithmic}[1]
+    \Statex
+    
+    \Function{Median\_in\_Stream}{$Stream$}
+    
+        \LeftComment{$max\_heap$ contains elements smaller than or equal to median}
+        \LeftComment{$min\_heap$ contains elements bigger than or equal to median}
+        \Statex
+        
+        \For{each $element$ in stream}
+            \State $max\_heap.push(element)$ \Comment{Insertion}
+            \State $max\_element \gets max\_heap.top$
+            \State $max\_heap.pop$
+            \State $min\_heap.push(max\_element)$
+            
+            \Statex
+            
+            \If{$max\_heap.size < min\_heap.size$} \Comment{Balancing}
+                \State $min\_element \gets min\_heap.top$
+                \State $min\_heap.pop$
+                \State $max\_heap.push(min\_element)$
+            \EndIf
+            
+            \Statex
+            
+            \If{$max\_heap.size == min\_heap.size$} \Comment{Find Median}
+                \State \textbf{Print} $( max(max\_heap) + min(min\_heap) ) /2$ 
+            \Else
+                \State \textbf{Print}  $max(max\_heap)$
+            \EndIf
+            
+        \EndFor
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\pagebreak
+
+\section*{Extended Discussion}
+As you can see, the code is quite concise. It handles a lot of tricky cases underneath. Let us explore some of them
+
+\begin{enumerate}
+    \item Initially, both the heaps are empty. Let us see what happens at the first iteration. In the insertion phase, the first element goes to the $max\_heap$ and then immediately to the $min\_heap$. In the Balancing phase, it comes back to the $max\_heap$ as its size has become smaller than $min\_heap$. In the last phase, we get the correct median.
+    
+    \item Suppose at some stage, both the heaps are balanced. Now, let us assume that the incoming element needs to go to the $max\_heap$. Then, in the insertion phase, it would be inserted into the $max\_heap$ and the new maximum element would be transferred to the $min\_heap$. However, this element would again come back in the insertion phase. Finally, we would get the correct median in the last phase.
+    
+    \item Suppose at the some stage, both the heaps are balanced and the new element needs to go into the $min\_heap$. Then, we would still insert it into the $max\_heap$ first but it would immediately be transferred to the $min\_heap$. In the balancing phase, a new element would be transferred to the $max\_heap$ which would be the median.
+    
+    \item If the size is not equal, then it means that the size of $max\_heap$ is bigger. Now, suppose the incoming element needs to go to the $max\_heap$. Then, in the insertion phase, we would insert it into the $max\_heap$ and transfer the biggest element to the $min\_heap$. There's no need to balance now as the size have become equal. Finally, we would get the correct median.
+    
+    \item If $max\_heap$ is bigger and the new element needs to go to the $min\_heap$, then we would insert it into the $max\_heap$ first and then immediately take it out and put it into the $min\_heap$. Of course, no balancing would happen and we would get the correct median. 
+\end{enumerate}
+
+\noindent
+In a nutshell, if the size of both the heaps are equal, then in the next phase $max\_heap$ would become greater in size. And if at some stage the $max\_heap$ is bigger in size, then in the next phase, the size of both the heaps would become equal. Of course, we maintain the invariant that any element of $max\_heap$ is less than or equal to any element of $min\_heap$ and hence our median formula works.
+
+\subsection*{Credits}
+This amazing idea was borrowed from this \href{https://leetcode.com/problems/find-median-from-data-stream/discuss/74049/Share-my-java-solution-logn-to-insert-O(1)-to-query}{link}
+
+\end{document}
