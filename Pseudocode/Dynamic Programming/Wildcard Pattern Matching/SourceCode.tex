@@ -1,0 +1,109 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface 'is' 'to' 'downto'
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Check if $text$ matches $pattern$ with support of wildcard characters $*$ and $?$}
+  
+  \begin{algorithmic}[1]
+    \Ensure Zero Based Indexing for the Matrix, One Based Index for the Strings
+    \Statex
+    \Function{$Wildcard\_Pattern\_Matching$}{$text, pattern$}
+        \LeftComment{$match[i][j]$ is $True$ if the first $i$ characters of $text$ matches the first $j$ characters of $pattern$}
+        
+        \Statex
+        \State $match[i][j] \gets false \hfill \forall i \hfill \forall j$
+        \Comment{Initialise the DP Matrix}
+        
+        \Statex
+        \State $match[0][0] \gets true$ 
+        \Comment{Both strings are empty}
+        
+        \Statex
+        \For{$i = 1 \To text.length$} \Comment{The $pattern$ is empty}
+            \State $match[i][0] \gets false$ 
+        \EndFor
+        
+        \Statex
+        \State $j \gets 1$
+        \While{$j \leq pattern.length \And pattern[j] \Is *$} \Comment{Text is empty}
+            \State $match[0][j] \gets true$ \Comment{It can only match with $*** \dots$}
+            \State $j \gets j + 1$
+        \EndWhile
+        
+        \Statex
+        \For{$ i = 1 \To text.length$}
+            \For{$j = 1 \To pattern.length$}
+            
+                \State $last\_t \gets text[i]$
+                \State $last\_p \gets pattern[j]$
+                
+                \If{$last\_p \Is ?$} \Comment{Wildcard}
+                    \State $match[i][j] \gets match[i-1][j-1]$
+                    
+                \ElsIf{$last\_p \Is *$} \Comment{Wildcard}
+                    \State $match[i][j] \gets match[i][j-1] \Or match[i-1][j]$
+                    
+                \ElsIf{$last\_p == last\_t$} \Comment{Not a wildcard}
+                    \State $match[i][j] \gets match[i-1][j-1]$
+                \EndIf
+                
+            \EndFor
+        \EndFor
+        
+        \State
+        \State \Return{$match[text.len][pattern.len]$}
+    \EndFunction
+  \end{algorithmic}
+
+\end{algorithm}
+
+\pagebreak
+\section*{\centering{Miscellaneous}}
+
+\subsection*{State Transition}
+Suppose that the $text$ has length $i$ and $pattern$ has length $j$
+\begin{enumerate}
+    \item If the last character of the $pattern$ is $?$, it means, that we necessarily have to match it with the last character of $text$. Hence, now we need to find whether the first $i-1$ characters of $text$ matches with the first $j-1$ characters of $pattern$. Hence, we recur for $match[i-1][j-1]$
+    
+    \item If the last character of the $pattern$ is $*$, then we have 2 choices, either match the wildcard to the last character of the text or skip it. If we decide to skip it, it means that the wildcard is matched with the empty sequence and hence we need to check if we can match the entire $text$ of length $i$ to the $pattern$ of length $j-1$. On the other hand, if we decide to match it with the last character, we can still use the wildcard to match other characters. Hence, we need to check if we can match the first $i-1$ characters of $text$ to the first $j$ characters of $pattern$. We take the best of the two outcomes. Hence, we recur for $match[i][j-1] \Or match[i-1][j]$
+    
+    \item If the last character of $pattern$ is not a wildcard, we have to ensure that it matches with the last character of $text$. If it does, we can recur for $match[i-1][j-1]$, else we set it to $false$.
+\end{enumerate}
+
+\subsection*{Base Case}
+\begin{enumerate}
+    \item If both the $pattern$ and $text$ has length $0$, then they match. Hence, $match[0][0] = true$
+    
+    \item If the $pattern$ has length $0$, it cannot be matched to any $text$ of positive length. Hence, $match[i][0] = false \hfill \forall i > 0$
+    
+    \item If the $text$ has length $0$, it can only be matched with a $pattern$ of the type $***\dots***$. Hence, we iterate the $text$ and keep setting $match[0][j] = true$ until we hit a character which is not $*$
+\end{enumerate}
+
+\end{document}
