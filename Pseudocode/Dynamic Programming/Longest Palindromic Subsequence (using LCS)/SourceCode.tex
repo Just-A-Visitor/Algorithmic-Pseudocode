@@ -1,0 +1,36 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the length of the longest palindromic subsequence}
+
+  \begin{algorithmic}[1]
+    \Require A non empty string
+    \Statex
+
+    \Function{$Longest\_Palindromic\_Subsequence$}{$str$}
+        \Statex
+        \State $r\_str \gets reverse(str) j$
+        \State \Return{$longest\_common\_substring(str, r\_str)$} 
+    \EndFunction
+  \end{algorithmic}
+
+\end{algorithm}
+
+\end{document}
