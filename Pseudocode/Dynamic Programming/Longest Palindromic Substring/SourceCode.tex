@@ -17,26 +17,39 @@
 \DeclareCaptionLabelFormat{algnonumber}{Algorithm}
 \captionsetup[algorithm]{labelformat = algnonumber}
 
+% Define the command for a boldface 'is' 'to' 'downto'
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+\newcommand{\Empty}{\textbf{empty,}}
+\newcommand{\Continue}{\textbf{ continue }}
+% Use them inside Math-Mode (Hence the space!)
+
 \begin{document}
 
 \begin{algorithm}
 
-  \caption{Find the longest palindromic sequence in a given string}
-  
+  \caption{Print the longest palindromic substring in a given string}
+
   \begin{algorithmic}[1]
-    \Ensure Zero Based Indexing
+    \Ensure One Based Indexing for \textbf{both} string and Matrix
+    \Require A non empty string
     \Statex
+
+    \Function{$Longest\_Palindromic\_Substring$}{$str$}
+    \LeftComment $dp[i][j]$ is \textit{true} if $str[i \dots j]$ is a palindrome.
     
-    \Function{Longest\_Palindrome}{$str$}
-    \LeftComment If $dp[i][j]$ is \textit{true}, $str[i...j]$ is a palindrome.
-        \If{$str$ is empty}
-            \State \Return{$""$}
-        \EndIf
+        \Statex
         \State $size \gets str.len$
-        \State $dp \gets \{false\}$  
-        \For{$i = size-1 : 0$}
-            \For{$j = i : size-1$}
-                \State $length \gets j-i+1$
+        \State $dp[i][j] \gets false \hfill \forall i \hfill \forall j$
+        \Comment{Initialise the DP Matrix}
+        
+        \Statex
+        \For{$i = size \Downto 1$} \Comment{Fill the DP matrix}
+            \For{$j = i \To size$}
+                \State $length \gets j- i + 1$
                 \If{$str[i] == str[j]$}
                     \If{$length \leq 2$}
                         \State $dp[i][j] \gets true$
@@ -47,26 +60,28 @@
             \EndFor
         \EndFor
         
-        \State $start \gets 0$
+        \Statex
+        \State $start \gets 1$
         \State $max\_length \gets 1$
-        
-        \For{$i = 0 : size-1$}
-            \For{$j = i : size-1$}
-                \If{$dp[i][j] == false$}
-                    \State \textit{continue}
-                \EndIf
-                \State $length \gets j-i+1$
-                \If{$length > max\_length$}
-                    \State $start \gets i$
-                    \State $max\_length \gets length$
+
+        \For{$i = 1 \To size$} \Comment{Get the longest length}
+            \For{$j = i \To size$}
+                \If{$dp[i][j] \Is true$}
+                    \State $length \gets j - i + 1$
+                    \If{$length > max\_length$}
+                        \State $start \gets i$
+                        \State $max\_length \gets length$
+                    \EndIf
                 \EndIf
             \EndFor
         \EndFor
-        \State \Return{$str.substring(start, max\_length)$}
+        
+        \Statex
+        \State \Return{$str.substring(start, max\_length)$} 
+        \LeftComment {Substring starting at $start$ and with length $max\_length$}
     \EndFunction
   \end{algorithmic}
-  
+
 \end{algorithm}
 
 \end{document}
-
