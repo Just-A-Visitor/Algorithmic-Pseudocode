@@ -1,0 +1,69 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Don not remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Let us keep the 'end only for 'For'
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFunction}
+\algtext*{EndWhile}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\newcommand{\IsNotEmpty}{\textbf{ is not empty,}}
+\newcommand{\Break}{\textbf{Break}}
+\newcommand{\Print}{\textbf{Print}}
+
+\begin{document}
+
+    \begin{algorithm}
+    
+      \caption{Find the first non-repeating character when each character of the stream arrives}
+      
+      \begin{algorithmic}[1]
+        \Statex
+        \Function {$First\_Non\_Repeating\_Char$}{$stream$}
+            \LeftComment{$freq$ is a hashmap which stores the frequency of the characters}
+            
+            \Statex
+            \For{each character $char$ \textbf{in} $stream$}
+                \State{$queue.push(char)$}
+                \State $freq[char] \gets freq[char] + 1$ \Comment{Assumes default frequency as 0}
+                
+                \Statex
+                \While{$queue \IsNotEmpty$}
+                    \If{$freq$[$queue.front$] $>$ 1}
+                        \State{$queue.pop$}
+                    \Else 
+                        \State{\Break} Loop
+                    \EndIf
+                \EndWhile
+                
+                \Statex
+                \If{$queue \IsNotEmpty $}
+                    \State{\Print($queue.front$)}
+                \Else 
+                    \State{\Print(No unique character)}
+                \EndIf
+                
+            \EndFor
+            \Statex
+            \State \Return{}
+        \EndFunction
+      \end{algorithmic}
+      
+    \end{algorithm}
+\end{document}
