@@ -1,0 +1,72 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the longest palindromic sequence in a given string}
+  
+  \begin{algorithmic}[1]
+    \Ensure Zero Based Indexing
+    \Statex
+    
+    \Function{Longest\_Palindrome}{$str$}
+    \LeftComment If $dp[i][j]$ is \textit{true}, $str[i...j]$ is a palindrome.
+        \If{$str$ is empty}
+            \State \Return{$""$}
+        \EndIf
+        \State $size \gets str.len$
+        \State $dp \gets \{false\}$  
+        \For{$i = size-1 : 0$}
+            \For{$j = i : size-1$}
+                \State $length \gets j-i+1$
+                \If{$str[i] == str[j]$}
+                    \If{$length \leq 2$}
+                        \State $dp[i][j] \gets true$
+                    \Else
+                        \State $dp[i][j] \gets dp[i+1][j-1]$
+                    \EndIf
+                \EndIf
+            \EndFor
+        \EndFor
+        
+        \State $start \gets 0$
+        \State $max\_length \gets 1$
+        
+        \For{$i = 0 : size-1$}
+            \For{$j = i : size-1$}
+                \If{$dp[i][j] == false$}
+                    \State \textit{continue}
+                \EndIf
+                \State $length \gets j-i+1$
+                \If{$length > max\_length$}
+                    \State $start \gets i$
+                    \State $max\_length \gets length$
+                \EndIf
+            \EndFor
+        \EndFor
+        \State \Return{$str.substring(start, max\_length)$}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
+
