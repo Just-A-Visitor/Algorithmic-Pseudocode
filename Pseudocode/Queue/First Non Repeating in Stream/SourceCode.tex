@@ -17,6 +17,10 @@
 \DeclareCaptionLabelFormat{algnonumber}{Algorithm}
 \captionsetup[algorithm]{labelformat = algnonumber}
 
+\newcommand{\IsNotEmpty}{\textbf{ is not empty, }}
+\newcommand{\Break}{\textbf{break}}
+\newcommand{\Print}{\textbf{Print}}
+
 \begin{document}
 
     \begin{algorithm}
@@ -24,33 +28,29 @@
       \caption{Find the first non-repeating character when each character of the stream arrives}
       
       \begin{algorithmic}[1]
-        \Ensure {All characters of string $str$ are lowercase alphabets}
         \Statex
-        \Function{First\_NonRepeating\_Char}{$str$}
-            \State{Let $Q$ be a queue of characters}
-            \State{Let $count$ be an array of size 26, which keeps track of frequency of alphabets.}
-            \State{Initialize the $count$ array with 0 for each alphabet}
-            \newline
+        \Function {$First\_Non\_Repeating\_Char$}{$str$}
+            \LeftComment{$frequency$ is a hashmap which stores the frequency of the characters}
+            \LeftComment{$queue$ is a queue of characters}
             \State{Scan $str$ from left to right and,}
-            \For{each character $ch$}
-                \State{Push $ch$ to $Q$}
-                \State{Increment frequency count of $ch$ by 1}
-                
-                \While{$Q$ is not empty}
-                    \If{Frequency of top element of $Q$ is greater than 1}
-                        \State{Pop the top element of $Q$}
+            \For{each character $char$}
+                \State{$queue$.push($char$)}
+                \State{Increment $frequency$[$char$] by 1}
+                \While{$queue$ \IsNotEmpty}
+                    \If{$frequency$[$queue.front$] $>$ 1}
+                        \State{$queue.$pop()}
                     \Else 
-                        \State{Break this loop}
+                        \State{\Break}
                     \EndIf
                 \EndWhile
-                \If{$Q$ is not empty}
-                    \State{Print the top element of $Q$}
+                \If{$queue$ \IsNotEmpty}
+                    \State{\Print($queue.front$)}
                 \Else 
-                    \State{Print $null$}
+                    \State{\Print($null)$}
                 \EndIf
                 
             \EndFor
-            
+            \Statex
             \State \Return{}
         \EndFunction
       \end{algorithmic}
