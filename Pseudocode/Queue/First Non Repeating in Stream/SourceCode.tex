@@ -1,0 +1,59 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+    \begin{algorithm}
+    
+      \caption{Find the first non-repeating character when each character of the stream arrives}
+      
+      \begin{algorithmic}[1]
+        \Ensure {All characters of string $str$ are lowercase alphabets}
+        \Statex
+        \Function{First\_NonRepeating\_Char}{$str$}
+            \State{Let $Q$ be a queue of characters}
+            \State{Let $count$ be an array of size 26, which keeps track of frequency of alphabets.}
+            \State{Initialize the $count$ array with 0 for each alphabet}
+            \newline
+            \State{Scan $str$ from left to right and,}
+            \For{each character $ch$}
+                \State{Push $ch$ to $Q$}
+                \State{Increment frequency count of $ch$ by 1}
+                
+                \While{$Q$ is not empty}
+                    \If{Frequency of top element of $Q$ is greater than 1}
+                        \State{Pop the top element of $Q$}
+                    \Else 
+                        \State{Break this loop}
+                    \EndIf
+                \EndWhile
+                \If{$Q$ is not empty}
+                    \State{Print the top element of $Q$}
+                \Else 
+                    \State{Print $null$}
+                \EndIf
+                
+            \EndFor
+            
+            \State \Return{}
+        \EndFunction
+      \end{algorithmic}
+      
+    \end{algorithm}
+\end{document}
