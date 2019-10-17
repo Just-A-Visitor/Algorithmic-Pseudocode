@@ -1,0 +1,63 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the length of the longest palindromic subsequence}
+
+  \begin{algorithmic}[1]
+    \Ensure Zero Based Indexing for the Matrix, One Based Index for the Strings
+    \Require A non empty string
+    \Statex
+
+    \Function{$LCS$}{$str_1, str_2$}
+        \LeftComment{$lcs[i][j]$ denotes the longest common subsequence of the first $i$ characters of $str_1$ and the first $j$ characters of $str_2$}
+        
+        \State $lcs[i][0] \gets 0 \hfill \forall i$ \Comment{The first string is empty}
+        \State $lcs[0][j] \gets 0 \hfill \forall j$ \Comment{The second string is empty}
+
+        \For{$ i = 1 : str_1.len$}
+            \For{$j = 1 : str_2.len$}
+                \State $exclude\_top \gets lcs[i-1][j]$
+                \State $exclude\_bot \gets lcs[i][j-1]$
+                \State $exclude\_both \gets lcs[i-1][j-1]$
+                \State $match \gets 1 + lcs[i-1][j-1] $
+                \If{$str_1[i] == str_2[j]$}
+                    \State $lcs[i][j] \gets match$
+                \Else 
+                    \State $lcs[i][j] \gets max(exclude\_top, exclude\_bot, exclude\_both) $
+                \EndIf
+            \EndFor
+        \EndFor
+        
+        \State \Return{$lcs[str_1.len][str_2.len]$}
+    \EndFunction
+    \Statex
+    
+    \Function{$Longest\_Palindromic\_Subsequence$}{$str$}
+        \State $rev\_str \gets reverse(str)$
+        \State \Return{$LCS(str, rev\_str)$} 
+    \EndFunction
+  \end{algorithmic}
+
+\end{algorithm}
+
+\end{document}
