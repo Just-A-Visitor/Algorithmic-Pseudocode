@@ -1,0 +1,101 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Don't Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFunction}
+\algtext*{EndFor}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface instructions
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Sort an array in the range $low$ to $high$ in $O(n \log{} n)$}
+  
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
+    \Statex
+    
+    \Procedure{$Merge$}{$arr, low, mid, high$}
+        \State $left\_len \gets mid - low + 1$
+        \State $right\_len \gets high - mid$
+        \State $left[left\_len + 1]$ \Comment{Create 2 new array}
+        \State $right[right\_len + 1]$ \Comment{Reserve an extra space for sentinel}
+        \State $sentinel \gets \infty$
+        
+        \Statex
+        \State $left\_index \gets 1$
+        \For {$i = low \To mid$} \Comment{Fill the $left$ array}
+            \State $left[left\_index] \gets a[i]$
+            \State $left\_index \gets left\_index + 1$
+        \EndFor
+        
+        \Statex
+        \State $left[left\_index] \gets sentinel$ \Comment{Append sentinel at the back}
+        
+        \Statex
+        \State $right\_index \gets 1$
+        \For {$i = mid + 1 \To high$} \Comment{Fill the $right$ array}
+            \State $right[right\_index] \gets a[i]$
+            \State $right\_index \gets right\_index + 1$
+        \EndFor
+        
+        \Statex
+        \State $right[right\_index] \gets sentinel$ \Comment{Append sentinel at the back}
+        
+        \Statex
+        \State $i \gets 1, j \gets 1$
+        \For{$k = low \To high$} \Comment{Merge them}
+            \If{$left[i] \leq right[j]$}
+                \State $a[k] \gets left[i]$
+                \State $i \gets i + 1$
+            \Else
+                \State $a[k] \gets right[j]$
+                \State $j \gets j + 1$
+            \EndIf
+        \EndFor
+        
+    \EndProcedure
+    
+    \Statex
+    \Function{$Merge\_Sort$}{$arr, low, high$}
+    \If{$low == high$}
+        \State \Return
+    \EndIf
+    
+    \State $mid \gets \left \lfloor{(low + high )/2}\right \rfloor$
+    \State $Merge\_Sort(arr, low, mid)$
+    \State $Merge\_Sort(arr, mid + 1, high)$
+    \State $Merge(arr, low, mid, high)$
+    \State \Return
+    
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+
+\end{document}
