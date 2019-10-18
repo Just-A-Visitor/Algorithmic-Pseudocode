@@ -1,0 +1,65 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface 'and' 'to'
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\And}{\textbf{ and }}
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Sort an array one by one}
+
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing for the Array
+    \Require A non empty array
+    \Statex
+
+    \Function{$Insertion\_Sort$}{$arr$}
+    \LeftComment $arr$ is the array to be sorted.
+    
+        \Statex
+
+        \For{$j = 2 \To length(arr)$}
+            \State $key \gets arr[j]$
+            
+            \Statex
+            
+            \State $i \gets j-1$
+            \While{$i >= 1$ \And $arr[i] > key$}
+                \State $arr[i+1] \gets arr[i]$
+                \State $i \gets i-1$
+            \EndWhile
+            
+            \Statex
+            \State $arr[i+1] \gets key$
+            
+        \EndFor
+        
+        \Statex
+        \State \Return{$arr$} 
+
+    \EndFunction
+  \end{algorithmic}
+
+\end{algorithm}
+
+\end{document}
