@@ -7,7 +7,11 @@
 \usepackage{algorithm}
 
 % Remove the 'end' at the end of the algorithm
-\usepackage[noend]{algpseudocode}
+\usepackage[]{algpseudocode}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndFunction}
+\algtext*{EndWhile}
 
 % Define Left Justified Comments
 \algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
@@ -26,7 +30,7 @@
 
 \begin{algorithm}
 
-  \caption{Sort an array one by one}
+  \caption{Sort an array by repeatedly inserting elements into a sorted sequence}
 
   \begin{algorithmic}[1]
     \Ensure One Based Indexing for the Array
@@ -34,18 +38,14 @@
     \Statex
 
     \Function{$Insertion\_Sort$}{$arr$}
-    \LeftComment $arr$ is the array to be sorted.
     
         \Statex
 
         \For{$j = 2 \To length(arr)$}
             \State $key \gets arr[j]$
-            
-            \Statex
-            
             \State $i \gets j-1$
-            \While{$i >= 1$ \And $arr[i] > key$}
-                \State $arr[i+1] \gets arr[i]$
+            \While{$i \geq 1 \And arr[i] > key$}
+                \State $arr[i+1] \gets arr[i]$ \Comment{Shift bigger element to the right}
                 \State $i \gets i-1$
             \EndWhile
             
