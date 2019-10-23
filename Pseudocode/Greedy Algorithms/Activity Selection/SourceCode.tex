@@ -21,24 +21,31 @@
 
 \begin{algorithm}
 
-  \caption{Activity Selection Problem}
+  \caption{Maximize the number of activities without overlapping schedules}
   \begin{algorithmic}[1]
     \Ensure One Based Indexing for the Array
     \Statex
-    \Function{Greedy-Activity-Selector}{$Activity, start, finish$}
+
+    \Function{Greedy-Activity-Selector}{$Activity$}
+        \LeftComment{$Activity[i]$ contains the $start$ and $finish$ time of $i^{th}$ Activity}
+        \Statex
+        
         \State Sort Activities into monotonically increasing order by finish time
-        \State $n \gets start.length$
+        \State $n \gets Activity.length$
         \State $Selected \gets \{Activity[1]\}$  
         \State $j \gets 1$ 
 
-        \For{$ i = 2 : n$}
-            \If{$start[i] >= finish[j]$}
+        \For{$ i = 2 \textbf{ to } n$}
+            \If{$Activity[i].start \geq Activity[j].finish$}
                 \State $Selected \gets Selected  \cup \{Activity[i]\} $
                 \State $j \gets i$
+                
             \EndIf
         \EndFor
         
+        \Statex
         \State \Return{$Selected$}
+            
     \EndFunction
   \end{algorithmic}
   
