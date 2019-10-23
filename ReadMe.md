@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="200" height="200" src="Images/Icon.png">
+</p>
+
 [![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 # Introduction
@@ -53,3 +57,6 @@ Read this section carefully if you are planning on contributing to this reposito
 **Stuck?**
   * If you need any clarifications or are stuck on something for a long time, feel free to ping us. [![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
+
+# Credits
+Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [Flaticon](https://www.flaticon.com)
