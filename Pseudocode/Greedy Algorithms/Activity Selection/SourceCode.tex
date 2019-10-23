@@ -1,0 +1,54 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Maximize the number of activities without overlapping schedules}
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing for the Array
+    \Statex
+
+    \Function{Greedy-Activity-Selector}{$Activity$}
+        \LeftComment{$Activity[i]$ contains the $start$ and $finish$ time of $i^{th}$ Activity}
+        \Statex
+        
+        \State Sort Activities into monotonically increasing order by finish time
+        \State $n \gets Activity.length$
+        \State $Selected \gets \{Activity[1]\}$  
+        \State $j \gets 1$ 
+
+        \For{$ i = 2 \textbf{ to } n$}
+            \If{$Activity[i].start \geq Activity[j].finish$}
+                \State $Selected \gets Selected  \cup \{Activity[i]\} $
+                \State $j \gets i$
+                
+            \EndIf
+        \EndFor
+        
+        \Statex
+        \State \Return{$Selected$}
+            
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
