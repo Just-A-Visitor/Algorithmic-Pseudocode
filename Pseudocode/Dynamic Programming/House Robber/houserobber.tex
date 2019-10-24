@@ -1,0 +1,58 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the maximum amount of money that can be robbed from non-adjacent houses}
+  
+  \begin{algorithmic}[1]
+    \Ensure Zero Based Indexing for the array
+    \Statex
+    
+    \Function{$rob$}{$arr$}
+    
+        \LeftComment{$dp[i]$ represents the maximum money we can rob using first $i$ houses}
+        
+        \Statex
+        \State $n \gets arr.length$
+        
+        \Statex
+        
+        \State $dp[0] \gets arr[0]$
+        \State $dp[1] \gets max(arr[0],arr[1])$
+        
+        \Statex
+        
+        \For {$i = 2$ \textbf{to} $n-1$}
+            \State $dp[i] = max(dp[i-1], arr[i] + dp[i-2])$
+        \EndFor
+        
+        \Statex
+        
+        \State \Return $dp[n-1]$
+        
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+
+\end{document}
