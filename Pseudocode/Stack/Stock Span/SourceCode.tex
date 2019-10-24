@@ -8,12 +8,12 @@
 
 % Don not remove the 'end' at the end of the algorithm
 \usepackage{algpseudocode}
+\usepackage{xcolor}
 
 % Let us keep the 'end only for 'For'
 % Manually remove the 'end' for some sections
 \algtext*{EndIf}
 \algtext*{EndFunction}
-\algtext*{EndWhile}
 
 % Define Left Justified Comments
 \algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
@@ -23,9 +23,10 @@
 \DeclareCaptionLabelFormat{algnonumber}{Algorithm}
 \captionsetup[algorithm]{labelformat = algnonumber}
 
-\newcommand{\IsNotEmpty}{\textbf{ is not empty,}}
-\newcommand{\Break}{\textbf{Break}}
+\newcommand{\IsNotEmpty}{is \textbf{not empty, }}
 \newcommand{\Print}{\textbf{Print}}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\And}{\textcolor{violet}{and}}
 
 \begin{document}
 
@@ -36,25 +37,22 @@
       \begin{algorithmic}[1]
         \Ensure One Based Indexing
         \Statex
-        \Function {$Calculate\_Stock\_Span$}{$prices,len$}
+        \Function {$Calculate\_Stock\_Span$}{$price$}
             \LeftComment{$span[i]$ denotes the span of the price of stock at the $i-th$ day}
             
             \Statex
-            \For{$ i = 1 : len$}
-                \Statex
-                \While{$stack \IsNotEmpty$}
-                    \If{$price$[$stack.top$] $<=$ $price$[$i$]}
-                        \State{$stack.pop$}
-                    \Else 
-                        \State{\Break} Loop
-                    \EndIf
+            \State $len \gets price.length$
+            \For{$ i = 1 \To len$}
+                \While{$stack$ \IsNotEmpty \ \And \ $price[stack.top] \leq price[i]$}
+                    \State $stack.pop$
                 \EndWhile
                 
                 \Statex
-                \If{$stack \IsNotEmpty $}
+                \If{$stack$ \IsNotEmpty}
                     \State $span[i] \gets (i - stack.top)$
                 \Else 
-                    \State $span[i] \gets (i+1)$
+                    \State $span[i] \gets i+1$
+                    \Statex
                 \EndIf
                 
                 \State{$stack.push(i)$}
