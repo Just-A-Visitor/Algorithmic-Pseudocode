@@ -23,6 +23,7 @@ Here is the list of questions that I've solved/intend to solve
                 Phase 2
 # Phase 2 Tips   
 * Practice writing code on paper.
+* Check for any edge cases that might fail your algorithm.
 * Your first submission should be your last submission. 
 * Your first implementation on IDE should avoid compilation errors.
 * Devote minimum 1 hour to each question.
