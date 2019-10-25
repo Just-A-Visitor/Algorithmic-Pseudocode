@@ -24,6 +24,7 @@ Here is the list of questions that I've solved/intend to solve
 # Phase 2 Tips   
 * Practice writing code on paper.
 * Your first submission should be your last submission. 
+* Identify any edge cases that might fail your algorithm.
 * Your first implementation on IDE should avoid compilation errors.
 * Devote minimum 1 hour to each question.
 * Start coding on IDE only after you have a batch of 10 pseudocodes.
@@ -38,6 +39,7 @@ Here is the list of questions that I've solved/intend to solve
 # Phase 2 List
 * - [ ] **Print Nodes at distance k from a target node**   
 * - [ ] **Search in a 2D Sorted Array**    
+* - [ ] **Search an element in a sorted rotated array**
 * - [ ] **WildCard Pattern Matching**  
 * - [ ] **Word Ladder**    
 * - [ ] **Asteroid Collison**    
