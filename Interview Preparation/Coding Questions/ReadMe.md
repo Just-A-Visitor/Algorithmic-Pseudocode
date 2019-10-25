@@ -37,7 +37,8 @@ Here is the list of questions that I've solved/intend to solve
 
 # Phase 2 List
 * - [ ] **Print Nodes at distance k from a target node**   
-* - [ ] **Search in a 2D Sorted Array**    
+* - [ ] **Search in a 2D Sorted Array**  
+* - [ ] **Search for an element in a sorted rotated array**
 * - [ ] **WildCard Pattern Matching**  
 * - [ ] **Word Ladder**    
 * - [ ] **Asteroid Collison**    
