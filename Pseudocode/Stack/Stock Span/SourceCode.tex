@@ -23,7 +23,7 @@
 \DeclareCaptionLabelFormat{algnonumber}{Algorithm}
 \captionsetup[algorithm]{labelformat = algnonumber}
 
-\newcommand{\IsNotEmpty}{is \textbf{not empty, }}
+\newcommand{\IsNotEmpty}{is \textbf{not empty,}}
 \newcommand{\Print}{\textbf{Print}}
 \newcommand{\To}{\textbf{ to }}
 \newcommand{\And}{\textcolor{violet}{and}}
@@ -51,7 +51,7 @@
                 \If{$stack$ \IsNotEmpty}
                     \State $span[i] \gets (i - stack.top)$
                 \Else 
-                    \State $span[i] \gets i+1$
+                    \State $span[i] \gets i$ \Comment{One Based Indexing}
                     \Statex
                 \EndIf
                 
