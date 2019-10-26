@@ -1,0 +1,46 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface instructions
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Calculate N-th term of the fibonacci sequence using a iterative dynamic programming approach.}
+  \begin{algorithmic}[1]
+    \Statex
+    \Function{Fibonacci}{$n$}
+        \State $fib[1] \gets 1$
+        \State $fib[2] \gets 1$
+        \For {$i = 3 \To n$}
+            \State $fib[i] \gets fib[i - 2] + fib[i - 1]$
+        \EndFor
+        \Return $fib[n]$
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
