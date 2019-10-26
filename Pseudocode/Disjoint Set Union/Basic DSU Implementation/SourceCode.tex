@@ -1,0 +1,87 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+\usepackage[colorlinks = true, urlcolor = blue,  linkcolor = blue]{hyperref}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Do not Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Remove the end manually for some commands
+\algtext*{EndIf}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface 'is' 'to' 'downto'
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Implement \textbf{Union Find} by using \textbf{Union by Rank} and \textbf{Path Compression}}
+  
+  \begin{algorithmic}[1]
+    \Procedure{Make\_Set}{$vertex$}
+        \State $parent[vertex] \gets vertex$
+        \State $rank[vertex] \gets 0$ \Comment{Rank is the depth of the tree}
+    \EndProcedure
+    
+    \Statex
+    \Statex
+    
+    \Procedure{Find\_Set}{$v$}
+        \If{$parent[v] == v$}
+            \State \Return $v$
+        \EndIf
+        
+        \Statex
+        \State $root\_v =$ \textbf{Find\_Set}($parent[v]$)
+        \State $parent[v] \gets root\_v$ \Comment{Path Compression}
+        \State \Return $root\_v$
+    \EndProcedure
+    
+    \Statex
+    \Statex
+    
+    \Procedure{Union\_Sets}{$a, b$}
+        \State $a \gets$ \textbf{Find\_Set}($a$) \Comment{$a$ has become $root\_a$}
+        \State $b \gets$ \textbf{Find\_Set}($b$) \Comment{$b$ has become $root\_b$}
+        
+        \Statex
+        
+        \If{$a \neq b$}
+            \If{$rank[b] > rank[a]$} \Comment{Union by rank}
+                \State $swap(a,b)$
+            \EndIf
+            
+            \State $parent[b] \gets a$ \Comment{Connect $b$ to $a$}
+            
+            \If{$rank[a] == rank[b]$} \Comment{Depth of $b$ cannot be bigger now}
+                \State $rank[a] \gets rank[a] + 1$
+            \EndIf
+        \EndIf
+    \EndProcedure
+  \end{algorithmic}
+
+\end{algorithm}
+
+\noindent
+\textbf{Time Complexity} : A $DSU$ with either Path Compression or Union by Rank/Size optimization has complexity $O(\log{} n)$ on average, while a $DSU$ with both the optimizations has amortized time complexity $O(1)$.  \\
+
+\noindent
+\textbf{Credits} : \href{https://cp-algorithms.com/data_structures/disjoint_set_union.html}{CP-Algorithms}
+\end{document}
