@@ -1,0 +1,66 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Don't Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFunction}
+\algtext*{EndFor}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface instructions
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Sort an array using Divide and Conquer approach}
+  
+  \begin{algorithmic}[1]
+    \Statex
+    
+    \Procedure{$Quick\_Sort$}{$arr, low, high$}
+        \If{$low < high$}
+            \State $pi = Partition(arr, low, high)$
+            \State $Quick\_Sort(arr, low, pi - 1)$
+            \State $Quick\_Sort(arr, pi + 1, high)$
+        \EndIf
+    \EndProcedure
+    
+    \Statex
+    \Function{$Partition$}{$arr, low, high$}
+        \State $pivot = arr[high]$
+        \State $i = low - 1$
+        \For {$j = low \To high - 1$}
+            \If{$arr[j] < pivot$}
+                \State $i++$
+                \State $swap(arr[i],arr[j])$
+            \EndIf
+        \EndFor
+        \State $swap(arr[i + 1],arr[high])$
+        \State \Return $i + 1$
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
