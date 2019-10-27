@@ -10,7 +10,6 @@
 
 % Manually remove the 'end' for some sections
 \algtext*{EndIf}
-\algtext*{EndFunction}
 \algtext*{EndFor}
 
 % Define Left Justified Comments
@@ -37,27 +36,27 @@
   
   \begin{algorithmic}[1]
     \Statex
-    
-    \Procedure{$Quick\_Sort$}{$arr, low, high$}
-        \If{$low < high$}
-            \State $pi = Partition(arr, low, high)$
-            \State $Quick\_Sort(arr, low, pi - 1)$
-            \State $Quick\_Sort(arr, pi + 1, high)$
-        \EndIf
-    \EndProcedure
-    
-    \Statex
-    \Function{$Partition$}{$arr, low, high$}
+
+    \Procedure{$Partition$}{$arr,\ low,\ high$}
         \State $pivot = arr[high]$
-        \State $i = low - 1$
-        \For {$j = low \To high - 1$}
-            \If{$arr[j] < pivot$}
-                \State $i++$
-                \State $swap(arr[i],arr[j])$
+        \State $i \gets low - 1$
+        \For {$j \gets low \To high - 1$}
+            \If{$arr[j] \leq pivot$}
+                \State $i \gets i + 1$
+                \State $swap(arr[i],\ arr[j])$
             \EndIf
         \EndFor
-        \State $swap(arr[i + 1],arr[high])$
+        \Statex
+        \State $swap(arr[i + 1],\ arr[high])$
         \State \Return $i + 1$
+    \EndProcedure
+    \Statex
+    \Function{QUICKSORT}{$arr,\ low,\ high$}
+        \If{$low < high$}
+            \State $pi\ \gets\ $\textbf{\textit{Partition}}$(arr,\ low,\ high)$
+            \State $QUICKSORT(arr,\ low,\ pi\ -\ 1)$
+            \State $QUICKSORT(arr,\ pi\ +\ 1,\ high)$
+        \EndIf
     \EndFunction
   \end{algorithmic}
   
