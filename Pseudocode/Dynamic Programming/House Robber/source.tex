@@ -22,32 +22,31 @@
 \begin{algorithm}
 
   \caption{Find the maximum amount of money that can be robbed from non-adjacent houses}
-  
-  \begin{algorithmic}[1]
-    \Ensure Zero Based Indexing for the array
+\begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
     \Statex
     
-    \Function{$rob$}{$arr$}
+    \Function{$House\_Robber$}{$arr$}
     
-        \LeftComment{$dp[i]$ represents the maximum money we can rob using first $i$ houses}
+        \LeftComment{$dp[i]$ represents the maximum money we can rob using the first $i$ houses}
         
         \Statex
         \State $n \gets arr.length$
         
-        \Statex
         
-        \State $dp[0] \gets arr[0]$
-        \State $dp[1] \gets max(arr[0],arr[1])$
+        \State $dp[1] \gets max(0,arr[1])$
+        \State $dp[2] \gets max(arr[1],arr[2])$
         
-        \Statex
         
-        \For {$i = 2$ \textbf{to} $n-1$}
-            \State $dp[i] = max(dp[i-1], arr[i] + dp[i-2])$
+        \For {$i = 3$ \textbf{to} $n$}
+            \State $take\_it \gets arr[i] + dp[i-2]$
+            \State $leave\_it \gets dp[i-1]$
+            \State $dp[i] \gets max(take\_it, \ leave\_it)$
         \EndFor
         
         \Statex
         
-        \State \Return $dp[n-1]$
+        \State \Return $dp[n]$
         
     \EndFunction
   \end{algorithmic}
