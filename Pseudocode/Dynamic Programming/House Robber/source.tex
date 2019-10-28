@@ -35,6 +35,11 @@
         
         
         \State $dp[1] \gets max(0,arr[1])$
+        \Statex
+        \If{$n$ is 1}
+        \State \Return $dp[1]$
+        \EndIf
+        \Statex
         \State $dp[2] \gets max(arr[1],arr[2])$
         
         
