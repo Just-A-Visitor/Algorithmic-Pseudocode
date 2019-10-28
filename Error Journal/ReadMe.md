@@ -7,6 +7,7 @@
 ## Class
 * Compilation error? Did you forget the semi colon?
 * Compilation error? Did you forget to make the functions/constructor public?
+* Compilation error? Did you forget to mention the scope of the methods?
 
 ## Graphs
 * Is the graph undirected ? Did you forget to add both sides of the edge in the adjacency list?
