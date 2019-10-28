@@ -1,3 +1,13 @@
+## Time Limit Exceeded
+* Huge input/output? Did you try using `scanf`, `printf`?
+* Huge input/output? Did you try `fast_input_output`?
+* Too many lines to print? Use `#define endl '\n'`
+* Interactive Problems? Did you forget to flush the output?
+
+## Class
+* Compilation error? Did you forget the semi colon?
+* Compilation error? Did you forget to make the functions/constructor public?
+
 ## Graphs
 * Is the graph undirected ? Did you forget to add both sides of the edge in the adjacency list?
 * Is the graph directed ? Did you accidentally add an undirected edge instead of a directed one?
