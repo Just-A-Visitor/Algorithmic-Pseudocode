@@ -37,7 +37,7 @@
   \begin{algorithmic}[1]
     \Statex
 
-    \Procedure{$Partition$}{$arr,\ low,\ high$}
+    \Procedure{Partition}{$arr,\ low,\ high$}
         \State $pivot = arr[high]$
         \State $i \gets low - 1$
         \For {$j \gets low \To high - 1$}
@@ -51,11 +51,11 @@
         \State \Return $i + 1$
     \EndProcedure
     \Statex
-    \Function{QUICKSORT}{$arr,\ low,\ high$}
+    \Function{Quick\_Sort}{$arr,\ low,\ high$}
         \If{$low < high$}
             \State $pi\ \gets\ $\textbf{\textit{Partition}}$(arr,\ low,\ high)$
-            \State $QUICKSORT(arr,\ low,\ pi\ -\ 1)$
-            \State $QUICKSORT(arr,\ pi\ +\ 1,\ high)$
+            \State \textbf{Quick\_Sort}$(arr,\ low,\ pi\ -\ 1)$
+            \State \textbf{Quick\_Sort}$(arr,\ pi\ +\ 1,\ high)$
         \EndIf
     \EndFunction
   \end{algorithmic}
