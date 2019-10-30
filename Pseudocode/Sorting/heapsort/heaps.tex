@@ -1,0 +1,216 @@
+\documentclass[11pt]{article}
+
+\usepackage{epsfig}
+\usepackage{fullpage}
+
+\begin{document}
+
+\title{{\bf Heaps. Heapsort.}\\
+\normalsize{(CLRS 6)}}
+\date{}
+
+\maketitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}
+
+\begin{itemize}
+\item We have discussed several fundamental algorithms (e.g. sorting)
+\item We will now turn to \emph{data structures}; Play an important role in
+algorithms design.
+        \begin{itemize}
+        \item Today we discuss priority queues and next time
+          structures for maintaining ordered sets.
+        \end{itemize}
+\end{itemize}
+
+\section{Priority Queue}
+
+\begin{itemize}
+\item A priority queue supports the following operations on a set $S$ of
+$n$ elements:
+        \begin{itemize}
+        \item {\sc Insert}: Insert a new element $e$ in $S$
+        \item {\sc FindMin}: Return the minimal element in $S$
+        \item {\sc DeleteMin}: Delete the minimal element in $S$
+        \end{itemize}
+\item Sometimes we are also interested in supporting the following
+operations:
+        \begin{itemize}
+        \item {\sc Change}: Change the key (priority) of an element in $S$
+        \item {\sc Delete}: Delete an element from $S$
+        \end{itemize}
+\item We can obviously sort using a priority queue:
+        \begin{itemize}
+        \item Insert all elements using {\sc Insert}
+        \item Delete all elements in order using {\sc FindMin} and {\sc
+        DeleteMin}
+        \end{itemize}
+\item Priority queues have many applications, e.g. in discrete event
+simulation, graph algorithms
+\end{itemize}
+
+
+\subsection{Array or List implementations}
+\begin{itemize}
+\item The first implementation that comes to mind is ordered array: \\ \\
+\centerline{\epsfig{file=Ordered_array.eps,height=0.5cm}}
+
+        \begin{itemize}
+        \item {\sc FindMin} can be performed in $O(1)$ time
+        \item {\sc DeleteMin} and {\sc Insert} takes $O(n)$ time since we
+        need to expand/compress the array after inserting or deleting element.
+        \end{itemize}
+\item If the array is unordered all operations take $O(n)$ time.
+\item We could use double linked sorted list instead of array to avoid the
+$O(n)$ expansion/compression cost
+        \begin{itemize}
+        \item but {\sc Insert} can still take $O(n)$ time.
+        \end{itemize}
+\end{itemize}
+
+
+\subsection{Heap implementation}
+
+\begin{itemize}
+\item One way of implementing a priority queue is using a heap
+\item Heap definition:
+
+\fbox{\parbox{11.5cm}{
+\begin{itemize}
+\item Perfectly balanced binary tree
+        \begin{itemize}
+        \item lowest level can be incomplete (but filled from left-to-right)
+        \end{itemize} 
+\item For all nodes $v$ we have key($v$)$\geq$key(parent($v$))
+\end{itemize}
+}}
+
+\item Example:
+
+\vspace{.5\baselineskip}
+
+\epsfig{file=heap,height=3cm}
+
+\item Heap can be implemented (stored) in two ways (at least)
+        \begin{itemize}
+        \item Using pointers
+        \item In an array level-by-level, left-to-right
+
+        Example:
+
+        \vspace{.5\baselineskip}
+
+                \epsfig{file=arrayheap,height=3cm}
+
+                \begin{itemize}
+                \item the left and right children of node in entry $i$
+                are in entry $2i$ and $2i+1$, respectively
+	      \item the parent of node in entry $i$ is in entry
+	      $\lfloor \frac{i}{2} \rfloor$
+                \end{itemize}
+        \end{itemize}
+\item Properties of heap:
+        \begin{itemize}
+        \item Height $\Theta(\log n)$
+        \item Minimum of $S$ is stored in root
+        \end{itemize}
+\item Operations:
+        \begin{itemize}
+        \item  {\sc Insert}
+                \begin{itemize}
+                \item Insert element in new leaf in leftmost possible
+                position on lowest level
+                \item Repeatedly swap element with element in parent node
+                until heap order is reestablished ({\sc up-heapify})
+		
+                Example: Insertion of 4
+		
+                \epsfig{file=insert4.eps,height=3cm}
+                \end{itemize}
+        \item {\sc FindMin}
+                \begin{itemize}
+                \item Return root element
+                \end{itemize}
+                
+        \item {\sc DeleteMin}
+                \begin{itemize}
+                \item Delete element in root
+                \item Move element from rightmost leaf on lowest level to
+                the root (and delete leaf)
+                \item Repeatedly swap element with the smaller of the
+                children elements until heap order is reestablished
+                ({\sc down-heapify})
+
+                \vspace{.5\baselineskip}
+
+                Example: 
+
+                \epsfig{file=deletemin.eps,height=3cm}
+                \end{itemize}
+        	
+\item {\sc Change} and {\sc Delete} can be handled similarly in $O(\log n)$
+time
+\begin{itemize}
+\item Note: Assuming that we know the element to be changed/deleted
+(we cannot search in a heap!!)
+\end{itemize}
+\end{itemize}
+
+
+\item {\bf Correctness:} Exercise.
+\item {\bf Running time:} All operations traverse at most one
+root-leaf path $\Rightarrow O(\log n)$ time.
+
+
+\item Sorting using heap ({\em HeapSort}) takes $\Theta(n\log n)$ time.
+  \begin{itemize}
+  \item $n\cdot O(\log n)$ time to insert all elements (build the
+    heap)
+  \item $n\cdot O(\log n)$ time to output sorted elements
+  \end{itemize}
+  
+\item Sometimes we would like to build a heap faster than $O(n\log n)$
+\begin{itemize}
+\item BUILDHEAP
+  \begin{itemize}
+  \item Insert elements in any order in perfectly balanced tree
+  \item {\sc down-heapify} all nodes level-by-level, bottom-up
+  \end{itemize}
+  
+\item Correctness: 
+  \begin{itemize}
+  \item Induction on height of tree: When doing level $i$, all trees
+    rooted at level $i-1$ are heaps.
+  \end{itemize}
+  
+\item Analysis:
+  \begin{itemize}
+  \item  The leaves are at height $0$, the root is at height $\log n$
+  \item $n$ elements $\Rightarrow \leq \lceil \frac{n}{2}\rceil$
+    leaves $\Rightarrow \lceil \frac{n}{2^h}\rceil$ elements at height 
+    $h$
+  \item Cost of {\sc down-heapify} on a node at height $h$ is $h$
+  \item Total cost: $\sum_{i=1}^{\log n} h\cdot \lceil
+    \frac{n}{2^h}\rceil=\Theta(n)\cdot \sum_{i=1}^{\log n}
+    \frac{h}{2^h}$
+  \item It can be shown that $\sum_{i=1}^{\log n} \frac{h}{2^h}=O(1)$
+    $\Longrightarrow$ the total buildheap cost is $\Theta(n)$
+
+    \vspace{\baselineskip}
+  \item Computing $\sum_{i=1}^{n} \frac{h}{2^h}$ and
+  $\sum_{i=1}^{\infty} \frac{h}{2^h}$
+    \begin{itemize}
+    \item Differentiate $\sum_{h=0}^{n} x^h = \frac{1 -
+      x^{n+1}}{1-x}$, respectively $\sum_{h=0}^{\infty} x^h =
+      \frac{1}{1-x}$ (assuming $|x|<1$)
+    \item $\sum_{h=0}^{\infty} hx^{h-1}=\frac{1}{(x-1)^2} \Rightarrow
+      \sum_{h=0}^{n} hx^h=\frac{x}{(x-1)^2} \Rightarrow \sum_{h=0}^{n}
+      \frac{h}{2^h}=\frac{1/2}{(1/2-1)^2}=O(1)$
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+
+\end{itemize}
+\end{document}
