@@ -9,6 +9,9 @@
 * Compilation error? Did you forget to make the functions/constructor public?
 * Compilation error? Did you forget to mention the scope of the methods?
 
+## Strings
+* TLE? Consider using an array of size `26`/`256` instead of a map.
+
 ## Graphs
 * Is the graph undirected ? Did you forget to add both sides of the edge in the adjacency list?
 * Is the graph directed ? Did you accidentally add an undirected edge instead of a directed one?
