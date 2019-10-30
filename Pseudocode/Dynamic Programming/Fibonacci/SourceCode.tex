@@ -28,7 +28,7 @@
 
 \begin{algorithm}
 
-  \caption{Calculate N-th term of the fibonacci sequence using a iterative dynamic programming approach (bottom up).}
+  \caption{Calculate N-th term of the Fibonacci sequence using iterative DP (Bottom Up)}
   \begin{algorithmic}[1]
     \Statex
     \Function{Fibonacci}{$n$}
@@ -37,23 +37,24 @@
         \For {$i = 3 \To n$}
             \State $fib[i] \gets fib[i - 2] + fib[i - 1]$
         \EndFor
-        \Return $fib[n]$
+        \Statex
+        \State \Return $fib[n]$
     \EndFunction
   \end{algorithmic}
   
 \end{algorithm}
 \begin{algorithm}
 
-  \caption{Calculate N-th term of the fibonacci sequence using a recursive dynamic programming approach (top down).}
+  \caption{Calculate N-th term of the Fibonacci sequence using recursive DP (Top Down)}
   \begin{algorithmic}[1]
-    \Ensure Zero Based Indexing approach for the inicial vector (fib)
+    \Ensure One Based Indexing for $fib$ array
     \State $fib \gets [1, 1, 0, 0, 0, 0, \dots]$
     \Statex
     \Function{Fibonacci}{$n$}
-        \If {$fib[n] <> 0$}
+        \If {$fib[n] \neq 0$}
             \State \Return $fib[n]$
         \EndIf
-        \State $fib[n] \gets Fibonacci[n - 2] + Fibonacci[n - 1]$
+        \State $fib[n] \gets \textbf{Fibonacci(n - 2)} + \textbf{Fibonacci(n - 1)}$
         \State \Return $fib[n]$
     \EndFunction
   \end{algorithmic}
