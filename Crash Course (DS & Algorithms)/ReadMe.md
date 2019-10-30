@@ -1,1 +1,1 @@
-This directory contains the *Lecture Notes*, *Programming Assignments* and *Practice Problems* of the **Data Structures and Algorithms** crash offered in the year 2019.
+This directory contains the *Lecture Notes*, *Programming Assignments* and *Practice Problems* of the **Data Structures and Algorithms** crash course that I took during the year 2019.
