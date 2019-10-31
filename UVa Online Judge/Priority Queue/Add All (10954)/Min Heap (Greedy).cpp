@@ -8,8 +8,8 @@ void solve(int size)
 		cin >> ele;
 	
 	priority_queue<int, vector<int>, greater<int>> minHeap;
-    for(auto ele : vec)
-        minHeap.push(ele);
+    	for(auto ele : vec)
+		minHeap.push(ele);
 
 	int totalCost = 0;
 	int currentCost;
