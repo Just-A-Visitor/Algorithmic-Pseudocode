@@ -34,9 +34,7 @@ int main()
 		vector<string> collection;
         
 		while(getline(cin, str) and str.length () != 0)
-		{
 			collection.push_back(str);
-		}
 
 		if(i != 0)
     			cout << endl;
