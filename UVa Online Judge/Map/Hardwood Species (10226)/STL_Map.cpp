@@ -39,7 +39,7 @@ int main()
 		}
 
 		if(i != 0)
-    		cout << endl;
+    			cout << endl;
             
 		calculateFraction(collection);
 	}
