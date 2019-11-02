@@ -38,7 +38,6 @@ Here is the list of questions that I've solved/intend to solve
 # Phase 2 List
 * - [ ] **Print Nodes at distance k from a target node**   
 * - [ ] **Search in a 2D Sorted Array**    
-* - [ ] **WildCard Pattern Matching**  
 * - [ ] **Word Ladder**    
 * - [ ] **Asteroid Collison**    
 * - [ ] **Maximum Points using Two Traversals**    
@@ -48,4 +47,5 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Cherry Pickup**   
 * - [ ] **Special Binary Strings**
 * - [x] **Word Ladder I**    
+* - [ ] **WildCard Pattern Matching**    
 * - [x] **Jump Game II**
