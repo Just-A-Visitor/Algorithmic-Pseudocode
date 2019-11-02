@@ -45,4 +45,7 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Activity Selection Problem**    
 * - [ ] **Largest Square/Rectangle of Ones in a Matrix**   
 * - [ ] **Merge Overlapping Intervals**
-* - [ ] **Jump Game II**
+* - [ ] **Cherry Pickup**   
+* - [ ] **Special Binary Strings**
+* - [x] **Word Ladder I**    
+* - [x] **Jump Game II**
