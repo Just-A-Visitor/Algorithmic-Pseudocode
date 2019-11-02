@@ -47,5 +47,5 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Cherry Pickup**   
 * - [ ] **Special Binary Strings**
 * - [x] **Word Ladder I**    
-* - [ ] **WildCard Pattern Matching**    
+* - [x] **WildCard Pattern Matching**    
 * - [x] **Jump Game II**
