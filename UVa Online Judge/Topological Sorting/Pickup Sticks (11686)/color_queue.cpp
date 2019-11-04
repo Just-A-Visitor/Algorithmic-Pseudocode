@@ -72,7 +72,7 @@ vector<int> Graph :: topologicalSort()
 		for(auto &ele : row_vec)
 			inDegree[ele]++;
 			
-	vector<int> topological;
+	vector<int> topologicalVec;
 	queue<int> myQueue;
 	
 	for(int u = 0; u < vertex; u++)
