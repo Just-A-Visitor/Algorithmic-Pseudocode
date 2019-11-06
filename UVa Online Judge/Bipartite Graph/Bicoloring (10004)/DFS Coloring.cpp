@@ -15,7 +15,6 @@ public:
 	
 public:
 	Graph(int vertex);
-	bool isBiPartite();
 	void addEdge(int u, int v);
 	void dfs(int source);
 	void dfs_wrapper();
