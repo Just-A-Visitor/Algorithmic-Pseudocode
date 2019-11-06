@@ -45,7 +45,7 @@
             
             \State $next \gets max\_reached + 1$
             
-            \While{$next <= arr.len$ \textbf{and} $next \leq current + a[current]$}
+            \While{$next \leq arr.len$ \textbf{and} $next \leq current + a[current]$}
                 \State $queue.push(next)$
                 \State $level[next] \gets level[current] + 1$
                 \State $max\_reached \gets next$

@@ -40,11 +40,14 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Print Nodes at distance k from a target node**   
 * - [ ] **Search in a 2D Sorted Array**    
 * - [ ] **Search an element in a sorted rotated array**
-* - [ ] **WildCard Pattern Matching**  
 * - [ ] **Word Ladder**    
 * - [ ] **Asteroid Collison**    
 * - [ ] **Maximum Points using Two Traversals**    
 * - [ ] **Activity Selection Problem**    
 * - [ ] **Largest Square/Rectangle of Ones in a Matrix**   
 * - [ ] **Merge Overlapping Intervals**
-* - [ ] **Jump Game II**
+* - [ ] **Cherry Pickup**   
+* - [ ] **Special Binary Strings**
+* - [x] **Word Ladder I**    
+* - [x] **WildCard Pattern Matching**    
+* - [x] **Jump Game II**
