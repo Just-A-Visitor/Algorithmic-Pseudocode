@@ -33,3 +33,4 @@ There is one key point for understanding the solution ==> **If we start at the i
 # Tasks
 
 * Read *LeetCode's* top solution for an alternate approach.
+* Explain the clean **Concatenation Approach**

@@ -1,0 +1,62 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the maximum amount of money that can be robbed from non-adjacent houses}
+\begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
+    \Statex
+    
+    \Function{$House\_Robber$}{$arr$}
+    
+        \LeftComment{$dp[i]$ represents the maximum money we can rob using the first $i$ houses}
+        
+        \Statex
+        \State $n \gets arr.length$
+        
+        
+        \State $dp[1] \gets max(0,arr[1])$
+        \Statex
+        \If{$n$ is 1}
+        \State \Return $dp[1]$
+        \EndIf
+        \Statex
+        \State $dp[2] \gets max(0,arr[1],arr[2])$
+        
+        
+        \For {$i = 3$ \textbf{to} $n$}
+            \State $take\_it \gets arr[i] + dp[i-2]$
+            \State $leave\_it \gets dp[i-1]$
+            \State $dp[i] \gets max(take\_it, \ leave\_it)$
+        \EndFor
+        
+        \Statex
+        
+        \State \Return $dp[n]$
+        
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+
+\end{document}
