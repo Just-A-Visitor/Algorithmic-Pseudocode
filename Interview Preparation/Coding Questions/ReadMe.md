@@ -51,3 +51,4 @@ Here is the list of questions that I've solved/intend to solve
 * - [x] **Word Ladder I**    
 * - [x] **WildCard Pattern Matching**    
 * - [x] **Jump Game II**
+* - [x] **Accounts Merge**
