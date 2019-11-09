@@ -48,7 +48,7 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Merge Overlapping Intervals**
 * - [ ] **Cherry Pickup**   
 * - [ ] **Special Binary Strings**
+* - [ ] **Accounts Merge**
 * - [x] **Word Ladder I**    
 * - [x] **WildCard Pattern Matching**    
 * - [x] **Jump Game II**
-* - [x] **Accounts Merge**
