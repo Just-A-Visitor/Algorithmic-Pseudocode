@@ -7,5 +7,10 @@ The idea is simple. We want to perform a DFS on the matrix to find the connected
 
 * To check whether any element in the connected componenet is a terminal node, we can just maintain a boolean variable called `terminal` and set it to true whenver we see a terminal node during the DFS call. After the DFS, we only increment the counter if `terminal` is set to false. 
 
+
+# To Do 
+`votrubac's` approach is more suitable for this question. The flood fill approach makes it very easy. After flooding all the lands in the connected components of the terminal nodes, we just need to find the remaining connected componenets. See solution [here](https://leetcode.com/problems/number-of-closed-islands/discuss/425150/JavaC%2B%2B-with-picture-flood-fill)
+
+
 # Blog
 [Link](https://leetcode.com/problems/number-of-closed-islands/discuss/425120/Detailed-Explanation-using-Terminal-Nodes)
