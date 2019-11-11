@@ -15,9 +15,8 @@ void Solution :: dfs(vector<vector<int>> &grid, int i, int j)
 	if(grid[i][j] == 1 or grid[i][j] == 2)
 		return;
 	
-	if(grid[i][j] == 0)
-		if(i == 0 or j == 0 or i == row - 1 or j == col -1)
-			terminal = true;
+	if(i == 0 or j == 0 or i == row - 1 or j == col -1)
+		terminal = true;
 	
 	// Visit this cell
 	grid[i][j] = 2;
