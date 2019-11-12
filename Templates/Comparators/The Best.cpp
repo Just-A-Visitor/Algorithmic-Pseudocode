@@ -1,6 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/* Note : Be very careful with comparators if you are going to use equality method */
+/* If there are 2 small arguments, you can just skip 'auto' and compare directly */
+
+
 class Edge
 {
 public:
