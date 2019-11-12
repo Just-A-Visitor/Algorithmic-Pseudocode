@@ -3,6 +3,7 @@ using namespace std;
 
 /* Note : Be very careful with comparators if you are going to use equality method */
 /* If there are 2 small arguments, you can just skip 'auto' and compare directly */
+/* The comparator can never look like lhs <= rhs. Why is that? Think Carefully. */
 
 
 class Edge
