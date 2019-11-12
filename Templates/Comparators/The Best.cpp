@@ -18,8 +18,8 @@ public:
 
 public:
 
-    Edge() : u(), v(), weight() {};
-    
+	Edge() : u(), v(), weight() {};
+	
 	Edge(int u, int v, int weight)
 	{
 		this->u = u, this->v = v;
@@ -37,16 +37,16 @@ public:
 
 int main()
 {
-    int n;
-    cin >> n;
-    
+	int n;
+	cin >> n;
+	
 	vector<Edge> vec(n);
 	
 	for(auto &ele : vec)
-	    cin >> ele.u >> ele.v >> ele.weight;
+		cin >> ele.u >> ele.v >> ele.weight;
 	
 	for(auto &ele : vec)
-	    cout << ele.u << " " << ele.v << " " << ele.weight << "\n";
-      
+		cout << ele.u << " " << ele.v << " " << ele.weight << "\n";
+	  
 	return 0;
 }
