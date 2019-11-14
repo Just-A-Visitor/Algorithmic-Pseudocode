@@ -33,31 +33,32 @@
     
     \Function{$isBipartite$}{}
     
-        \LeftComment{Initialization}
-        \State $Queue\ q$ \Comment{Used for the BFS}
-        \For {$i = 1 : V$} \Comment{Where each $i$ represents a vertex}
+    
+        \State $Queue\ queue$ \Comment{Used for the BFS}
+        \For {each $vertex$}
             \State $color[i] \gets 0$
             \State $visited[i] \gets false$
         \EndFor
-        \State $q.push(0)$ \Comment{Index of the first node to explore}
+        \State $queue.push(0)$
         \State $visited[0] \gets true$
         
         \Statex
-        \LeftComment{BFS}
-        \While{$q\ is\ \textbf{not\ empty}$}
-            \State $current \gets q.pop()$
+        \While{$queue\ is\ \textbf{not\ empty}$} \Comment{BFS}
+            \State $current \gets queue.front$
+            \State $queue.pop$
             \For{each vertex $v$ adjacent to $current$} \Comment{Where $v$ is the vertex's index}
                 \If{$\textbf{not}\ visited[v]$}
-                    \State $q.push(v)$ \Comment{To later check its adjacent vertices}
-                    \State $color[v] \gets color[curent] \oplus 1$
+                    \State $queue.push(v)$
+                    \State $color[v] \gets color[current] \oplus 1$ \Comment{Assign $v$ in a different set}
                     \State $visited[v] \gets true$
                 \Else
                     \If{$color[v]=color[current]$}
-                        \State \Return $false$ \Comment{Two adjacent vertices must have different colors}
+                        \State \Return $false$
                     \EndIf
                 \EndIf
             \EndFor
         \EndWhile
+        \Statex
         \State \Return $true$
     \EndFunction
   \end{algorithmic}
