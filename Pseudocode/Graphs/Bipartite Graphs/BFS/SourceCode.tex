@@ -31,34 +31,39 @@
     
     \Statex
     
-    \Function{$isBipartite$}{}
+    \Function{$isBipartite$}{Vertex Set, Adjacency List}
     
-    
-        \State $Queue\ queue$ \Comment{Used for the BFS}
-        \For {each $vertex$}
-            \State $color[i] \gets 0$
-            \State $visited[i] \gets false$
+        
+        \For {each vertex $v \in V$ } \Comment{$V$ is the Vertex Set}
+            \State $color[v] \gets 0$
+            \State $visited[v] \gets false$
         \EndFor
-        \State $queue.push(0)$
-        \State $visited[0] \gets true$
         
         \Statex
-        \While{$queue\ is\ \textbf{not\ empty}$} \Comment{BFS}
+        \State $queue \gets \{\}$ \Comment{Empty queue for BFS}
+        \State $queue.push(1)$ \Comment{One based indexing}
+        \State $visited[1] \gets true$
+        
+        \Statex
+        
+        \While{$queue\ is\ \textbf{not\ empty,}$}
             \State $current \gets queue.front$
             \State $queue.pop$
-            \For{each vertex $v$ adjacent to $current$} \Comment{Where $v$ is the vertex's index}
+            \For{each vertex $v$ adjacent to $current$} 
                 \If{$\textbf{not}\ visited[v]$}
-                    \State $queue.push(v)$
-                    \State $color[v] \gets color[current] \oplus 1$ \Comment{Assign $v$ in a different set}
+                    \State $q.push(v)$ 
+                    \State $color[v] \gets color[current] \oplus 1$ \Comment{This trick inverts the color}
                     \State $visited[v] \gets true$
                 \Else
-                    \If{$color[v]=color[current]$}
-                        \State \Return $false$
+                    \If{$color[v]==color[current]$} \Comment{Violation}
+                        \State \Return $false$ 
                     \EndIf
                 \EndIf
             \EndFor
         \EndWhile
-        \Statex
+        
+        \Statex 
+        
         \State \Return $true$
     \EndFunction
   \end{algorithmic}
