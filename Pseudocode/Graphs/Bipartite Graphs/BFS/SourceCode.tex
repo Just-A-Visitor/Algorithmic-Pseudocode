@@ -1,0 +1,74 @@
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Check if a connected graph is bipartite using BFS}
+  
+  \algorithmicrequire \ A connected graph with V vertices\\
+  \algorithmicensure \ $true$ if the graph is bipartite, $false$ otherwise
+  
+  \begin{algorithmic}[1]
+    
+    \Statex
+    
+    \Function{$isBipartite$}{Vertex Set, Adjacency List}
+    
+        
+        \For {each vertex $v \in V$ } \Comment{$V$ is the Vertex Set}
+            \State $color[v] \gets 0$
+            \State $visited[v] \gets false$
+        \EndFor
+        
+        \Statex
+        \State $queue \gets \{\}$ \Comment{Empty queue for BFS}
+        \State $queue.push(1)$ \Comment{One based indexing}
+        \State $visited[1] \gets true$
+        
+        \Statex
+        
+        \While{$queue\ is\ \textbf{not\ empty,}$}
+            \State $current \gets queue.front$
+            \State $queue.pop$
+            \For{each vertex $v$ adjacent to $current$} 
+                \If{$\textbf{not}\ visited[v]$}
+                    \State $q.push(v)$ 
+                    \State $color[v] \gets color[current] \oplus 1$ \Comment{This trick inverts the color}
+                    \State $visited[v] \gets true$
+                \Else
+                    \If{$color[v]==color[current]$} \Comment{Violation}
+                        \State \Return $false$ 
+                    \EndIf
+                \EndIf
+            \EndFor
+        \EndWhile
+        
+        \Statex 
+        
+        \State \Return $true$
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+
+\end{document}
