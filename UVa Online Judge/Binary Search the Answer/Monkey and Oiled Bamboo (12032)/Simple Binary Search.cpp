@@ -2,22 +2,22 @@
 using namespace std;
 
 /* Assumes that the sentinel is appended at the front */
-bool possible(vector<int> &a, int k)
+bool possible(vector<int> &a, int max_jump_length)
 {
 	int n = a.size();
 
 	for(int i = 1; i < n; i++)
 	{
-		if(k <= 0)
+		if(max_jump_length <= 0)
 			return false;
 
 		int jump = a[i] - a[i-1];
 
-		if(jump > k)
+		if(jump > max_jump_length)
 			return false;
 
-		if(jump == k)
-			k--;
+		if(jump == max_jump_length)
+			max_jump_length--;
 	}
 
 	return true;
