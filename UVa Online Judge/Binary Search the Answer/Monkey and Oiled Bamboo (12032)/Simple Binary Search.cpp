@@ -40,7 +40,6 @@ int solve(vector<int> &a)
 
 	assert(possible(a, low));
 
-
 	return low;
 }
 
@@ -59,6 +58,8 @@ int main()
 			cin >> ele;
 		
 		int sentinel = 0;
+		
+		// Technique to insert an element at the front
 		a.insert(a.begin(), sentinel);
 
 		cout << "Case " << i << ": "  << solve(a) << endl;
