@@ -18,7 +18,7 @@ int solve(vector<vector<int>> &mat)
 	int dx[] = {0, 0, 1, -1};
 	int dy[] = {1, -1, 0, 0};
 
-	queue<pair<int, int>> bfs;
+	queue< pair<int, int> > bfs;
 	
 	for(int i = 0; i < R; i++)
 	{
