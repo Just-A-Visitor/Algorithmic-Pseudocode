@@ -19,7 +19,7 @@ public:
 public:
 	Graph(int vertex);
 	void addEdge(int u, int v);
-	void  dfs(int source);
+	void dfs(int source);
 	void dfs_wrapper();
 	vector<int> topologicalSort();
 };
@@ -38,8 +38,8 @@ void Graph :: addEdge(int u, int v)
 
 void Graph :: dfs(int source)
 {
-    color[source] = gray;
-    
+	color[source] = gray;
+	
 	for(auto ele : adj[source])
 	{
 		if(color[ele] == white)
@@ -48,8 +48,8 @@ void Graph :: dfs(int source)
 		}
 		else 
 		{
-		    if(color[ele] == gray)
-		        cyclePresent = true;
+			if(color[ele] == gray)
+				cyclePresent = true;
 		}
 	}
 	
@@ -78,7 +78,7 @@ vector<int> Graph :: topologicalSort()
 	for(int u = 0; u < vertex; u++)
 		if(inDegree[u] == 0)
 			myQueue.push(u);
-    
+	
 	while(!myQueue.empty())
 	{
 		int current = myQueue.front();
@@ -100,42 +100,42 @@ vector<int> Graph :: topologicalSort()
 
 void pickup_sticks(int vertex, int edges)
 {
-    Graph graph(vertex);
-    for(int i = 0; i < edges; i++)
-    {
-        int u, v;
-        cin >> u >> v;
-        u--; v--;
-        
-        graph.addEdge(u,v);
-    }
-    
-    graph.dfs_wrapper();
-    
-    if(graph.cyclePresent)
-    {
-        cout << "IMPOSSIBLE" << endl;
-        return;
-    }
-    
-    vector<int> result = graph.topologicalSort();
-    for(auto node : result)
-    {
-        node++;
-        cout << node << endl;
-    }
+	Graph graph(vertex);
+	for(int i = 0; i < edges; i++)
+	{
+		int u, v;
+		cin >> u >> v;
+		u--; v--;
+		
+		graph.addEdge(u,v);
+	}
+	
+	graph.dfs_wrapper();
+	
+	if(graph.cyclePresent)
+	{
+		cout << "IMPOSSIBLE" << endl;
+		return;
+	}
+	
+	vector<int> result = graph.topologicalSort();
+	for(auto node : result)
+	{
+		node++;
+		cout << node << endl;
+	}
 }
 
 int main()
 {
-    int vertex, edges;
-    
-    cin >> vertex >> edges;
-    
-    while(vertex > 0 and edges > 0)
-    {
-        pickup_sticks(vertex, edges);
-        cin >> vertex >> edges;
-    }
-    return 0;
+	int vertex, edges;
+	
+	cin >> vertex >> edges;
+	
+	while(vertex > 0 and edges > 0)
+	{
+		pickup_sticks(vertex, edges);
+		cin >> vertex >> edges;
+	}
+	return 0;
 }
