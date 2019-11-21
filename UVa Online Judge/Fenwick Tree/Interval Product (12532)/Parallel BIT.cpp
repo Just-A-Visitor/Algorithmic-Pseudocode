@@ -54,7 +54,7 @@ string solve(int n)
 	// One based indexing
 	vector<int> a(n + 1);
 	FenwickTree ft_pos(n);
-	FenwickTree ft_neg(n)
+	FenwickTree ft_neg(n);
 	
 	for(int i = 1; i < a.size(); i++)
 	{
