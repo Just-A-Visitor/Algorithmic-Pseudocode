@@ -46,8 +46,7 @@ void FenwickTree :: adjust(int ind, int to_add)
 		ft[ind] += to_add;
 }
 
-void update(FenwickTree &ft_pos, FenwickTree &ft_neg, 
-			vector<int> &a, int ind, int newVal)
+void update(FenwickTree &ft_pos, FenwickTree &ft_neg, vector<int> &a, int ind, int newVal)
 {
 	if(newVal > 0)
 	{
