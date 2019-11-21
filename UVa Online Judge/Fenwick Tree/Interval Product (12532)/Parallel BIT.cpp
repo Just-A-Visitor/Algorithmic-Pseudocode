@@ -56,7 +56,7 @@ string solve(int n)
 	FenwickTree ft_pos(n);
 	FenwickTree ft_neg(n);
 	
-	for(int i = 1; i < a.size(); i++)
+	for(int i = 1; i <= n; i++)
 	{
 		cin >> a[i];
 		
