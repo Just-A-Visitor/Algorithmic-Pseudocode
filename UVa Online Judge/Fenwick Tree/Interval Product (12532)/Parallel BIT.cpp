@@ -67,8 +67,6 @@ string solve(int n)
 			ft_neg.adjust(i, 1);
 	}
 	
-	//for(auto &ele )
-
 	string res = "";
 	for(int i = 0; i < queries; i++)
 	{
