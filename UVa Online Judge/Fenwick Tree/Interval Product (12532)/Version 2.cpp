@@ -133,9 +133,9 @@ string solve(int n)
 			
 			if(pos + neg != interval_len)
 				res += '0';
-			else  if(neg % 2 == 0)
+			else if(neg % 2 == 0)
 				res += '+';
-			else
+			else if(neg %2 != 0)
 				res += '-';
 
 		}
