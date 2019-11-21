@@ -55,7 +55,7 @@ void solve(int n)
 	for(int i = 1; i <= n; i++)
 	{
 		cin >> a[i];
-		ft.adjust(i, a[i]);
+		ft.adjust(i, a[i] - 0);
 	}
 
 	cin.ignore();
