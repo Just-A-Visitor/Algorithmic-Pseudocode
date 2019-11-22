@@ -38,7 +38,7 @@ void FenwickTree :: adjust(int ind, int to_add)
 
 void FenwickTree :: updateRange(int left, int right, int to_add)
 {
-	// Note :: The Bound of access would be taken care by adjust
+	// Note :: The Out of Bound access would be taken care by adjust
 	adjust(left, to_add);
 	adjust(right + 1, -1*to_add);
 }
