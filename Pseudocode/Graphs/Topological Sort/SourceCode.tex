@@ -49,6 +49,13 @@
             \EndFor
         \EndFor
         
+        \ForAll{$node\ n\ in\ the\ graph\ $}
+            \If{$inDegree[n]\ == 0$}
+                \State $ add\ n\ to\ S $
+                \EndIf
+        \EndFor
+        
+        
         \While {$ S\ is\ non\ empty\  $}
             \State $remove\ a\ node\ n\ from\ S\ $
             \State $add\ n\ to\ tail\ of\ L\ $
