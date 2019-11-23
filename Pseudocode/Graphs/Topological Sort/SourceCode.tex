@@ -42,12 +42,19 @@
     \Statex
         \State $L \gets Empty\ list\ that\ will\ contain\ the\ sorted\ elements $
         \State $S \gets Set\ of\ all\ nodes\ with\ no\ incoming\ edge\ $
+        \State $inDegree \gets Vector\ where\ inDegree[n]\ is\ the\ number\ of\ incoming\ edge\ of\ the\ node\ n$
+        \ForAll{$node\ n\ in\ the\ graph\ $}
+            \ForAll{$node\ m\ with\ an\ edge\ e\ from\ n\ to\ m$}
+                \State $inDegree[m]++\  (number\ of\ incoming\ edges\ of\ the\ node\ m) $
+            \EndFor
+        \EndFor
+        
         \While {$ S\ is\ non\ empty\  $}
             \State $remove\ a\ node\ n\ from\ S\ $
             \State $add\ n\ to\ tail\ of\ L\ $
             \ForAll{$node\ m\ with\ an\ edge\ e\ from\ n\ to\ m $}
-                \State $remove\ edge\ e\ from\ the\ graph$
-                \If{$ m\ has\ no\ other\ incoming\ edges$}
+                 \State $inDegree[m]--\  (number\ of\ incoming\ edges\ of\ the\ node\ m) $
+                \If{$ m\ has\ no\ other\ incoming\ edges\ (inDegree\ ==\ 0)$}
                     \State $insert\ m\ into\ S$
                 \EndIf
             \EndFor
@@ -64,38 +71,38 @@
 Example:
 \begin{figure}[H]
 \centering
-\includegraphics[width=100mm]{khanAlgoStep1.png}
+\includegraphics[width=100mm]{KahnAlgoStep1.png}
 \caption{init state}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=100mm]{khanAlgoStep2.png}
+\includegraphics[width=100mm]{KahnAlgoStep2.png}
 \caption{state 1}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=100mm]{khanAlgoStep3.png}
+\includegraphics[width=100mm]{KahnAlgoStep3.png}
 \caption{state 2}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=100mm]{khanAlgoStep4.png}
+\includegraphics[width=100mm]{KahnAlgoStep4.png}
 \caption{state 3}
 \end{figure}
     
     
     \begin{figure}[H]
 \centering
-\includegraphics[width=100mm]{khanAlgoStep5.png}
+\includegraphics[width=100mm]{KahnAlgoStep5.png}
 \caption{state 4 }
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=100mm]{khanAlgoStep6.png}
+\includegraphics[width=100mm]{KahnAlgoStep6.png}
 \caption{state 5}
 \end{figure}
     
