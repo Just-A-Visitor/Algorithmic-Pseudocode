@@ -15,6 +15,7 @@
 \algtext*{EndIf}
 \algtext*{EndFor}
 \algtext*{EndWhile}
+\algtext*{EndProcedure}
 
 % Define Left Justified Comments
 \algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
@@ -36,46 +37,50 @@
 
 \begin{algorithm}
 
-  \caption{Topological sort using Kahn's algorithm  \cite{1}}
+  \caption{Topological sort using Kahn's algorithm  [1]}
   
   \begin{algorithmic}[1]
     \Statex
-        \State $L \gets Empty\ list\ that\ will\ contain\ the\ sorted\ elements $
-        \State $S \gets Set\ of\ all\ nodes\ with\ no\ incoming\ edge\ $
-        \State $inDegree \gets Vector\ where\ inDegree[n]\ is\ the\ number\ of\ incoming\ edge\ of\ the\ node\ n$
+    \Procedure{Topological Sort}{$ $}
+        \State $Sorted \gets Empty\ list\ that\ will\ contain\ the\ sorted\ elements $
+        \State $Queue \gets Queue\ of\ all\ nodes\ with\ no\ incoming\ edge\ $
+        \State $InDegree \gets InDegree[n]\ =\  incoming\ edges\ of\ the\ node\ n$
+        \Statex
         \ForAll{$node\ n\ in\ the\ graph\ $}
             \ForAll{$node\ m\ with\ an\ edge\ e\ from\ n\ to\ m$}
-                \State $inDegree[m]++\  (number\ of\ incoming\ edges\ of\ the\ node\ m) $
+                \State $InDegree[m]=\ InDegree[m]+1\ $  \Comment{number\ of\ incoming\ edges\ of\ the\ node\ m}
             \EndFor
         \EndFor
-        
+        \Statex
         \ForAll{$node\ n\ in\ the\ graph\ $}
-            \If{$inDegree[n]\ == 0$}
-                \State $ add\ n\ to\ S $
+            \If{$InDegree[n]\ is\ 0$}
+                \State $ add\ n\ to\ Queue  $
                 \EndIf
         \EndFor
+        \Statex
         
-        
-        \While {$ S\ is\ non\ empty\  $}
-            \State $remove\ a\ node\ n\ from\ S\ $
-            \State $add\ n\ to\ tail\ of\ L\ $
+        \While {$ Queue\ is\ non\ empty\  $}
+            \State $remove\ a\ node\ n\ from\ Queue \ $
+            \State $add\ n\ to\ tail\ of\ Sorted\ $
             \ForAll{$node\ m\ with\ an\ edge\ e\ from\ n\ to\ m $}
-                 \State $inDegree[m]--\  (number\ of\ incoming\ edges\ of\ the\ node\ m) $
-                \If{$ m\ has\ no\ other\ incoming\ edges\ (inDegree\ ==\ 0)$}
-                    \State $insert\ m\ into\ S$
+                 \State $InDegree[m]=\ InDegree[m]-1\ $
+                \If{$InDegree[m]\ is\ 0  $} \Comment{m\ has\ no\ other\ incoming\ edges}
+                    \State $insert\ m\ into\ Queue $
                 \EndIf
             \EndFor
         \EndWhile
+        \Statex
         \If{$ grap\ has\ no\ edges$}
-            \State $return\ error\  \ \ \ (graph\ has\ at\ least\ one\ cycle)$
+            \State $return\ error\ $ \Comment{graph\ has\ at\ least\ one\ cycle}
         \Else
-        \State $return\ L\  \ \ \ (a\ topologically\ sorted\ order)$
+        \State $return\ Sorted\ $ \Comment{a\ topologically\ sorted\ order}
         \EndIf
+     \EndProcedure
   \end{algorithmic}
  
 \end{algorithm}
 
-Example:
+Example ( Where S = Queue and L = sorted):
 \begin{figure}[H]
 \centering
 \includegraphics[width=100mm]{KahnAlgoStep1.png}
