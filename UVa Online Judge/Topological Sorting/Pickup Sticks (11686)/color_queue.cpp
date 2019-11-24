@@ -69,29 +69,29 @@ vector<int> Graph :: topologicalSort()
 	vector<int> inDegree(vertex,0);
 
 	for(auto &row_vec : adj)
-		for(auto &ele : row_vec)
-			inDegree[ele]++;
+		for(auto &child : row_vec)
+			inDegree[child]++;
 			
 	vector<int> topologicalVec;
 	queue<int> myQueue;
 	
-	for(int u = 0; u < vertex; u++)
-		if(inDegree[u] == 0)
-			myQueue.push(u);
+	for(int node = 0; node < vertex; node++)
+		if(inDegree[node] == 0)
+			myQueue.push(node);
 	
-	while(!myQueue.empty())
+	while(not myQueue.empty())
 	{
 		int current = myQueue.front();
 		myQueue.pop();
 
 		topologicalVec.push_back(current);
 
-		for(auto neighbour : adj[current])
+		for(auto child : adj[current])
 		{
-			inDegree[neighbour]--;
+			inDegree[child]--;
 
-			if(inDegree[neighbour] == 0)
-				myQueue.push(neighbour);
+			if(inDegree[child] == 0)
+				myQueue.push(child);
 		}
 	}
 
