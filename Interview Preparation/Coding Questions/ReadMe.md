@@ -52,3 +52,7 @@ Here is the list of questions that I've solved/intend to solve
 * - [x] **Word Ladder I**    
 * - [x] **WildCard Pattern Matching**    
 * - [x] **Jump Game II**
+
+
+# Phase 3
+* Solve DP questions from **HackerRank** / **Atcoder**.
