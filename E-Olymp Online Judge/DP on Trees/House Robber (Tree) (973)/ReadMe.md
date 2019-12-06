@@ -5,3 +5,7 @@
 * Naturallly, `dp_subtree[i] = max(dp_include[i], dp_exclude[i])`. So, when we decide to leave the `i-th` vertex, we can just accumulate the profit of all the subtrees rooted at the children via this array. 
 * Of course, we could have done this without creating an array. However, I wanted to keep things self-explanatory for the first time.
 * Looking on the bright side, I did clear all the test cases on the first submission.
+
+
+### Credits
+* [Codeforces Blog](https://codeforces.com/blog/entry/20935)
