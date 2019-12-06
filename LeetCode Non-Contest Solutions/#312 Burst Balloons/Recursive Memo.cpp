@@ -7,6 +7,7 @@ public:
 	int maxCoins(vector<int> &a);
 };
 
+/* Max Coins that you can collect in the range (low, high) (Both exclusive) */
 int Solution :: collect(vector<int> &a, int low, int high)
 {
 	int len = high - low + 1;
