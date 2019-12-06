@@ -33,7 +33,7 @@ void Tree :: addEdge(int u, int v)
 }
 
 /* dp_include[i] represents the maximum coins in the i-th subtree when you necessarily include the i-th vertex
- * dp_exclude[i] represents the maximum coins in the i-th  subtree when you necessarily exlcude the i-th vertex
+ * dp_exclude[i] represents the maximum coins in the i-th subtree when you necessarily exlcude the i-th vertex
  * dp_subtree[i] represents the maximum coins in the subtree with the i-th vertex as root (covers all cases)
  */
 
