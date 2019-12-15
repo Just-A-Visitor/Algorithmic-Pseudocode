@@ -1,0 +1,71 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the maximum amount of money that can be collected by bursting balloons}
+\begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
+    \Statex
+ 
+     
+    \Function{$Collect$}{$arr,low,high$}
+    \State $len \gets high-low+1$
+  \If{$len<=2$}
+    
+ 	 	\Return $0$
+   \EndIf
+   \If{$arr[low][high]!=-1$} \Comment denotes the profit by collecting in the range [low,high]
+  
+  \Return     $arr[low][high]$
+  \EndIf
+    \State $max\_profit \gets 0$
+    \For {$k=low+1;k<high;k++$} \Comment find max coins
+    \Statex
+            \State $collect\_ left \gets collect(arr,low,k)$
+            \State $collect\_ right\gets collect(arr,k,high)$
+            \State $collect\_ now \gets arr[low]*arr[k]*arr[high]$   
+            \State $profit\_ now \gets collect\_ left+collect\_ right+collect\_ now$
+            \State $max \_ profit \gets max(max\_ profit,profit\_ now)$
+    \EndFor
+    \State $arr[low][high] \gets max\_profit$ 
+    \Statex
+    \Return $max\_profit$
+   \EndFunction
+   \Statex
+   \Statex
+    \Function{$Max\_Coins$}{$arr$}
+    
+        \State $sentinel \gets 1$
+        \State $arr.push\_back(sentinel)$		\Comment add 2 elements at top and bottom of the array
+       \State $arr.push\_front(sentinel)$
+  		\State $n \gets arrSize$                 \Comment Resize the array
+    \State $n \gets n-1$                         
+    \Statex
+    
+    \Return collect(arr, 0, n - 1)
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+
+\end{document}
