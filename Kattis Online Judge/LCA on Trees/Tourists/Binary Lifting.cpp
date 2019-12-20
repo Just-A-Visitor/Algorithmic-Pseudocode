@@ -19,10 +19,10 @@ public:
 	
 	void addEdge(int u, int v);
 	void level_order_traversal();
-	int LCA(int u, int v);
-	int shortest_path(int u, int v);
 	void binary_lifting();
 	int walk(int source, int k);
+	int LCA(int u, int v);
+	int shortest_path(int u, int v);
 };
 
 void Tree :: addEdge(int u, int v)
