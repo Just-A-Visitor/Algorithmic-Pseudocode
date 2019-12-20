@@ -81,7 +81,7 @@ int Tree :: LCA(int u, int v)
 /* Returns the number of edges in the shortest path from 'u' to 'v' */
 int Tree ::  shortest_path(int u, int v)
 {
-	return depth[u] + depth[v] - 2*LCA(u,v);
+	return depth[u] + depth[v] - 2*depth[LCA(u,v)];
 }
 
 void solve()
