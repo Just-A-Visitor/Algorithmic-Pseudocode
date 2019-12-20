@@ -127,10 +127,10 @@ int Tree :: LCA(int u, int v)
 	if(depth[u] < depth[v])
 		swap(u,v);
 
-	// The first node is the deeper one
+	// The first node is the deeper one. Bring them on the same level
 	u = walk(u, depth[u] - depth[v]);
 	
-	// This has to be handled explicitly. Think why?
+	// This has to be handled explicitly. Think why? (We have to be one shy)
 	if(u == v)
 		return u;
 	
