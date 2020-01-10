@@ -58,3 +58,4 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Cherry Pickup**
 * - [ ] **Interleaving Strings**
 * - [ ] **Vertex Cover on Trees**
+* - [ ] **Suffix Array**
