@@ -1,0 +1,95 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFor}
+\algtext*{EndWhile}
+
+% Define the command for a boldface 'is' 'to' 'downto'
+\newcommand{\In}{\textbf{ in }}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Find the maximum amount of money that can be collected by bursting balloons}
+\begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
+    \Statex
+ 
+    \Function{$Collect$}{$arr,\ low,\ high$}
+       
+       \State $len \gets high-low+1$
+       
+       \If{$len \leq 2$}	 
+ 	 	  \State \Return $0$
+ 	   \EndIf
+       
+       \Statex
+   
+        \If{$memo[low][high] \neq -1$} \Comment denotes the profit by collecting in the range [low,high]
+            \State  \Return $memo[low][high]$
+        \EndIf
+        
+        \Statex
+        
+        \State $max\_profit \gets 0$
+        \For {$k \In [low + 1, high - 1]$} \Comment find max coins
+            \State $collect\_ left \gets collect(arr, \ low, \ k)$
+            \State $collect\_ right\gets collect(arr, \ k, \ high)$
+            \State $collect\_ now \gets arr[low]*arr[k]*arr[high]$   
+            \State $profit\_ now \gets collect\_ left+collect\_ right+collect\_ now$
+            \State $max \_ profit \gets max(max\_ profit,profit\_ now)$
+        \EndFor
+        
+        \Statex
+        \State $memo[low][high] \gets max\_profit$  \Comment Save the results for later use
+        \State \Return $max\_profit$
+   \EndFunction
+   
+   \Statex
+   \Statex
+   
+    \Function{$Max\_Coins$}{$arr$}
+        \State $sentinel \gets 1$
+        \State $arr.push\_back(sentinel)$		\Comment add 2 elements at top and bottom of the array
+        \State $arr.push\_front(sentinel)$                
+        \State $n \gets arr.length$                \Comment find the new length    
+        \State $memo[i][j] \gets -1 \hfill \forall i \hfill \forall j$                    
+        \State \Return collect(arr,1,n)             \Comment 1 based indexing
+    \EndFunction
+    
+    
+    \section*{Walkthrough}
+\begin{enumerate}
+
+    \item $memo[low][high]$ represents the maximum amount that you can collect after bursting \textbf{all} the balloons between $low$ and $high$ \textbf{excluding} both the end points.
+    \item The paramter $k$ in the pseudocode represents the last balloon to be busted in the range $(low, high)$. We vary this choice of $k$ over all the balloons in the interval.
+    
+    \item Since we need to burst the entire array, therefore, we append 2 \textbf{fake} boundaries on either side to comply with our memo definition. Naturally, the answer is $memo[1][arr.len]$ (as we need to exclude these fake boundaries).
+\end{enumerate}
+
+
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
