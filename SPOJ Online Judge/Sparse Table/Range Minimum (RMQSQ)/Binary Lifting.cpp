@@ -30,7 +30,7 @@ void RMQ :: build_lookup_table()
 	// We want to access jump[][maxPower]
 	jump.resize(n, vector<int> (maxPower + 1, inf));
 
-	/* jump[ind][power] represents the minimum number in the range (ind, ind + 2^power) */
+	/* jump[ind][power] represents the minimum number in the range [ind, ind + 2^power] */
 	/* Transitions : From ind, jump to 'ind + 2^(power-1)' , and then jump to 'ind + 2^power' */
 
 	// The first jump of step 1 will lead you to the next element 
