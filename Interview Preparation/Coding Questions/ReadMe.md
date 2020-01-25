@@ -60,3 +60,4 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Vertex Cover on Trees**
 * - [ ] **Suffix Array**
 * - [ ] **Maximum Matching(?)**
+* - [ ] **Bitwise OR of Subarrays**
