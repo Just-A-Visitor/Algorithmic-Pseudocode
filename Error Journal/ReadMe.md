@@ -30,3 +30,5 @@
 ## Sieve
 * Did you start the outer loop from 2 instead of 1?
 
+## Bitwise
+* Don't mixup `|`, `or`
