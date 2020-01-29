@@ -11,5 +11,7 @@
 
 * Notice that we can fill the DP table in a bottom up fashion, spending **O(32)** at each node. Finally, we can combine all the `dp[i]` sets into a single set and extract its size. The total complexity is **O(32N)**. **Brilliant**.
 
+* The time limit is too strict. Use `unordered_set` instead of `set`.
+
 ### Credits
 [Leetcode's Discuss](https://leetcode.com/problems/bitwise-ors-of-subarrays/discuss/165933/Python-Dynamic-programming-solution-with-indepth-explanation-of-intuition.) : An in depth explanation of the reasoning.
