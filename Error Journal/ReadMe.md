@@ -24,6 +24,11 @@
 * Getting a **TLE** while running BFS? Did you forget to pop the queue?
 
 
+## Trees
+* Did you forget to convert everything to zero based indexing?
+* *DP on Trees*? Did you forget the condition `parent == child`? (+2)
+
+
 ## DFS
 * Recursive call ? Did you call `source` again instead of `child`?
 
