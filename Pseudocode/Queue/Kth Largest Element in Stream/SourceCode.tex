@@ -1,0 +1,51 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Kth Largest Element in a Stream}
+  \begin{algorithmic}[1]
+    \Statex
+    \Function{Init\_Queue}{$array$, $k$}
+        \LeftComment $queue$ buffers k elements from the stream.
+        \LeftComment $queue$ is a priority queue: its elements are kept in ascending order.
+        \LeftComment $array$ must be at least $k-1$ elements long.
+        \Statex
+        \State $queue \gets$ Empty queue
+        \For{all elements in $array$}
+            \State $queue.push(element)$
+        \EndFor
+    \EndFunction
+
+    \Statex
+    \Statex
+    
+    \Function{Add\_New\_Value\_From\_Stream}{$val$}
+        \State $queue.push(val)$
+        \While{$queue.size > k$}
+            \State $queue.pop$
+        \EndWhile
+        \State \Return{$queue.front$}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
