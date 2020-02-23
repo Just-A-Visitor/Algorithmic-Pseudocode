@@ -22,30 +22,30 @@
 
   \caption{Kth Largest Element in a Stream}
   \begin{algorithmic}[1]
+    \LeftComment $max\_heap$ buffers k elements from the stream.
+    \LeftComment $max\_heap$ is a priority queue : The largest element is at the top
+    \LeftComment $array$ must be at least $k-1$ elements long.
     \Statex
-    \Function{Init\_Queue}{$array$, $k$}
-        \LeftComment $queue$ buffers k elements from the stream.
-        \LeftComment $queue$ is a priority queue: its elements are kept in ascending order.
-        \LeftComment $array$ must be at least $k-1$ elements long.
-        \Statex
-        \State $queue \gets$ Empty queue
-        \For{all elements in $array$}
-            \State $queue.push(element)$
+    \Function{Init\_Heap}{$array$, $k$}
+        \State $max\_heap \gets$ Empty max\_heap
+        \For{\textbf{each} element \textbf{in } $array$}
+            \State $max\_heap.push(element)$
         \EndFor
     \EndFunction
 
     \Statex
-    \Statex
     
     \Function{Add\_New\_Value\_From\_Stream}{$val$}
-        \State $queue.push(val)$
-        \While{$queue.size > k$}
-            \State $queue.pop$
+        \State $max\_heap.push(val)$
+        \While{$max\_heap.size > k$}
+            \State $max\_heap.pop$
         \EndWhile
-        \State \Return{$queue.front$}
+        \State \Return{$max\_heap.top$}
     \EndFunction
   \end{algorithmic}
   
 \end{algorithm}
 
+\noindent
+\textbf{Note} : The goal of the algorithm is to output the $Kth$ largest element as soon as we encounter a new element of the stream.
 \end{document}
