@@ -1,0 +1,51 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Kth Largest Element in a Stream}
+  \begin{algorithmic}[1]
+    \LeftComment $max\_heap$ buffers k elements from the stream.
+    \LeftComment $max\_heap$ is a priority queue : The largest element is at the top
+    \LeftComment $array$ must be at least $k-1$ elements long.
+    \Statex
+    \Function{Init\_Heap}{$array$, $k$}
+        \State $max\_heap \gets$ Empty max\_heap
+        \For{\textbf{each} element \textbf{in } $array$}
+            \State $max\_heap.push(element)$
+        \EndFor
+    \EndFunction
+
+    \Statex
+    
+    \Function{Add\_New\_Value\_From\_Stream}{$val$}
+        \State $max\_heap.push(val)$
+        \While{$max\_heap.size > k$}
+            \State $max\_heap.pop$
+        \EndWhile
+        \State \Return{$max\_heap.top$}
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\noindent
+\textbf{Note} : The goal of the algorithm is to output the $Kth$ largest element as soon as we encounter a new element of the stream.
+\end{document}
