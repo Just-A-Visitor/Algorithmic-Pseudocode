@@ -1,0 +1,69 @@
+\documentclass{article}
+% Set the Page Layout
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Not removing the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Removing 'end' command for some of the blocks
+\algtext*{EndIf}
+\algtext*{EndFunction}
+\algtext*{EndFor}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\And}{\textbf{ and }}
+
+\begin{document}
+
+\begin{algorithm}
+
+    \caption{Circular Tour of Petrol Pumps}
+    
+    
+    \begin{algorithmic}[1]
+    \Statex
+    \Function{Can\_Complete\_Circuit}{$gas,cost$}
+        \LeftComment $current\_gas$ contains the current gas quantity
+        \LeftComment $start$ is the start position
+        \LeftComment $total\_gas$ contains the total quantity of gas
+        
+        \Statex
+        \State $current\_gas \gets 0$
+        \State $start \gets 0$
+        \State $total\_gas \gets 0$
+        
+        \For{$j = 2 \To length(arr)$}
+            \State $dif \gets gas[j] - cost[j]$
+            \State $total\_gas \gets total\_gas + dif$
+            \State $current\_gas \gets current\_gas + dif$
+            
+            \If {$current\_gas < 0$}
+                \State $start \gets j + 1$
+                \State $current\_gas \gets 0$
+            
+            \EndIf
+        
+        \EndFor
+        
+        \If{$total\_gas \geq 0$}
+            \State \Return {$start$}
+        
+        \EndIf
+        
+        \State \Return{$-1$}
+    \EndFunction
+\end{algorithmic}
+\end{algorithm}
+\end{document}
