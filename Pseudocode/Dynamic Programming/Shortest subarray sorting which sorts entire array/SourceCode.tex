@@ -32,7 +32,7 @@
     \Ensure One Based Indexing for the array
     \Statex
     \Function{$Find\_Sub\_Array$}{$arr$}
-        \LeftComment{$min\_right[i]$ denotes the maximum element to the right of i, including i-th element}
+        \LeftComment{$min\_right[i]$ denotes the minimum element to the right of i, including i-th element}
         \LeftComment{$max\_left[i]$ denotes the maximum element to the left of i, including i-th element}
         \Statex
         
@@ -43,13 +43,13 @@
         
         \Statex
         \State $min\_right[n] \gets arr[n]$
-        \For{$ i = n$ \Downto $1$}
+        \For{$ i = n$ - 1 \Downto $1$}
             \State $min\_right[i] \gets min(arr[i], min\_right[i + 1])$
         \EndFor
         
         \Statex
         \State $max\_left[1] \gets arr[1]$
-        \For{$ i = 1 \To n$}
+        \For{$ i = 2 \To n$}
             \State $max\_left[i] \gets max(arr[i], max\_left[i - 1])$
         \EndFor
         
