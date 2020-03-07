@@ -1,0 +1,85 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface 'is' 'break' 'downto'  'to'
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\Break}{\textbf{Break}}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\To}{\textbf{ to }}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Function to find the shortest subarray sorting which sorts the entire array}
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
+    \Statex
+    \Function{$Find\_Sub\_Array$}{$arr$}
+        \LeftComment{$min\_right[i]$ denotes the minimum element to the right of i, including i-th element}
+        \LeftComment{$max\_left[i]$ denotes the maximum element to the left of i, including i-th element}
+        \Statex
+        
+        \State $n \gets arr.length$
+        \If{$n = 0$ \textbf{or} $n = 1$}
+            \State \Return{0}
+        \EndIf
+        
+        \Statex
+        \State $min\_right[n] \gets arr[n]$
+        \For{$ i = n$ - 1 \Downto $1$}
+            \State $min\_right[i] \gets min(arr[i], min\_right[i + 1])$
+        \EndFor
+        
+        \Statex
+        \State $max\_left[1] \gets arr[1]$
+        \For{$ i = 2 \To n$}
+            \State $max\_left[i] \gets max(arr[i], max\_left[i - 1])$
+        \EndFor
+        
+        \Statex
+        \State $left\_index \gets -1$
+        \For{$ i = 1 \To n$}
+            \If{$arr[i] \neq min\_right[i]$}
+                \State $left\_index \gets i$
+                \State{\Break} Loop
+            \EndIf
+        \EndFor
+        
+        \Statex
+        \State $right\_index \gets -1$
+        \For{$ i = n$ \Downto $1$}
+            \If{$arr[i] \neq max\_left[i]$}
+                \State $right\_index \gets i$
+                \State{\Break} Loop
+            \EndIf
+        \EndFor
+        
+        \Statex
+        \If{$left\_index \Is -1$ \textbf{or} $right\_index \Is -1$}
+            \State \Return{0}
+        \Else
+            \State \Return{($right\_index - left\_index$ + 1)}
+        \EndIf
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
