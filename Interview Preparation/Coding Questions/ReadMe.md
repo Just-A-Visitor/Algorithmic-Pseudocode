@@ -35,7 +35,6 @@ Here is the list of questions that I've solved/intend to solve
 
 
 
-
 # Phase 2 List
 * - [ ] **Print Nodes at distance k from a target node**   
 * - [ ] **Search in a 2D Sorted Array**    
@@ -45,9 +44,20 @@ Here is the list of questions that I've solved/intend to solve
 * - [ ] **Maximum Points using Two Traversals**    
 * - [ ] **Activity Selection Problem**    
 * - [ ] **Largest Square/Rectangle of Ones in a Matrix**   
-* - [ ] **Merge Overlapping Intervals**
-* - [ ] **Cherry Pickup**   
 * - [ ] **Special Binary Strings**
+* - [ ] **Accounts Merge**
 * - [x] **Word Ladder I**    
 * - [x] **WildCard Pattern Matching**    
 * - [x] **Jump Game II**
+
+
+# Phase 3
+* Solve DP questions from **HackerRank** / **Atcoder**.
+* - [ ] **Longest String Chain**
+* - [x] **LCA using Binary Lifting**
+* - [ ] **Cherry Pickup**
+* - [ ] **Interleaving Strings**
+* - [ ] **Vertex Cover on Trees**
+* - [ ] **Suffix Array**
+* - [ ] **Maximum Matching(?)**
+* - [ ] **Bitwise OR of Subarrays**
