@@ -9,7 +9,9 @@
 * [Analysis](https://leetcode.com/problems/reverse-linked-list/discuss/254618/C%2B%2BJavaScript-Detailed-Explanation-Recursive-and-Iterative)   
 
 </details>
-
+    
+    
+    
 
 <details>
 	<summary>Intersection of 2 Linked List</summary>
@@ -68,6 +70,7 @@
 
 </details>
 
+<br></br>
 
 ### Phase  : Trees
 
@@ -150,8 +153,11 @@
 * ?[Question Link]()
 * 
 
-</details>
 
+
+</details>   
+
+<br></br>
 
 ### Phase  : Stacks
 
@@ -238,6 +244,7 @@
 
 </details>
 
+<br></br>
 
 ### Phase  : Queue
 
@@ -282,6 +289,8 @@
 
 </details>
 
+<br></br>
+
 ### Phase  : Hashing
 
 <details>
@@ -291,6 +300,8 @@
 * [Analysis and Solution](https://www.geeksforgeeks.org/print-all-pairs-with-given-sum/)
 
 </details>
+
+<br></br>
 
 
 ### Phase  : Heaps
@@ -332,6 +343,7 @@
 
 </details>
 
+<br></br>
 
 
 ### Phase  : Greedy Algorithms
@@ -352,6 +364,8 @@
 * [Analysis and Solution](https://www.geeksforgeeks.org/activity-selection-problem-greedy-algo-1/)
 
 </details>
+
+<br></br>
 
 ### Phase  : 1D Dynamic Programming
 
@@ -412,6 +426,7 @@
 
 </details>
 
+<br></br>
 
 ### Phase  : 2D Dynamic Programming
 
@@ -495,6 +510,8 @@
 
 </details>
 
+<br></br>
+
 ### Phase  : Sliding Window
 
 <details>
@@ -546,6 +563,8 @@
 
 </details>
 
+<br></br>
+
 
 ### Phase  : Divide and Conquer
 
@@ -563,8 +582,11 @@
 
 * [Question Link](https://practice.geeksforgeeks.org/problems/inversion-of-array/0)
 * [Analysis and Solution](https://www.geeksforgeeks.org/counting-inversions/)
-* </details>
 
+</details>
+
+
+<br></br>
 
 ### Phase : Binary Search
 
@@ -578,6 +600,8 @@
 
 </details>
 
+
+<br></br>
 
 
 ### Phase : Matrix
@@ -597,6 +621,8 @@
 * [Analysis and Solution](https://www.geeksforgeeks.org/print-a-given-matrix-in-spiral-form/)
 
 </details>
+
+<br></br>
 
 # What Next?
 
