@@ -43,10 +43,11 @@
 <details>
 	<summary>Merge 2 Sorted Linked Lists</summary>
 
-* ?[Question Link]()   
+* [Question Link](https://practice.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1)  
 * Start out with the recursive approach and build the iterative approach on top of it.
 * A great use case of Recursion. The recursive code is very concise.
 * Recall that we discussed **Tail Recursion** in one of the lectures. Use the fact that the above recursive code is a Tail Recursion to easily convert it into an iterative procedure.
+* [Analysis and Solution](https://www.geeksforgeeks.org/merge-two-sorted-linked-lists/)
 
 </details>
 
@@ -54,8 +55,8 @@
 <details>
 	<summary>Find Middle Element of Linked List</summary>
 
-* ?[Question Link]()
-* 
+* [Question Link](https://practice.geeksforgeeks.org/problems/finding-middle-element-in-a-linked-list/1)
+* [Analysis and Solution](https://www.geeksforgeeks.org/write-a-c-function-to-print-the-middle-of-the-linked-list/)
 
 </details>
 
@@ -63,10 +64,21 @@
 <details>
 	<summary>Reorder a List in a Certain Fashion</summary>
 
-* ?[Question Link]()
-* 
+* [Question Link](https://practice.geeksforgeeks.org/problems/reorder-list/1)
+* An excellent question to test several concepts of Linked Lists. 
+* **Hint** :: Find the middle element, split the list, reverse the second half, and then perform alternate merging,
+* [Analysis and Solution](https://www.geeksforgeeks.org/rearrange-a-given-linked-list-in-place/)
 
 </details>
+
+<details>
+	<summary>Clone a List with Random Pointers (Advanced)</summary>
+
+* [Question Link](https://practice.geeksforgeeks.org/problems/binary-tree-to-dll/1)
+* [Analysis and Solution 1](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/258935/Detailed-Explanation-with-Pictures-C%2B%2BJavaScript)
+* [Analysis and Solution 2](https://leetcode.com/problems/copy-list-with-random-pointer/discuss/259563/Detailed-Explanation-Constant-Space-C%2B%2BJavaScript)  
+
+</details>   
 
 <br></br>
 
@@ -80,7 +92,13 @@
   * **Basic Level Order Traversal**
   * **Level Order Traversal in a Line by Line Fashion** (Using 2 Queues)
   * **Level Order Traversal in a Line by Line Fashion** (Using 1 Queue and 1 Marker)
-  * **Level Order Traversal in a Line by Line Fashion** (Using 1 Queue and No Marker)
+  * **Level Order Traversal in a Line by Line Fashion** (Using 1 Queue and No Marker
+
+* [Pseudocodes for all 4 Cases](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/tree/master/Pseudocode/Trees/Level%20Order%20Traversal)
+* [Question Link 1](https://practice.geeksforgeeks.org/problems/level-order-traversal/1)
+* [Analysis 1](https://www.geeksforgeeks.org/level-order-tree-traversal/)
+* [Question Link 2](https://practice.geeksforgeeks.org/problems/level-order-traversal-line-by-line/1)
+* [Analysis 2](https://www.geeksforgeeks.org/print-level-order-traversal-line-line/)
 
 </details>
 
@@ -96,14 +114,18 @@
   * [A Bit of Recursion +  A Bit of Iteration - All Trees](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/LeetCode%20Non-Contest%20Solutions/%23116%20Populating%20Next%20Pointers/Second%20Draft%20(All%20Trees)%20(Less%20Recursion).cpp)
   * [Iterative O(1) space for all Binary Trees](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/LeetCode%20Non-Contest%20Solutions/%23116%20Populating%20Next%20Pointers/O(1)%20Space%20Complexity%20(All%20Trees).cpp)
 
+* [Analysis](https://www.geeksforgeeks.org/connect-nodes-at-same-level/)
+
 </details>
 
 
 <details>
 	<summary>Left and Right View of a Tree</summary>
 
-* ?[Question Link]()   
-* 
+* [Question Link for Left View](https://practice.geeksforgeeks.org/problems/left-view-of-binary-tree/1)   
+* [Question Link for Right View](https://practice.geeksforgeeks.org/problems/right-view-of-binary-tree/1)
+* [Analysis for Left View](https://www.geeksforgeeks.org/print-left-view-binary-tree/)
+* [Analysis for Right View](https://www.geeksforgeeks.org/print-right-view-binary-tree-2/)
 
 </details>
 
@@ -111,8 +133,9 @@
 <details>
 	<summary>Vertical Order Traversal</summary>
 
-* ?[Question Link]()   
-* 
+* [Question Link](https://practice.geeksforgeeks.org/problems/print-a-binary-tree-in-vertical-order/1)   
+* [Pseudocode](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/Pseudocode/Trees/Vertical%20Order%20Traversal/Vertical%20Order%20Traversal.pdf)
+* [Analysis and Solution](https://www.geeksforgeeks.org/print-a-binary-tree-in-vertical-order-set-3-using-level-order-traversal/)
 
 </details>
 
@@ -120,9 +143,12 @@
 <details>
 	<summary>Top and Bottom View</summary>
 
-* ?[Question Link]()   
+* [Question Link for Top View](https://practice.geeksforgeeks.org/problems/top-view-of-binary-tree/1)
+* [Question Link for Bottom View](https://practice.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1)
 * It's trivial if you've already solved **Vertical Order Traversal**. 
 * **Hint** : During Vertical Order Traversal, the first element of each level would be visible in the Top View. (Similarly, the last element of each element would be visible in the bottom view).
+* [Analysis for Top View](https://www.geeksforgeeks.org/print-nodes-top-view-binary-tree/)
+* [Analysis for Bottom View](https://www.geeksforgeeks.org/bottom-view-binary-tree/)
 
 </details>
 
@@ -130,8 +156,10 @@
 <details>
 	<summary>Zig Zag Tree Traversal</summary>
 
-* ?[Question Link]()   
+* [Question Link](https://practice.geeksforgeeks.org/problems/zigzag-tree-traversal/1)   
 * A perfect application of Data Structures.
+* [Pseudocode](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/Pseudocode/Trees/Zig%20Zag%20Tree%20Traversal/Zig%20Zag%20Traversal.pdf)
+* [Analysis](https://www.geeksforgeeks.org/zigzag-tree-traversal/)
 
 </details>
 
@@ -139,8 +167,9 @@
 <details>
 	<summary>Diameter of Binary Tree</summary>
 
-* ?[Question Link]()
-* 
+* [Question Link](https://leetcode.com/problems/diameter-of-binary-tree/)
+* A different dimension of Recursion. Ensure that the time complexity is **O(n)**
+* [Analysis and Solution]
 
 </details>
 
@@ -148,10 +177,10 @@
 <details>
 	<summary>Binary Tree to Doubly Linked List</summary>
 
-* ?[Question Link]()
-* 
-
-
+* [Question Link](https://practice.geeksforgeeks.org/problems/binary-tree-to-dll/1)
+* A great use case of Recursion
+* [Solution](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/GeekForGeeks/Binary%20Tree%20to%20DLL/Modified%20InOrder.cpp)
+* [Analysis](https://www.geeksforgeeks.org/convert-given-binary-tree-doubly-linked-list-set-3/)
 
 </details>   
 
@@ -171,8 +200,6 @@
 
 <details>
     	<summary>Longest Valid Parentheses</summary>
-
-
 *  [Question Link](https://leetcode.com/problems/longest-valid-parentheses/)
 * The core concept is the same as **Valid Parentheses**
 * [DP Solution](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/LeetCode%20Non-Contest%20Solutions/%2332%20Longest%20Valid%20Parentheses/DP%20Approach.cpp) (Messy)
@@ -183,10 +210,6 @@
 
 <details>
 	<summary>Min Stack</summary>
-
-
-
-
 * [Question Link](https://leetcode.com/problems/min-stack/)
 * [Solution](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/LeetCode%20Non-Contest%20Solutions/%23155%20Stack%20to%20Implement%20getMin/Auxillary%20Stack.cpp)
 
@@ -583,7 +606,6 @@
 
 </details>
 
-
 <br></br>
 
 ### Phase : Binary Search
@@ -634,3 +656,4 @@
 * Cycle Detection in a Graph
 * Topological Sorting
 * Flood Fill Algorithm
+
