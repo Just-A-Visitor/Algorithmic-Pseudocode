@@ -1,3 +1,15 @@
+# Foreword
+* This list contains around 60 questions. Try to solve each question without looking at the solution. 
+* Every question is a collapsible link. Upon expanding it, you can find the link to the online judge where you can submit it. I've also included the links to the solution, editorial (and hints at times).
+* Try to solve each question using the paradigms of C++. It is but natural that you get stuck during the initial phase of problem solving. So, should you get stuck, don't hesitate to ask your doubts on Slack/Mail. In the meanwhile, move on to the next question. (The topics need not be attempted linearly).
+* To study DP, you can go through the DP chapter from CLRS.
+* However, a better alternative would be to lookup online videos for each problem. Some good channels are **BackToBackSWE**, **Tushar Roy** and **Abdul Bari**. 
+* Once you've solved a particular question, go through all the top voted solutions on **Leetcode's Discuss**. This is the most crucial part of problem solving. Not only should you know the solution, but also various approaches for the same problem.
+* If you feel confident enough, try participating in **Leetcode's Weekly and BiWeekly** Contests. This would give you a rough understanding of your current level of preparation.
+* If and when you manage to complete this list, let me know and I'll update the next set of questions.
+
+<br></br>
+
 ### Phase  : Linked List
 
 <details>
