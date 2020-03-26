@@ -9,9 +9,7 @@
 * [Analysis](https://leetcode.com/problems/reverse-linked-list/discuss/254618/C%2B%2BJavaScript-Detailed-Explanation-Recursive-and-Iterative)   
 
 </details>
-    
-    
-    
+
 
 <details>
 	<summary>Intersection of 2 Linked List</summary>
