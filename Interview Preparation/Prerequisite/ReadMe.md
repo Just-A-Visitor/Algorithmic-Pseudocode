@@ -23,7 +23,7 @@
 * [Analysis 1](https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!) (Tricky)   
 * [Analysis 2](https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49800/recommend-for-beginnersclean-C%2B%2B-implementation-with-detailed-explaination) (Detailed)   
 
-</details>     w
+</details> 
 
 
 <details>
