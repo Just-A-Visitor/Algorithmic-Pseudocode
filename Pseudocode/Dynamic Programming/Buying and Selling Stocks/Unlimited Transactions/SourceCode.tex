@@ -1,0 +1,66 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFor}
+\algtext*{EndWhile}
+
+% Define the command for a boldface 'is' 'to' 'downto'
+\newcommand{\In}{\textbf{ in }}
+
+\begin{document}
+
+\begin{algorithm}
+
+\caption{Find the maximum profit by buying and selling stocks}
+
+\begin{algorithmic}[1]
+    \Ensure One Based Indexing for the array
+    \Statex
+ 
+    \Function{$maxProfit$}{$arr$, $len$}
+       
+       \Statex
+       \State $profit$ = 0
+       
+      \For{$i=1$ \textbf{in} $len-1$}	 
+ 	 	  \If{$arr$[$i$] $<$ $arr$[$i+1$]}
+ 	 	    \State $profit$ += $arr$[$i+1$] - $arr$[$i$]
+ 	      \EndIf
+ 	  \EndFor
+      \State return $profit$
+
+      \Statex
+      \EndFunction
+       
+    \vskip 0.5in
+    \subsection*{Walkthrough}
+        \begin{enumerate}
+            \item The parameter $arr$[$i$] represents the array of all the stock prices from day one to day $len$.
+            \item The variable $profit$ is the profit, i.e. the sum of all \textbf{differences} of two bought and sold stocks.
+            
+            \item In order to maximize the profit, we iterate linearly through the stock $arr$ and always check, if the current index's stock is \textbf{cheaper}, than the succeeding index's stock. If so, this means that profit would be made, and the \textbf{difference} of the two prices is added to $profit$.
+     \end{enumerate}
+
+
+\end{algorithmic}
+\end{algorithm}
+\end{document}
