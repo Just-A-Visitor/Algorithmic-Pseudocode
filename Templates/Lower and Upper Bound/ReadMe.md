@@ -21,7 +21,7 @@ You might've already come across **Binary Search**, which gives you the index of
 	* Its behaviour is same, irrespective of the fact whether the key exists or not.
 	* If all the elements are smaller than or equal to the key, it gives you an iterator to the end of the container.
 
-That's all the theory that you need to fully understand `upper_bound` and `lower_bound`.
+That's all the theory that you need to know to fully understand `upper_bound` and `lower_bound`.
 
 <br></br>
 
