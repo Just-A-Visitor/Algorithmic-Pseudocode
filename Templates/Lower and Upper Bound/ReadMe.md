@@ -21,13 +21,13 @@ You might've already come across **Binary Search**, which gives you the index of
 	* Its behaviour is same, irrespective of the fact whether the key exists or not.
 	* If all the elements are smaller than or equal to the key, it gives you an iterator to the end of the container.
 
-That's all the theory that you need to fully understand `upper_bound` and `lower_bound`.
+That's all the theory that you need to know to fully understand `upper_bound` and `lower_bound`.
 
 <br></br>
 
 #### **Examples**
 
-Arr_Val = `[1, 3, 5, 5, 5, 7, 9, 9]`.
+Arr_Val = `[1, 3, 5, 5, 5, 7, 9, 9]`.   
 Arr_Ind = `[0, 1, 2, 3, 4, 5, 6, 7]`.
 
 * `lower_bound(5)` would give you an iterator pointing to index `2`. (with value 5)
