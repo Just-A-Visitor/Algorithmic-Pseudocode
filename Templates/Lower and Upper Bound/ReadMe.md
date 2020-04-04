@@ -27,7 +27,7 @@ That's all the theory that you need to know to fully understand `upper_bound` an
 
 #### **Examples**
 
-Arr_Val = `[1, 3, 5, 5, 5, 7, 9, 9]`.
+Arr_Val = `[1, 3, 5, 5, 5, 7, 9, 9]`.   
 Arr_Ind = `[0, 1, 2, 3, 4, 5, 6, 7]`.
 
 * `lower_bound(5)` would give you an iterator pointing to index `2`. (with value 5)
