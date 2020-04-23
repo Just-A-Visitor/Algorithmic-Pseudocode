@@ -187,7 +187,7 @@ Suppose, there are 2 persons `A` and `B`. Both the persons start from certain ce
 
 Let us define `dp[x][y][p][q]` as **The maximum amount of diamonds(combined) that can be collected by both persons along their path to `(1, 1)` when Person `A` starts at the cell `(x, y)` while Person `B` starts at the cell `(p, q)`.** (We assume that if both the people reach the exact same cell at any point, only one of them would collect the diamond in that cell). Of course, it might happen that you are not able to reach `(1,1)` from the given starting positions. In that case, we set `dp[x][y][p][q] = minus_infinity`. 
 
-Notice that our answer would be `dp[1][1][1][1]`. 
+Notice that our answer would be `dp[n][n][n][n]`. 
 
 The transitions are simple. At the next time step, both the persons have to take a step (either to the *left* or *up*). Observe that these are independent events.
 
