@@ -1,4 +1,4 @@
-Welcome to the end game of **Leetcode**! (Atleast that's what most people thik it to be!). Of course, I too had the same notion, but after solving it, it doesn't look that scary anymore. Let's jump directly to the solution.
+Welcome to the end game of **Leetcode**! (Atleast that's what most people think it to be!). Of course, I too had the same notion, but after solving it, it doesn't look that scary anymore. Let's jump directly to the solution.
 
 <details>
 	<summary>Switch to one-Based Indexing</summary>
