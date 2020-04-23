@@ -46,12 +46,14 @@ Total --> 13
 
 In the return trip, you have 2 options
 * Go left till column 1 and go up till row 1
-* Go up till row 1 and go left till column 1
+* Go up till row 1 and go left till column 1.
+
+
 As you can easily see, in both of these options, you can only collect a single cherry.
 
 Total -->  1
 
-So, you'll always end up leaving one cherry in the grid. However, if you play smart, you can collect all the cherries.
+So, you'll always end up leaving one cherry in the grid. However, if you play smart, you can collect all the cherries.   
 **Optimal Path**
 * **Trip 1** : Go right till column 4, go down till row 3, go right till column 7 and then go down till row 7.
 * **Trip 2** : Go left till  column 4, go up till row 4, go left till column 1 and then go up till row 1.
@@ -63,6 +65,9 @@ So, you'll always end up leaving one cherry in the grid. However, if you play sm
 ### Pre-Requisite : Creating Multidimensional vectors
 Say, we want to create a 4D vector of dimension `mat[n][n][n][n]`, initialized with default values `def_val`. Let us see the results for each smaller dimension first.
 
+<details>
+	<summary>Creating a 2D Vector</summary>
+	
 **Creating a 1D Vector**
 
 1) Concise Approach
@@ -75,7 +80,11 @@ vector<int> mat(n, def_val)
 ```
 
 </details>
+</details>
 
+<details>
+	<summary>Creating a 2D Vector</summary>
+	
 **Creating a 2D Vector**
 
 1) Naive Approach
@@ -102,7 +111,11 @@ vector<vector<int>> mat(n, vector<int>(n, def_val))
 
 </details>
 
+</details>
 
+<details>
+	<summary>Creating a 3D Vector</summary>
+	
 **Creating a 3D Vector**
 
 1) Naive Approach
@@ -126,6 +139,11 @@ for(auto &vec_2d: mat)
 ```
 </details>
 
+</details>
+
+<details>
+	<summary>Creating a 4D Vector</summary>
+	
 **Creating a 4D Vector**
 
 1) Naive Approach
@@ -151,6 +169,7 @@ for(auto &vec_3d: mat)
 	vec_3d.resize(n, vec_2d)
 ```
 
+</details>
 </details>
 </details>
 
