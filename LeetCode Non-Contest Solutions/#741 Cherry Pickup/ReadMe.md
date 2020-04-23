@@ -66,7 +66,7 @@ So, you'll always end up leaving one cherry in the grid. However, if you play sm
 Say, we want to create a 4D vector of dimension `mat[n][n][n][n]`, initialized with default values `def_val`. Let us see the results for each smaller dimension first.
 
 <details>
-	<summary>Creating a 2D Vector</summary>
+	<summary>Creating a 1D Vector</summary>
 	
 **Creating a 1D Vector**
 
@@ -441,3 +441,9 @@ int Solution :: cherryPickup(vector<vector<int>> &oldGrid)
 
 </details>
 </details>
+
+<details>
+	<summary>Credits</summary>
+
+### Credits
+[The Real MVP](https://leetcode.com/problems/cherry-pickup/discuss/165218/Java-O(N3)-DP-solution-w-specific-explanation)
