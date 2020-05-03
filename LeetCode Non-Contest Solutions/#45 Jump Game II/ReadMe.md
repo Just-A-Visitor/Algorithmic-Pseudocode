@@ -19,3 +19,6 @@
 # To Do
 * Optimize the bruteforce BFS (Done!) 
 * Try to do it in O(1) space.
+
+## Round 2
+Came back to this question after 7 months. Indeed, the `maxReach` is a bit risky for off-by one errors. Hence, I made the code more concise by using the variable `min_un_reach` which denotes the minimum element not yet reached. Now, the code is more compact.
