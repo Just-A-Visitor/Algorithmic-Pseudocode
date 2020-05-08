@@ -22,3 +22,18 @@
 * Does your code handle cycles in the graph?
 * Take care of cycles of length 2 (Non existent in undirected graphs).
 * Getting a **TLE** while running BFS? Did you forget to pop the queue?
+
+
+## Trees
+* Did you forget to convert everything to zero based indexing?
+* *DP on Trees*? Did you forget the condition `parent == child`? (+2)
+
+
+## DFS
+* Recursive call ? Did you call `source` again instead of `child`?
+
+## Sieve
+* Did you start the outer loop from 2 instead of 1?
+
+## Bitwise
+* Don't mixup `|`, `or`
