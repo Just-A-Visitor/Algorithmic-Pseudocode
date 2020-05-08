@@ -55,7 +55,7 @@ void RMQ :: build_lookup_table()
 	}
 }
 
-/* Assumes one based indexing */
+/* Assumes zero based indexing */
 int RMQ :: query(int low, int high)
 {
 	/** Caused me a WA. This is the number of jumps we have to take
