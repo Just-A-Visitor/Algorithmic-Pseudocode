@@ -2,7 +2,7 @@
   <img width="200" height="200" src="Images/Icon.png">
 </p>
 
-[![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://just-a-visitor.github.io/) [![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://mail.google.com/mail/?view=cm&fs=1&to=just1visitor@gmail.com&su=Query)
+[![Gitter](https://badges.gitter.im/algorithmic-pseudocode/community.svg)](https://gitter.im/algorithmic-pseudocode/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://just-a-visitor.github.io/) 
 
 **A strange game. The only winning move is not to play**.
 
