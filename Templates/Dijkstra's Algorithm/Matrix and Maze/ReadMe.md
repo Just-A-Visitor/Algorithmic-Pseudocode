@@ -43,7 +43,7 @@ To instantiate an object, just call `Triplet(dist,x_cord,y_cord)`
 How to replace the inbuilt comparators? Just include this in the class itself
 ```cpp
 {
-    bool operator <(const int &biggerNode) const
+    bool operator <(const Triplet &biggerNode) const
     {
                 return dist < biggerNode.dist;
     }
@@ -72,7 +72,7 @@ argument to **biggerNode**).
 Intially, my comparator looked like this
 ```cpp
 {
-    bool operator <(const int &biggerNode) const
+    bool operator <(const Triplet &biggerNode) const
     {
                 return dist < biggerNode.dist;
     }
@@ -88,7 +88,7 @@ fails? This was casuing unexpected error.
 **The Real Code**
 ```cpp
 {
-    bool operator <(const int &biggerNode) const
+    bool operator <(const Triplet &biggerNode) const
     {
         if(dist==biggerNode.dist)
             {
