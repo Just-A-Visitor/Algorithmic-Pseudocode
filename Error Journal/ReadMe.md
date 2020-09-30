@@ -7,6 +7,7 @@
 ## Class
 * Compilation error? Did you forget the semi colon?
 * Compilation error? Did you forget to make the functions/constructor public?
+* Compilation error? Did you forget to override a virtual function?
 * Compilation error? Did you forget to mention the scope of the methods?
 
 ## Strings
