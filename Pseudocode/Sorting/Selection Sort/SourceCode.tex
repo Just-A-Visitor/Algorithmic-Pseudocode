@@ -1,0 +1,56 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Don't Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFor}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface instructions
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Sort an array in non-descending order}
+  
+\begin{algorithmic}[1]
+	\Statex
+	\Function{SelectionSort}{$A$}
+	\For {$i=1,\dots,n-1$}
+		\State $m \gets i$
+		\For {$j=i+1,\dots,n$}
+			\If {$M[j]<M[m]$}
+			\State $m \gets j$
+			\EndIf
+		\EndFor
+		\State $swap(M[i],M[m])$ 	
+	\EndFor
+\EndFunction
+\end{algorithmic}
+
+\end{algorithm}
+  
+
+
+\end{document}
