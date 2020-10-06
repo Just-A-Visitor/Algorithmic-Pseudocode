@@ -1,0 +1,69 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Define the command for a boldface instructions
+\newcommand{\And}{\textbf{ and }}
+\newcommand{\To}{\textbf{ to }}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Heap sort}
+  \begin{algorithmic}[1]
+    \Ensure One Based Indexing
+    \LeftComment Array indeces start at 1 and end at $array.size$ inclusive
+    \Statex
+    \Function{Heapify\_Element}{$array$, $k$, $heap\_size$}
+        \State $max\_index \gets k$ 
+        \If{$2*k \leq heap\_size \And array[k] < array[2*k]$}
+            \State $max\_index \gets 2*k$ 
+        \EndIf
+        \If{$2*k+1 \leq heap\_size \And array[max\_index] < array[2*k+1]$}
+            \State $max\_index \gets 2*k+1$
+        \EndIf
+        \If{$max\_index \neq k$}
+            \State $array.swap(max\_index,k)$
+            \State \Call{Heapify\_Element}{$array$, $max\_index$, $heap\_size$}
+        \EndIf
+    \EndFunction
+
+    \Function{Build\_Heap}{$array$,$heap\_size$}
+        \State $length \gets heap\_size$
+        \For{$index = floor(length/2) \To 1$}
+            \State \Call{Heapify\_Element}{$array$, $index$, $heap\_size$}
+        \EndFor
+    \EndFunction
+
+    \Statex
+    
+    \Function{Heap\_Sort}{$array$}
+        \State \Call{Build\_Heap}{$array$}
+        \State $heap\_size \gets array.size$
+        \While{$heap\_size > 1$}
+            \State $array.swap(1,heap\_size)$
+            \State $heap\_size \gets heap\_size - 1$
+            \State \Call{Heapify\_Element}{$array$, $1$, $heap\_size$}
+        \EndWhile
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\noindent
+\end{document}
