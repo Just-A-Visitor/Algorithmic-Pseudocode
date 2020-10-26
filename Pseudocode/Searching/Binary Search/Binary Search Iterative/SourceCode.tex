@@ -1,0 +1,59 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Don't Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFor}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface instructions
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Searching an element in a sorted array} 
+\begin{algorithmic}[1]
+	\Statex
+	\Procedure{BinarySearch}{$A$, $l$, $r$, $x$}
+	\While{$l \leq r$}
+    	\State $m \gets (l + r) \, / \, 2$
+    	\If{$A[m] = x$}
+        	\State \Return $m$
+    	\EndIf 
+    	
+    	\If{$x < A[m]$}
+    	    \State $r = m - 1$
+    	\Else
+        	\State $l = m + 1$ 
+    	\EndIf
+	\EndWhile
+    \\
+    \State \Return $-1$
+\EndProcedure
+\end{algorithmic}
+
+\end{algorithm} 
+
+ 
+\end{document}
