@@ -47,7 +47,7 @@
 * [Slow and Fast Pointers Solution](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/LeetCode%20Non-Contest%20Solutions/%23141%20Loop%20Detection%20in%20Linked%20List/Walker%20%26%20Runner%20Approach.cpp)
 * Try to code the Hashing based approach by yourself. (It's very trivial)
 * There's a more elegant approach to this question (which destroys the original list). It uses the concept of iterative reversal of a linked list. Can you come up with that approach.
-* [Iterative Reversal Approrach](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/LeetCode%20Non-Contest%20Solutions/%23141%20Loop%20Detection%20in%20Linked%20List/Reversal%20Approach.cpp)
+* [Iterative Reversal Approach](https://github.com/Just-A-Visitor/Algorithmic-Pseudocode/blob/master/LeetCode%20Non-Contest%20Solutions/%23141%20Loop%20Detection%20in%20Linked%20List/Reversal%20Approach.cpp)
 
 </details>   
 

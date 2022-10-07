@@ -32,13 +32,13 @@ Read this section carefully if you are planning on contributing to this reposito
 
 * Your work might help other people preparing for interviews/competitive programming get acquainted with the core concepts of the algorithms rather than being confused by the clutter of the programming language.
 
-* Lastly, you'll get to learn **Latex** which is a great experience in itself. 
+* Lastly, you'll get to learn **LaTeX** which is a great experience in itself. 
 
 **The How**
 
-* If this is your first time contributing to a public repository, please refer to this [link](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/). For more clarity, you can refer to this [link](https://github.com/MarcDiethelm/contributing)
+* If this is your first time contributing to a public repository, please refer to this [link](https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/). For more clarity, you can refer to this [link](https://github.com/MarcDiethelm/contributing).
 
-* If you are not familiar with **TEX** or TypeSetting in general, please refer to this [link](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes). You don't need to install anything to contribute to this repository. Just make sure that you have an **Overleaf** account and you are good to go.
+* If you are not familiar with **TeX** or TypeSetting in general, please refer to this [link](https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes). You don't need to install anything to contribute to this repository. Just make sure that you have an **Overleaf** account and you are good to go.
 
 * Create an _issue_ if you've decided to work on an algorithm and get it approved before the coding phase. **Please do not start working on the issue before commenting on that particular thread.**
 
@@ -46,9 +46,9 @@ Read this section carefully if you are planning on contributing to this reposito
 
 * If you want to code a different implementation than what is already present (for example, _iterative_ instead of _recursive_, constant space instead of linear space, etc), please create a new sub-folder inside the root directory.
 
-* Don't include a lot of comments in the pseudocode (it just means that the code is not self-expressive). However, if the algorithm is highly non-trivial and you would like to include some explanation, please do so before or after the pseudocode. Refer to this [link](Pseudocode/Heaps/Median%20in%20a%20Stream%20of%20Integers/Min_Max%20Heaps.pdf) for example. 
+* Don't include a lot of comments in the pseudocode (it just means that the code is not self-expressive). However, if the algorithm is highly non-trivial and you would like to include some explanation, please do so before or after the pseudocode. Refer to this [link](Pseudocode/Heaps/Median%20in%20a%20Stream%20of%20Integers/Median%20in%20Stream.pdf) for example. 
 
-* Do **not** create a **ReadMe** file inside the newly created folder. If you want to submit the code with which you tested your pseudocode, you can add it in the **Validation Codes** folder following the same heirarchy.
+* Do **not** create a **ReadMe** file inside the newly created folder. If you want to submit the code with which you tested your pseudocode, you can add it in the **Validation Codes** folder following the same hierarchy.
 
 * If you borrow the code from any online/offline source, please remember to cite it.
 
