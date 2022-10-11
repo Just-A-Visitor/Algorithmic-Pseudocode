@@ -26,7 +26,7 @@ int Solution :: minSteps(vector<int>& source, vector<int>& target, int candidate
 /* Returns the min steps to equalize each element in any vector */
 int Solution :: minDominoRotations(vector<int>& a, vector<int>& b)
 {
-    // Get the size, Create the frequncy and candidate vector
+    // Get the size, Create the frequency and candidate vector
     int n = a.size();
     vector<int> freq(7,0);
     vector<int> candidate;
@@ -35,7 +35,7 @@ int Solution :: minDominoRotations(vector<int>& a, vector<int>& b)
     for(int i=0; i<n; i++)
         freq[a[i]]++, freq[b[i]]++;
     
-    // Fill the candidate vectpr
+    // Fill the candidate vector
     for(int i=1; i<=6; i++)
         if(freq[i]>=n) 
             candidate.push_back(i);
@@ -46,7 +46,7 @@ int Solution :: minDominoRotations(vector<int>& a, vector<int>& b)
     // Variable to store the min steps
     int minCount = INT_MAX;
     
-    // Try all the candidate elements (atmost 2)
+    // Try all the candidate elements (at most 2)
     for(int i=0; i<candidate.size(); i++)
     {
         // Try to fill the candidate in the top and bottom

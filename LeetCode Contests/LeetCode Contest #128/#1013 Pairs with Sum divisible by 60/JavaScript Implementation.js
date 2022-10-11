@@ -4,12 +4,12 @@ var numPairsDivisibleBy60 = function(time)
     // The reference for modular arithmetic
     const ref=60;
 	
-    // Initilize the map
+    // Initialize the map
     var count = [];
     for(let i=0; i<ref; i++)
         count.push(0);
     
-    // Populate the map in modular arithemtic
+    // Populate the map in modular arithmetic
     for(let i=0; i<time.length; i++)
         count[time[i]%ref]++;
 		

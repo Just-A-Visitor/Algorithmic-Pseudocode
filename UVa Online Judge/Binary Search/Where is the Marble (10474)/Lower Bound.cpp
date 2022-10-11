@@ -11,7 +11,7 @@ void solve(vector<int> &vec, vector<int> &queries)
 		
 		int index = itr - vec.begin();
 		
-		// ++index to accomodate 1 based indexing
+		// ++index to accommodate 1 based indexing
 		if(index < vec.size() and vec[index] == query)
 			cout << query << " found at " << ++index << endl;
 		else
