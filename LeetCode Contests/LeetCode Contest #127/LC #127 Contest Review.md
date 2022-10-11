@@ -21,4 +21,4 @@ any of the questions. I didn't even realize that the time complexity of the 4th 
 solutions received bad reviews too. I need to focus more on writing quality codes with optimal complexity along with a thorough explanation. This
 would benefit me more than anyone else, as it would be a great help during my revision. I was going through the solution of the top 10 people 
 in the contest and I was literally amazed by the elegance of their solution. Now I realize why are they able to complete the contest within 10
-to 15 minutes. **I have to see the codes of atleast top 10 people from the next contest**.
+to 15 minutes. **I have to see the codes of at least top 10 people from the next contest**.

@@ -9,7 +9,7 @@ Anyway, I was thinking of the *trie* based approach during the contest (by looki
 
 * Insertion in the trie is trivial, just follow the normal procedure for insertion, and in the end, increase the count of words ending at the last node by 1. 
 
-* For any puzzle, we willl traverse the tree and get the answer. Observe that we only need to go 7 levels deep. 
+* For any puzzle, we will traverse the tree and get the answer. Observe that we only need to go 7 levels deep. 
 
 * We explore all the 7 possibilities. As soon as we see the first element, we can keep incrementing the count from this node onwards. 
 
