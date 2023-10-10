@@ -1,0 +1,62 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Don't Remove the 'end' at the end of the algorithm
+\usepackage{algpseudocode}
+
+% Manually remove the 'end' for some sections
+\algtext*{EndIf}
+\algtext*{EndFor}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Define the command for a boldface instructions
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+
+% Use them inside Math-Mode (Hence the space!)
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Sort an array using Bucket Sort approach}
+  
+  \begin{algorithmic}[1]
+  	\Ensure That all elements with the same key value will be grouped together, and that the elements             within each group will be sorted in ascending order.
+
+    \Require A non empty array
+    \Statex
+    \LeftComment { Time complexity is $O(n)$ }
+    \Statex
+
+\Function{bucketSort}{$list, B$}
+\State buckets // new array of B empty lists
+\State A // the array's maximum key value
+\For {$i = 1 \To length( list )$}
+    \State Insert array[i] into buckets [ floor ( B * list[i] / A) ]
+\EndFor
+\For {$i \To B$} do
+    \State Sort buckets[i]
+\EndFor
+\Return buckets[1], buckets[2],...............buckets[B]
+\EndFunction
+    
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\end{document}
