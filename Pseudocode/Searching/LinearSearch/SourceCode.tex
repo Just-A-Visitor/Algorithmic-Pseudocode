@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+% Set up commands for pseudo-code elements
+\newcommand{\Is}{\textbf{ is }}
+\newcommand{\To}{\textbf{ to }}
+\newcommand{\Downto}{\textbf{ downto }}
+\newcommand{\Or}{\textbf{ or }}
+\newcommand{\And}{\textbf{ and }}
+
+\begin{document}
+
+\begin{algorithm}
+  \caption{Linear Search}
+  \begin{algorithmic}[1]
+    \Statex
+    \Procedure{LinearSearch}{$A$, $n$, $x$} \Comment{Searches for $x$ in array $A$ of size $n$}
+      \For{$i \gets 1$ \To $n$} \Comment{Iterate through each element in the array}
+        \If{$A[i] \Is x$} \Comment{If the current element is equal to $x$}
+          \State \Return $i$ \Comment{Return the index where $x$ is found}
+        \EndIf
+      \EndFor
+      \State \Return \textbf{-1} \Comment{Return -1 if $x$ is not found in the array}
+    \EndProcedure
+  \end{algorithmic}
+\end{algorithm}
+
+\end{document}
