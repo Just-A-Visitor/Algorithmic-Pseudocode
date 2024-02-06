@@ -1,0 +1,81 @@
+% Set the Page Layout
+\documentclass[12pt]{article}
+\usepackage[inner = 2.0cm, outer = 2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+
+% Package to put url
+\usepackage{url}
+
+% Package to write pseudo-codes
+\usepackage{algorithm}
+
+% Remove the 'end' at the end of the algorithm
+\usepackage[noend]{algpseudocode}
+
+% Define Left Justified Comments
+\algnewcommand{\LeftComment}[1]{\Statex \(\triangleright\) #1}
+
+% Remove the Numbering of the Algorithm
+\usepackage{caption}
+\DeclareCaptionLabelFormat{algnonumber}{Algorithm}
+\captionsetup[algorithm]{labelformat = algnonumber}
+
+\begin{document}
+
+\begin{algorithm}
+
+  \caption{Symmetric Trees: Mirror Image of Itself}
+  
+  \begin{algorithmic}[1]
+    \Require A Binary Tree
+    \Statex
+
+    \Function{Is\_Symmetric}{$root$}
+        \LeftComment{Iterative approach using a queue}
+        \LeftComment {Assume createEmptyQueue(), enqueue(), dequeue() and isEmpty() are functions that perform queue operations}
+    
+    \Statex
+    
+        \If{$root$ is $NULL$}
+            \State \textbf{return} $true$
+        \EndIf
+        
+        \State queue $\gets$ \textsc{createEmptyQueue}()
+        \State \textsc{enqueue}$(queue, root)$
+        \State \textsc{enqueue}$(queue, root)$
+        
+        \While{\textbf{not} $\textsc{isEmpty}(queue)$}
+            \State $leftNode$ $\gets$ $\textsc{dequeue}(queue)$
+            \State $rightNode$ $\gets$ $\textsc{dequeue}(queue)$
+            
+            \If{$leftNode$ \textbf{is} $NULL$ \textbf{and} $rightNode$ \textbf{is} $NULL$}
+                \State \textbf{continue}
+            \EndIf
+    
+            \If{$leftNode$ \textbf{is} $NULL$ \textbf{or} $rightNode$ \textbf{is} $NULL$}
+            \State \textbf{return} $false$
+            \EndIf
+            
+            \If{$leftNode.data$ $\neq$ $RightNode.data$}
+                \State \textbf{return} $false$   
+            \EndIf
+
+        \State \textsc{enqueue}$(queue, leftNode.left)$
+        \State \textsc{enqueue}$(queue, rightNode.right)$
+        \State \textsc{enqueue}$(queue, leftNode.right)$
+        \State \textsc{enqueue}$(queue, rightNode.left)$
+        
+    \EndWhile
+    \State \textbf{return} $true$
+
+    \EndFunction
+  \end{algorithmic}
+  
+\end{algorithm}
+
+\section{References}
+\begin{enumerate}
+    \item \url{https://www.geeksforgeeks.org/symmetric-tree-tree-which-is-mirror-image-of-itself/}
+    \item \url{https://aaronice.gitbook.io/lintcode/trees/symmetric-tree}
+\end{enumerate}
+
+\end{document}
