@@ -9,9 +9,81 @@
 # Introduction
 This repository contains the pseudo-code of various algorithms and data structures necessary for **Interview Preparation** and **Competitive Coding**. The pseudocodes are written such that they can be easily adapted to any language. Let us remove the clutter of language and focus on the core concepts of the question!
 
+* The questions in the project are NOT organized by difficulty. They are organized by question platform. 
 
-# Sample GIF
-![Images](Images/Sample.gif)
+**Project includes questions from websites such as:**
+
+* Codechef
+* Codeforces
+* Crash Course
+* Crash Course ||
+* E-Olymp
+* GeekForGeeks
+* HackerRank
+* Leetcode
+
+
+# Sample Pseudocode
+
+**Sample 1:**
+* **Algorithm** Find the maximum amount of water that can be trapped between the given bars
+* **Ensure:** One Based Indexing for the array
+
+```
+1: function Trapping-Rain_Water (arr)
+•  left-max i represents the largest bar to the left of i (including it )
+•  right_maxli] represents the largest bar to the right of i (including it)
+•  contribution i denotes the maximum amount of water on top of the i - th bar
+
+2: n <- arr.length
+
+3: left_max[1] <- a[1]
+4: for i = 2: n do
+5:      left_max[i] = max(left_max[i-1], a[i])
+
+6: right_max[n] <- a[n]
+7: for i = len - 1 down 1 do 
+8:      right_max[i] = max(right_max[i+1], a[i])
+
+9: for i = 1 : n do
+10:     max_height <- min(left_max[i],right_max[i])  
+11:     contribution[i] <- (max_height - a[i])
+
+12: total_water <- 0
+13: for i = 1 : n do
+14:     total_water <- total_water + contribution[i]
+
+15: return total_water
+```
+
+**Sample 2:**
+* **Algorithm** Find the Median in a stream of integers
+
+```
+1: function MEDIAN_IN_STREAM(Stream)
+•  max heap contains elements smaller than or equal to median
+•  min heap contains elements bigger than or equal to median
+
+• Insertion
+2: for each element in stream do
+3: max_heap.push(element)
+4: max_element <- max_heap.top
+5: max_heap.pop
+6: min_heap.push(max_element)
+
+• Balancing
+7: if max_heap.size < min heap.size then
+8: min_element <- min_heap.top
+9: min_heap.pop
+10: max_heap.push(min_element)
+
+• Find Median
+11: if max_heap.size == min_heap.size then
+12:     Print (max(max_heap) + min(min_heap))/2
+13: else
+14:     Print max(max_heap)
+```
+
 
 # Contribution
 Read this section carefully if you are planning on contributing to this repository. 
